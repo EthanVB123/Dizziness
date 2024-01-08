@@ -57,7 +57,7 @@
                 <input type="text" id="activity" name="activity">
             </li>
             <li>
-                <label for="length">How long did it last for?</label> <!-- maybe do this in number and time unit? -->
+                <label for="length">How long did the dizziness last for?</label> <!-- maybe do this in number and time unit? -->
                 <input type="text" id="length" name="length">
             </li>
             <li>
@@ -332,6 +332,106 @@
                 <input type="text" id="factor2" name="factor2">
             </li>
             <!-- Above included in the JS, below yet to be implemented -->
+            <br>
+            <h2>Headaches</h2>
+            <li>
+                <label for="headacheyes">Do you have headaches? Yes</label>
+                <input type="radio" id="headacheyes" name="headache">
+                <label for="headacheno">No</label>
+                <input type="radio" id="headacheno" name="headache">
+            </li>
+            <li>
+                <label for="hvyes">If yes, do you feel the headache is related to vertigo? Yes</label>
+                <input type="radio" id="hvyes" name="hv">
+                <label for="hvno">No</label>
+                <input type="radio" id="hvno" name="hv">
+            </li>
+            <li>
+                <label for="headachedate">If yes for headache, start date?</label>
+                <input type="date" id="headachedate" name="headachedate">
+            </li>
+            <br>
+            <li>
+                <input type="checkbox" id="headache1" name="headache1" class="headache">
+                <label for="headache1">Do bright lights bother you?</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache2" name="headache2" class="headache">
+                <label for="headache2">Does noise bother you?</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache3" name="headache3" class="headache">
+                <label for="headache3">Nausea</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache4" name="headache4" class="headache">
+                <label for="headache4">Vomiting</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache5" name="headache5" class="headache">
+                <label for="headache5">Do strong smells bother you?</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache6" name="headache6" class="headache">
+                <label for="headache6">Motion very bothersome?</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache7" name="headache7" class="headache">
+                <label for="headache7">Weather changes trigger?</label>
+            </li>
+            <li>
+                <input type="checkbox" id="headache8" name="headache8" class="headache">
+                <label for="headache8">Do you have visual auras?</label>
+            </li>
+            <br>
+            <li>
+                <label for="headacheLocation">Location in the head</label>
+                <input type="text" id="headacheLocation" name="headacheLocation">
+            </li>
+            <li>
+                <label for="headacheFrequency">Headache frequency</label>
+                <select id="headacheFrequency" name="headacheFrequency">
+                    <option value=">1/hr">More often than hourly</option>
+                    <option value="Every 1-6 hours">Once every 1-6 hours</option>
+                    <option value="2-4/day">2-4 times a day</option>
+                    <option value="1/day">Once a day</option>
+                    <option value="1-6/week">1-6 times a week</option>
+                    <option value="<1/week">Less than once a week</option>
+                </select>
+            </li>
+            <li>
+                <label for="headacheLength">Duration per episode</label>
+                <select id="headacheLength" name="headacheLength">
+                    <option value="<1min">Less than a minute</option>
+                    <option value="1-5min">1-5 minutes</option>
+                    <option value="5-15min">5-15 minutes</option>
+                    <option value="15-60min">15-60 minutes</option>
+                    <option value="1-4h">1-4 hours</option>
+                    <option value=">4h">More than 4 hours</option>
+                </select>
+            </li>
+            <li>
+                <label for="treatments">Current Treatments</label>
+                <input type="text" id="treatments" name="treatments">
+            </li>
+            <br>
+            <h2>Ear Symptoms</h2>
+            <li>
+                <label for="earyes">Do you have ear symptoms? Yes</label>
+                <input type="radio" id="earyes" name="ear">
+                <label for="earno">No</label>
+                <input type="radio" id="earno" name="ear">
+            </li>
+            <li>
+                <label for="evyes">If yes, do you feel the headache is related to vertigo? Yes</label>
+                <input type="radio" id="evyes" name="ev">
+                <label for="evno">No</label>
+                <input type="radio" id="hvno" name="ev">
+            </li>
+            <li>
+                <label for="headachedate">If yes for headache, start date?</label>
+                <input type="date" id="headachedate" name="headachedate">
+            </li>
             <br>
             <li>
                 <button type="button" onclick="submitForm()">Finish Survey</button>
