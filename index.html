@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <script src="script.js"></script>
-    
+
     <h1 id="title">
         Welcome to the form!
     </h1>
@@ -22,6 +23,24 @@
             <li>
                 <label for="age">Patient Age (in years)</label>
                 <input type="number" id="age" name="age" min="0" max="150">
+            </li>
+            <h2>Main Problem</h2>
+            <li>
+
+                <label for="Dizziness">Dizziness</label>
+                <input type="checkbox" id="Dizziness" name="Dizziness">
+            </li>
+            <li>
+                <label for="Imbalance">Imbalance</label>
+                <input type="checkbox" id="Imbalance" name="Imbalance">
+            </li>
+            <li>
+                <label for="Ear Symptoms">Ear Symptoms</label>
+                <input type="checkbox" id="Ear Symptoms" name="Ear Symptoms">
+            </li>
+            <li>
+                <label for="Started">My symptoms started on:</label>
+                <input type="date" id="Started" name="Started">
             </li>
             <li>
                 <button type="submit">Submit Form</button>
