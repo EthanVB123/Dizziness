@@ -10,16 +10,18 @@ function submitForm() {
     outputString += "You are " + age + " years old\n";
     // Main Problem
     outputString += "Main Problem(s):\n"
-    var dizziness = document.getElementById('dizziness').checked;
-    console.log(dizziness);
-    outputString += dizziness ? "Dizziness\n" : "";
-    var imbalance = document.getElementById('imbalance').checked;
-    console.log(imbalance);
-    outputString += imbalance ? "Imbalance\n" : "";
-    
-    var earSymptoms = document.getElementById('earSymptoms').checked;
-    outputString += earSymptoms ? "Ear Symptoms\n": "";
+    outputString += document.getElementById('dizziness').checked ? "Dizziness\n" : "";
+    outputString += document.getElementById('imbalance').checked ? "Imbalance\n" : "";
+    outputString += document.getElementById('earSymptoms').checked ? "Ear Symptoms\n": "";
     outputString += "\n";
+    // Date
+    var dateStarted = document.getElementById("Started").value;
+    outputString += "Symptoms started on "+convertDates(dateStarted)+"\n";
+
+
+
+
+
     downloadResults("results.txt", outputString);
 }
 function downloadResults(filename, text) {
@@ -36,4 +38,7 @@ function downloadResults(filename, text) {
     element.click();
     
     document.body.removeChild(element);
-  }
+}
+function convertDates(isoDate) {
+    return isoDate.slice(8)+"/"+isoDate.slice(5,7)+"/"+isoDate.slice(0,4);
+}
