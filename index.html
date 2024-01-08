@@ -11,7 +11,7 @@
     <script src="script.js"></script>
 
     <h1 id="title">
-        Welcome to the form!
+        Dizziness Survey - World College of Neurology
     </h1>
 
     <form>
@@ -25,8 +25,8 @@
                 <input type="number" id="age" name="age" min="0" max="150">
             </li>
             <h2>Main Problem</h2>
+            <h4>I am here because of (circle all that apply):</h4>
             <li>
-
                 <label for="dizziness">Dizziness</label>
                 <input type="checkbox" id="dizziness" name="dizziness">
             </li>
@@ -38,9 +38,140 @@
                 <label for="earSymptoms">Ear Symptoms</label>
                 <input type="checkbox" id="earSymptoms" name="earSymptoms">
             </li>
+            <h4>My symptoms started on:</h4>
             <li>
-                <label for="Started">My symptoms started on:</label>
+                <label for="Started">Start Date</label>
                 <input type="date" id="Started" name="Started">
+            </li>
+            <!-- Above included in the JS, below yet to be implemented -->
+            <h4>When the dizziness started:</h4>
+            <li>
+                <label for="time">What time was it?</label>
+                <input type="time" id="time" name="time">
+            </li>
+            <li>
+                <label for="location">Where were you?</label>
+                <input type="text" id="location" name="location">
+            </li>
+            <li>
+                <label for="activity">What were you doing?</label>
+                <input type="text" id="activity" name="activity">
+            </li>
+            <li>
+                <label for="length">How long did it last for?</label> <!-- maybe do this in number and time unit? -->
+                <input type="text" id="length" name="length">
+            </li>
+            <li>
+                <label for="priorIssues">Any health issues or change in medications prior to dizziness?</label>
+                <input type="text" id="priorIssues" name="priorIssues">
+            </li>
+
+            <h4>When I feel dizzy, I get the sensation of: (Select all that apply)</h4>
+            <li>
+                <input type="checkbox" id="dizzy1" name="dizzy1">
+                <label for="dizzy1">Swaying, spinning, tumbline, cart-wheeling, tilting or rocking</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy2" name="dizzy2">
+                <label for="dizzy2">Imbalance, veering to LEFT side</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy3" name="dizzy3">
+                <label for="dizzy3">Imbalance, veering to RIGHT side</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy4" name="dizzy4">
+                <label for="dizzy4">Nausea, vomiting</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy5" name="dizzy5">
+                <label for="dizzy5">Double vision</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy6" name="dizzy6">
+                <label for="dizzy6">Blurred vision</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy7" name="dizzy7">
+                <label for="dizzy7">Jumping vision</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy8" name="dizzy8">
+                <label for="dizzy8">Light-headedness</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy9" name="dizzy9">
+                <label for="dizzy9">Loss of consciousness</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy10" name="dizzy10">
+                <label for="dizzy10">Headache</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy11" name="dizzy11">
+                <label for="dizzy11">Ear symptoms</label>
+            </li>
+            <li>
+                <input type="checkbox" id="dizzy12" name="dizzy12">
+                <label for="dizzy12">Other neurological symptoms -</label>
+                <label for="dizzy12-1">Describe:</label>
+                <input type="text" id="dizzy12-1" name="dizzy12-1">
+            </li>
+
+            <h4>Since then, my dizziness is:</h4>
+            <li>
+                <label for="yes1">Constant? Yes</label>
+                <input type="radio" id="yes1" name="constant">
+                <label for="no1">No</label>
+                <input type="radio" id="no1" name="constant">
+            </li>
+            <li>
+                <label for="yes2">Coming in attacks? Yes</label>
+                <input type="radio" id="yes2" name="attack">
+                <label for="no2">No</label>
+                <input type="radio" id="no2" name="attack">
+            </li>
+
+            <h4>If in attacks:</h4>
+            <li>
+                <label for="attack1">How often?</label>
+                <select id="attack1" name="attack1">
+                    <option value="2+/day">2 or more times a day</option>
+                    <option value="1/day">Once a day</option>
+                    <option value="2-6/wk">2-6 times a week</option>
+                    <option value="1/wk">Once a week</option>
+                    <option value="2-4/mo">2-4 times a month</option>
+                    <option value="0.5-1/mo">Once every 1-2 months</option>
+                    <option value="2-6/yr">2-6 times a year</option>
+                    <option value="1/yr">Once a year</option>
+                    <option value="<1/yr">Less than once a year</option>
+                </select>
+            </li>
+            <li>
+                <label for="attack2">How long per attack?</label>
+                <select id="attack2" name="attack2">
+                    <option value="<1min">Less than a minute</option>
+                    <option value="1-5min">1-5 minutes</option>
+                    <option value="5-15min">5-15 minutes</option>
+                    <option value="15-60min">15-60 minutes</option>
+                    <option value="1-4h">1-4 hours</option>
+                    <option value=">4h">More than 4 hours</option>
+                </select>
+            </li>
+            <li>
+                <label for="attack3">Can it be provoked by certain things?</label>
+                <select id="attack3" name="attack3">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+                <label for="attack3-1">If yes, what things?</label>
+                <input type="text" id="attack3-1" name="attack3-1">
+            </li>
+            <li>
+                <label for="attack4">Do you have a warning that an attack is about to start? Yes</label>
+                <input type="radio" id="attack4" name="attack4">
+                <label for="attack4-1">No</label>
+                <input type="radio" id="attack4-1" name="attack4">
             </li>
             <li>
                 <button type="button" onclick="submitForm()">THIS IS THE BUTTON</button>
