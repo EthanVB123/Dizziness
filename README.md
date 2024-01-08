@@ -8,7 +8,9 @@ If time remains, it would be nice to output a PDF Report.
 
 # Progress Updates
 
-### 08/1 12:35PM
+### 08/01 04:15PM
+Finished with the main problem section of the questionnaire. Making reasonable time, secondary goal looking unlikely
+### 08/01 12:35PM
 Constructed a basic form with a few questions on it.
 Got a button that downloads a text file based off of the name.
 Solid progress!
