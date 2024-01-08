@@ -18,10 +18,31 @@ function submitForm() {
     var dateStarted = document.getElementById("Started").value;
     outputString += "Symptoms started on "+convertDates(dateStarted)+"\n";
 
-    outputString += "When the dizziness started, it was "+document.getElementById("time").value+"and it lasted for the time period of "+document.getElementById("length").value+"\n";
-    outputString += "Patient was doing "+document.getElementById("activity").value+" at "+document.getElementById("location").value + "\n"
+    outputString += "When the dizziness started, it was "+document.getElementById("time").value+" and it lasted for the time period of "+document.getElementById("length").value+"\n";
+    outputString += "Patient was doing "+document.getElementById("activity").value+"\nPatient's location was "+document.getElementById("location").value + "\n"
+    outputString += `Prior to the dizziness, the patient had the following health issues or changes to medications: "${document.getElementById("priorIssues").value}"\n`
 
-
+    outputString += "When the patient feels dizzy, they get the sensation of:\n"
+    var dizzySymptoms = document.getElementsByClassName("dizzysymptom");
+    var dizzySymptomsInOrder = 
+        ["Swaying, spinning, tumbling, cart-wheeling, tilting or rocking",
+        "Imbalance, veering to left side",
+        "Imbalance, veering to right side",
+        "Nausea, vomiting",
+        "Double",
+        "Blurred",
+        "Jumping vision",
+        "Light-headedness",
+        "Loss of consciousness",
+        "Headache",
+        "Ear symptoms",
+        "Other neurological symptoms"]
+    for (var i=0; i<dizzySymptoms.length; i++) {
+        if (dizzySymptoms[i].checked) {
+            outputString += dizzySymptomsInOrder[dizzySymptoms[i].id.slice(5) -1] + "\n";
+        }
+    }
+    //.forEach(function (item) {if (item.checked) {outputString += `${item.id}\n`;}})
 
     downloadResults("results.txt", outputString);
 }
