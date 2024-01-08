@@ -18,7 +18,8 @@ function submitForm() {
     var dateStarted = document.getElementById("Started").value;
     outputString += "Symptoms started on "+convertDates(dateStarted)+"\n";
 
-
+    outputString += "When the dizziness started, it was "+document.getElementById("time").value+"and it lasted for the time period of "+document.getElementById("length").value+"\n";
+    outputString += "Patient was doing "+document.getElementById("activity").value+" at "+document.getElementById("location").value + "\n"
 
 
 
