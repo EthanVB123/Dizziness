@@ -1,3 +1,5 @@
+var numMeds = 1;
+document.getElementById("addmed").addEventListener("click", addmed);
 function submitForm() {
     var outputString = "";
     // Name, age, main problem
@@ -128,10 +130,40 @@ function downloadResults(filename, text) {
 function convertDates(isoDate) {
     return isoDate.slice(8)+"/"+isoDate.slice(5,7)+"/"+isoDate.slice(0,4);
 }
+
 function reveal(idToCheck, idToChange) {
     if (document.getElementById(idToCheck).checked) {
         document.getElementById(idToChange).classList.remove("hidden");
     } else {
         document.getElementById(idToChange).classList.add("hidden");
     }
+}
+function addmed() {
+    numMeds++;
+    const newMed = document.createElement("div");
+    newMed.id = `med${numMeds}`;
+    newMed.innerHTML = `
+    <li>
+        <label for="med${numMeds}-1">${numMeds}. Name</label>
+        <input type="text" id="med${numMeds}-1" name="med${numMeds}-1">
+        <br>
+        <label for="med${numMeds}-2"> Dosage</label>
+        <input type="text" id="med${numMeds}-2" name="med${numMeds}-2">
+        <br>
+        <label for="med${numMeds}-3"> Frequency</label>
+        <input type="text" id="med${numMeds}-3" name="med${numMeds}-3">
+        <br>
+        <label for="med${numMeds}-4"> Start Date</label>
+        <input type="date" id="med${numMeds}-4" name="med${numMeds}-4">
+        <br>
+        <label for="med${numMeds}-5"> Helpfulness</label>
+        <select id="med${numMeds}-5" name="med${numMeds}-5">
+            <option value="helpful">Quite helpful</option>
+            <option value="somewhat helpful">Somewhat helpful</option>
+            <option value="not very helpful">Not very helpful</option>
+            <option value="not at all helpful">Not at all helpful</option>
+        </select>
+    </li>
+    <br>`
+    document.getElementById("medications").insertBefore(newMed, document.getElementById("addmed"));
 }

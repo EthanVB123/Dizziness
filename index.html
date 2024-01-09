@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    
-    <script src="script.js"></script>
+
+    <script src="script.js" async></script>
 
     <h1 id="title">
         Dizziness Survey - World College of Neurology
@@ -66,7 +68,8 @@
                 <input type="text" id="activity" name="activity">
             </li>
             <li>
-                <label for="length">How long did the dizziness last for?</label> <!-- maybe do this in number and time unit? -->
+                <label for="length">How long did the dizziness last for?</label>
+                <!-- maybe do this in number and time unit? -->
                 <input type="text" id="length" name="length">
             </li>
             <li>
@@ -141,55 +144,55 @@
                 <input type="radio" id="no2" name="attack" onchange='reveal("yes2","attackSecondary")'>
             </li>
             <div id="attackSecondary" class="hidden">
-            <h4>If in attacks:</h4>
-            <li>
-                <label for="attack1">How often?</label>
-                <select id="attack1" name="attack1">
-                    <option value="2+/day">2 or more times a day</option>
-                    <option value="1/day">Once a day</option>
-                    <option value="2-6/wk">2-6 times a week</option>
-                    <option value="1/wk">Once a week</option>
-                    <option value="2-4/mo">2-4 times a month</option>
-                    <option value="0.5-1/mo">Once every 1-2 months</option>
-                    <option value="2-6/yr">2-6 times a year</option>
-                    <option value="1/yr">Once a year</option>
-                    <option value="<1/yr">Less than once a year</option>
-                </select>
-            </li>
-            <li>
-                <label for="attack2">How long per attack?</label>
-                <select id="attack2" name="attack2">
-                    <option value="<1min">Less than a minute</option>
-                    <option value="1-5min">1-5 minutes</option>
-                    <option value="5-15min">5-15 minutes</option>
-                    <option value="15-60min">15-60 minutes</option>
-                    <option value="1-4h">1-4 hours</option>
-                    <option value=">4h">More than 4 hours</option>
-                </select>
-            </li>
-            <li>
-                <label for="attack3">Can it be provoked by certain things?</label>
-                <select id="attack3" name="attack3">
-                    <option value="1">Yes</option>
-                    <option value="2">No</option>
-                </select>
-                <label for="attack3-1">If yes, what things?</label>
-                <input type="text" id="attack3-1" name="attack3-1">
-            </li>
-            <li>
-                <label for="attack4">Do you have a warning that an attack is about to start? Yes</label>
-                <input type="radio" id="attack4" name="attack4">
-                <label for="attack4-1">No</label>
-                <input type="radio" id="attack4-1" name="attack4">
-            </li>
-            <li>
-                <label for="trend">The overall trend of the dizziness since initial onset is:</label>
-                <select id="trend" name="trend">
-                    <option value="worsening">Worsening</option>
-                    <option value="nochange">No change</option>
-                    <option value="improving">Improving</option>
-                </select>
-            </li>
+                <h4>If in attacks:</h4>
+                <li>
+                    <label for="attack1">How often?</label>
+                    <select id="attack1" name="attack1">
+                        <option value="2+/day">2 or more times a day</option>
+                        <option value="1/day">Once a day</option>
+                        <option value="2-6/wk">2-6 times a week</option>
+                        <option value="1/wk">Once a week</option>
+                        <option value="2-4/mo">2-4 times a month</option>
+                        <option value="0.5-1/mo">Once every 1-2 months</option>
+                        <option value="2-6/yr">2-6 times a year</option>
+                        <option value="1/yr">Once a year</option>
+                        <option value="<1/yr">Less than once a year</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="attack2">How long per attack?</label>
+                    <select id="attack2" name="attack2">
+                        <option value="<1min">Less than a minute</option>
+                        <option value="1-5min">1-5 minutes</option>
+                        <option value="5-15min">5-15 minutes</option>
+                        <option value="15-60min">15-60 minutes</option>
+                        <option value="1-4h">1-4 hours</option>
+                        <option value=">4h">More than 4 hours</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="attack3">Can it be provoked by certain things?</label>
+                    <select id="attack3" name="attack3">
+                        <option value="1">Yes</option>
+                        <option value="2">No</option>
+                    </select>
+                    <label for="attack3-1">If yes, what things?</label>
+                    <input type="text" id="attack3-1" name="attack3-1">
+                </li>
+                <li>
+                    <label for="attack4">Do you have a warning that an attack is about to start? Yes</label>
+                    <input type="radio" id="attack4" name="attack4">
+                    <label for="attack4-1">No</label>
+                    <input type="radio" id="attack4-1" name="attack4">
+                </li>
+                <li>
+                    <label for="trend">The overall trend of the dizziness since initial onset is:</label>
+                    <select id="trend" name="trend">
+                        <option value="worsening">Worsening</option>
+                        <option value="nochange">No change</option>
+                        <option value="improving">Improving</option>
+                    </select>
+                </li>
             </div>
             <h4>My vertigo is provoked by: (Select all that apply)</h4>
             <li>
@@ -278,7 +281,7 @@
             </li>
             <li>
                 <input type="checkbox" id="provoke22" name="provoke22" class="provoke">
-                <label for="provoke22">Foods - which?</label> 
+                <label for="provoke22">Foods - which?</label>
                 <input type="text" id="provoke22-1" name="provoke22-1">
             </li>
             <li>
@@ -299,7 +302,7 @@
             </li>
             <li>
                 <input type="checkbox" id="provoke27" name="provoke27" class="provoke">
-                <label for="provoke27">Time of day - when?</label> 
+                <label for="provoke27">Time of day - when?</label>
                 <input type="text" id="provoke27-1" name="provoke27-1">
             </li>
             <li>
@@ -345,85 +348,87 @@
             <h2>Headaches</h2>
             <li>
                 <label for="headacheyes">Do you have headaches? Yes</label>
-                <input type="radio" id="headacheyes" name="headache" onchange='reveal("headacheyes","headacheSecondary")'>
+                <input type="radio" id="headacheyes" name="headache"
+                    onchange='reveal("headacheyes","headacheSecondary")'>
                 <label for="headacheno">No</label>
-                <input type="radio" id="headacheno" name="headache" onchange='reveal("headacheyes","headacheSecondary")'>
+                <input type="radio" id="headacheno" name="headache"
+                    onchange='reveal("headacheyes","headacheSecondary")'>
             </li>
             <div id="headacheSecondary" class="hidden">
-            <li>
-                <label for="hvyes">If yes, do you feel the headache is related to vertigo? Yes</label>
-                <input type="radio" id="hvyes" name="hv">
-                <label for="hvno">No</label>
-                <input type="radio" id="hvno" name="hv">
-            </li>
-            <li>
-                <label for="headachedate">If yes for headache, start date?</label>
-                <input type="date" id="headachedate" name="headachedate">
-            </li>
-            <br>
-            <li>
-                <input type="checkbox" id="headache1" name="headache1" class="headache">
-                <label for="headache1">Do bright lights bother you?</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache2" name="headache2" class="headache">
-                <label for="headache2">Does noise bother you?</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache3" name="headache3" class="headache">
-                <label for="headache3">Nausea</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache4" name="headache4" class="headache">
-                <label for="headache4">Vomiting</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache5" name="headache5" class="headache">
-                <label for="headache5">Do strong smells bother you?</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache6" name="headache6" class="headache">
-                <label for="headache6">Motion very bothersome?</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache7" name="headache7" class="headache">
-                <label for="headache7">Weather changes trigger?</label>
-            </li>
-            <li>
-                <input type="checkbox" id="headache8" name="headache8" class="headache">
-                <label for="headache8">Do you have visual auras?</label>
-            </li>
-            <br>
-            <li>
-                <label for="headacheLocation">Location in the head</label>
-                <input type="text" id="headacheLocation" name="headacheLocation">
-            </li>
-            <li>
-                <label for="headacheFrequency">Headache frequency</label>
-                <select id="headacheFrequency" name="headacheFrequency">
-                    <option value=">1/hr">More often than hourly</option>
-                    <option value="Every 1-6 hours">Once every 1-6 hours</option>
-                    <option value="2-4/day">2-4 times a day</option>
-                    <option value="1/day">Once a day</option>
-                    <option value="1-6/week">1-6 times a week</option>
-                    <option value="<1/week">Less than once a week</option>
-                </select>
-            </li>
-            <li>
-                <label for="headacheLength">Duration per episode</label>
-                <select id="headacheLength" name="headacheLength">
-                    <option value="<1min">Less than a minute</option>
-                    <option value="1-5min">1-5 minutes</option>
-                    <option value="5-15min">5-15 minutes</option>
-                    <option value="15-60min">15-60 minutes</option>
-                    <option value="1-4h">1-4 hours</option>
-                    <option value=">4h">More than 4 hours</option>
-                </select>
-            </li>
-            <li>
-                <label for="treatments">Current Treatments</label>
-                <input type="text" id="treatments" name="treatments">
-            </li>
+                <li>
+                    <label for="hvyes">If yes, do you feel the headache is related to vertigo? Yes</label>
+                    <input type="radio" id="hvyes" name="hv">
+                    <label for="hvno">No</label>
+                    <input type="radio" id="hvno" name="hv">
+                </li>
+                <li>
+                    <label for="headachedate">If yes for headache, start date?</label>
+                    <input type="date" id="headachedate" name="headachedate">
+                </li>
+                <br>
+                <li>
+                    <input type="checkbox" id="headache1" name="headache1" class="headache">
+                    <label for="headache1">Do bright lights bother you?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache2" name="headache2" class="headache">
+                    <label for="headache2">Does noise bother you?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache3" name="headache3" class="headache">
+                    <label for="headache3">Nausea</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache4" name="headache4" class="headache">
+                    <label for="headache4">Vomiting</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache5" name="headache5" class="headache">
+                    <label for="headache5">Do strong smells bother you?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache6" name="headache6" class="headache">
+                    <label for="headache6">Motion very bothersome?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache7" name="headache7" class="headache">
+                    <label for="headache7">Weather changes trigger?</label>
+                </li>
+                <li>
+                    <input type="checkbox" id="headache8" name="headache8" class="headache">
+                    <label for="headache8">Do you have visual auras?</label>
+                </li>
+                <br>
+                <li>
+                    <label for="headacheLocation">Location in the head</label>
+                    <input type="text" id="headacheLocation" name="headacheLocation">
+                </li>
+                <li>
+                    <label for="headacheFrequency">Headache frequency</label>
+                    <select id="headacheFrequency" name="headacheFrequency">
+                        <option value=">1/hr">More often than hourly</option>
+                        <option value="Every 1-6 hours">Once every 1-6 hours</option>
+                        <option value="2-4/day">2-4 times a day</option>
+                        <option value="1/day">Once a day</option>
+                        <option value="1-6/week">1-6 times a week</option>
+                        <option value="<1/week">Less than once a week</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="headacheLength">Duration per episode</label>
+                    <select id="headacheLength" name="headacheLength">
+                        <option value="<1min">Less than a minute</option>
+                        <option value="1-5min">1-5 minutes</option>
+                        <option value="5-15min">5-15 minutes</option>
+                        <option value="15-60min">15-60 minutes</option>
+                        <option value="1-4h">1-4 hours</option>
+                        <option value=">4h">More than 4 hours</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="treatments">Current Treatments</label>
+                    <input type="text" id="treatments" name="treatments">
+                </li>
             </div>
             <br>
             <h2>Ear Symptoms</h2>
@@ -434,69 +439,69 @@
                 <input type="radio" id="earno" name="ear" onchange='reveal("earyes","earSecondary")'>
             </li>
             <div id="earSecondary" class="hidden">
-            <li>
-                <label for="evyes">If yes, do you feel the headache is related to vertigo? Yes</label>
-                <input type="radio" id="evyes" name="ev">
-                <label for="evno">No</label>
-                <input type="radio" id="evno" name="ev">
-            </li>
-            <li>
-                <label for="eardate">If yes for ear symptoms, start date?</label>
-                <input type="date" id="eardate" name="eardate">
-            </li>
-            <li>List individual dates below in the Brief Notes section if onset at different times</li>
-            <li>
-                <label for="tinnitusL">Tinnitus - Left</label>
-                <input type="checkbox" id="tinnitusL" name="tinnitusL">
-                <label for="tinnitusR">Right</label> 
-                <input type="checkbox" id="tinnitusR" name="tinnitusR">
-                <label for="tinnitusN">Brief Notes</label>
-                <input type="text" id="tinnitusN" name="tinnitusN">
+                <li>
+                    <label for="evyes">If yes, do you feel the headache is related to vertigo? Yes</label>
+                    <input type="radio" id="evyes" name="ev">
+                    <label for="evno">No</label>
+                    <input type="radio" id="evno" name="ev">
+                </li>
+                <li>
+                    <label for="eardate">If yes for ear symptoms, start date?</label>
+                    <input type="date" id="eardate" name="eardate">
+                </li>
+                <li>List individual dates below in the Brief Notes section if onset at different times</li>
+                <li>
+                    <label for="tinnitusL">Tinnitus - Left</label>
+                    <input type="checkbox" id="tinnitusL" name="tinnitusL">
+                    <label for="tinnitusR">Right</label>
+                    <input type="checkbox" id="tinnitusR" name="tinnitusR">
+                    <label for="tinnitusN">Brief Notes</label>
+                    <input type="text" id="tinnitusN" name="tinnitusN">
 
-            </li>
-            <li>
-                <label for="sensitivityL">Sensitivity to noise - Left</label>
-                <input type="checkbox" id="sensitivityL" name="sensitivityL">
-                <label for="sensitivityR">Right</label> 
-                <input type="checkbox" id="sensitivityR" name="sensitivityR">
-                <label for="sensitivityN">Brief Notes</label>
-                <input type="text" id="sensitivityN" name="sensitivityN">
+                </li>
+                <li>
+                    <label for="sensitivityL">Sensitivity to noise - Left</label>
+                    <input type="checkbox" id="sensitivityL" name="sensitivityL">
+                    <label for="sensitivityR">Right</label>
+                    <input type="checkbox" id="sensitivityR" name="sensitivityR">
+                    <label for="sensitivityN">Brief Notes</label>
+                    <input type="text" id="sensitivityN" name="sensitivityN">
 
-            </li>
-            <li>
-                <label for="earpressureL">Ear pressure/fullness - Left</label>
-                <input type="checkbox" id="earpressureL" name="earpressureL">
-                <label for="earpressureR">Right</label> 
-                <input type="checkbox" id="earpressureR" name="earpressureR">
-                <label for="earpressureN">Brief Notes</label>
-                <input type="text" id="earpressureN" name="earpressureN">
+                </li>
+                <li>
+                    <label for="earpressureL">Ear pressure/fullness - Left</label>
+                    <input type="checkbox" id="earpressureL" name="earpressureL">
+                    <label for="earpressureR">Right</label>
+                    <input type="checkbox" id="earpressureR" name="earpressureR">
+                    <label for="earpressureN">Brief Notes</label>
+                    <input type="text" id="earpressureN" name="earpressureN">
 
-            </li>
-            <li>
-                <label for="lossL">Hearing loss - Left</label>
-                <input type="checkbox" id="lossL" name="lossL">
-                <label for="lossR">Right</label> 
-                <input type="checkbox" id="lossR" name="lossR">
-                <label for="lossN">Brief Notes</label>
-                <input type="text" id="lossN" name="lossN">
+                </li>
+                <li>
+                    <label for="lossL">Hearing loss - Left</label>
+                    <input type="checkbox" id="lossL" name="lossL">
+                    <label for="lossR">Right</label>
+                    <input type="checkbox" id="lossR" name="lossR">
+                    <label for="lossN">Brief Notes</label>
+                    <input type="text" id="lossN" name="lossN">
 
-            </li>
-            <li>
-                <label for="aidsL">Hearing aids - Left</label>
-                <input type="checkbox" id="aidsL" name="aidsL">
-                <label for="aidsR">Right</label> 
-                <input type="checkbox" id="aidsR" name="aidsR">
-                <label for="aidsN">Brief Notes</label>
-                <input type="text" id="aidsN" name="aidsN">
+                </li>
+                <li>
+                    <label for="aidsL">Hearing aids - Left</label>
+                    <input type="checkbox" id="aidsL" name="aidsL">
+                    <label for="aidsR">Right</label>
+                    <input type="checkbox" id="aidsR" name="aidsR">
+                    <label for="aidsN">Brief Notes</label>
+                    <input type="text" id="aidsN" name="aidsN">
 
-                <!-- This is where I am up to-->
-            </li>
-            <li>
-                <label for="doctorInfoEar">List of doctors seen, tests, diagnosis, and treatments</label>
-            </li>
-            <li>
-                <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5"></textarea>
-            </li>
+                    <!-- This is where I am up to-->
+                </li>
+                <li>
+                    <label for="doctorInfoEar">List of doctors seen, tests, diagnosis, and treatments</label>
+                </li>
+                <li>
+                    <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5"></textarea>
+                </li>
             </div>
             <br>
             <h2>Lifestyle</h2>
@@ -516,7 +521,8 @@
                     <input type="number" min="0" id="smokerQuantity" name="smokerQuantity">
                 </li>
                 <li>
-                    <label for="smokerStart">When did you start? (If you don't know exact date, approximate is fine)</label>
+                    <label for="smokerStart">When did you start? (If you don't know exact date, approximate is
+                        fine)</label>
                     <input type="date" id="smokerStart" name="smokerStart">
                 </li>
                 <li>
@@ -593,7 +599,8 @@
                         <option value="not using oral contraceptive or hormone replacement">No</option>
                         <option value="using oral contraceptive">Oral contraceptive only</option>
                         <option value="using hormone replacement">Hormone replacement only</option>
-                        <option value="using oral contraceptive and hormone replacement">Both oral contraceptive and hormone replacement</option>
+                        <option value="using oral contraceptive and hormone replacement">Both oral contraceptive and
+                            hormone replacement</option>
                     </select>
                 </li>
                 <li>
@@ -601,10 +608,12 @@
                     <select id="menstrual" name="menstrual">
                         <option value="regular menstrual cycles">Regular menstrual cycles</option>
                         <option value="irregular menstrual cycles">Irregular menstrual cycles</option>
-                        <option value="peri-menopausal">Peri-menopausal</option> <!-- should this be in the same option? -->
+                        <option value="peri-menopausal">Peri-menopausal</option>
+                        <!-- should this be in the same option? -->
                         <option value="menopausal">Menopausal</option>
                     </select>
-                    <label for="menopause">If menopausal, age of menopause?</label> <!-- should this be a dependent question? -->
+                    <label for="menopause">If menopausal, age of menopause?</label>
+                    <!-- should this be a dependent question? -->
                     <input type="number" min="0" id="menopause" name="menopause">
                 </li>
             </div>
@@ -613,8 +622,8 @@
             <h4>Have you had any of the following injuries/exposures? If so, check the box and provide details.</h4>
             <li>
                 <span>
-                <input type="checkbox" id="injury1" name="injury1" onchange='reveal("injury1","injury1Secondary")'>
-                <label for="injury1">Head trauma</label>
+                    <input type="checkbox" id="injury1" name="injury1" onchange='reveal("injury1","injury1Secondary")'>
+                    <label for="injury1">Head trauma</label>
                 </span>
                 <span id="injury1Secondary" class="hidden">
                     <label for="injury1details"> - Details?</label>
@@ -623,8 +632,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="injury2" name="injury2" onchange='reveal("injury2","injury2Secondary")'>
-                <label for="injury2">Ear trauma</label>
+                    <input type="checkbox" id="injury2" name="injury2" onchange='reveal("injury2","injury2Secondary")'>
+                    <label for="injury2">Ear trauma</label>
                 </span>
                 <span id="injury2Secondary" class="hidden">
                     <label for="injury2details"> - Details?</label>
@@ -633,8 +642,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="injury3" name="injury3" onchange='reveal("injury3","injury3Secondary")'>
-                <label for="injury3">Ear infection</label>
+                    <input type="checkbox" id="injury3" name="injury3" onchange='reveal("injury3","injury3Secondary")'>
+                    <label for="injury3">Ear infection</label>
                 </span>
                 <span id="injury3Secondary" class="hidden">
                     <label for="injury3details"> - Details?</label>
@@ -643,8 +652,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="injury4" name="injury4" onchange='reveal("injury4","injury4Secondary")'>
-                <label for="injury4">Neck trauma</label>
+                    <input type="checkbox" id="injury4" name="injury4" onchange='reveal("injury4","injury4Secondary")'>
+                    <label for="injury4">Neck trauma</label>
                 </span>
                 <span id="injury4Secondary" class="hidden">
                     <label for="injury4details"> - Details?</label>
@@ -653,8 +662,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="injury5" name="injury5" onchange='reveal("injury5","injury5Secondary")'>
-                <label for="injury5">Loud noise (machinery, explosion, loud concert etc.)</label>
+                    <input type="checkbox" id="injury5" name="injury5" onchange='reveal("injury5","injury5Secondary")'>
+                    <label for="injury5">Loud noise (machinery, explosion, loud concert etc.)</label>
                 </span>
                 <span id="injury5Secondary" class="hidden">
                     <label for="injury5details"> - Details?</label>
@@ -663,8 +672,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="injury6" name="injury6" onchange='reveal("injury6","injury6Secondary")'>
-                <label for="injury6">Chemicals/toxins</label>
+                    <input type="checkbox" id="injury6" name="injury6" onchange='reveal("injury6","injury6Secondary")'>
+                    <label for="injury6">Chemicals/toxins</label>
                 </span>
                 <span id="injury6Secondary" class="hidden">
                     <label for="injury6details"> - Details?</label>
@@ -673,8 +682,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="injury7" name="injury7" onchange='reveal("injury7","injury7Secondary")'>
-                <label for="injury7">Scuba diving</label>
+                    <input type="checkbox" id="injury7" name="injury7" onchange='reveal("injury7","injury7Secondary")'>
+                    <label for="injury7">Scuba diving</label>
                 </span>
                 <span id="injury7Secondary" class="hidden">
                     <label for="injury7details"> - Details?</label>
@@ -685,8 +694,8 @@
             <h4>Have you taken any of the following drugs? If so, check the box and indicate date.</h4>
             <li>
                 <span>
-                <input type="checkbox" id="drug1" name="drug1" onchange='reveal("drug1","drug1Secondary")'>
-                <label for="drug1">Aspirin in large doses</label>
+                    <input type="checkbox" id="drug1" name="drug1" onchange='reveal("drug1","drug1Secondary")'>
+                    <label for="drug1">Aspirin in large doses</label>
                 </span>
                 <span id="drug1Secondary" class="hidden">
                     <label for="drug1details"> - Date?</label>
@@ -695,8 +704,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug2" name="drug2" onchange='reveal("drug2","drug2Secondary")'>
-                <label for="drug2">Cisplatin, Vincristine</label>
+                    <input type="checkbox" id="drug2" name="drug2" onchange='reveal("drug2","drug2Secondary")'>
+                    <label for="drug2">Cisplatin, Vincristine</label>
                 </span>
                 <span id="drug2Secondary" class="hidden">
                     <label for="drug2details"> - Date?</label>
@@ -705,8 +714,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug3" name="drug3" onchange='reveal("drug3","drug3Secondary")'>
-                <label for="drug3">Frusemide</label>
+                    <input type="checkbox" id="drug3" name="drug3" onchange='reveal("drug3","drug3Secondary")'>
+                    <label for="drug3">Frusemide</label>
                 </span>
                 <span id="drug3Secondary" class="hidden">
                     <label for="drug3details"> - Date?</label>
@@ -715,8 +724,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug4" name="drug4" onchange='reveal("drug4","drug4Secondary")'>
-                <label for="drug4">Gentamicin</label>
+                    <input type="checkbox" id="drug4" name="drug4" onchange='reveal("drug4","drug4Secondary")'>
+                    <label for="drug4">Gentamicin</label>
                 </span>
                 <span id="drug4Secondary" class="hidden">
                     <label for="drug4details"> - Date?</label>
@@ -725,8 +734,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug5" name="drug5" onchange='reveal("drug5","drug5Secondary")'>
-                <label for="drug5">Tobramycin</label>
+                    <input type="checkbox" id="drug5" name="drug5" onchange='reveal("drug5","drug5Secondary")'>
+                    <label for="drug5">Tobramycin</label>
                 </span>
                 <span id="drug5Secondary" class="hidden">
                     <label for="drug5details"> - Date?</label>
@@ -735,8 +744,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug6" name="drug6" onchange='reveal("drug6","drug6Secondary")'>
-                <label for="drug6">Vancomycin</label>
+                    <input type="checkbox" id="drug6" name="drug6" onchange='reveal("drug6","drug6Secondary")'>
+                    <label for="drug6">Vancomycin</label>
                 </span>
                 <span id="drug6Secondary" class="hidden">
                     <label for="drug6details"> - Date?</label>
@@ -745,8 +754,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug7" name="drug7" onchange='reveal("drug7","drug7Secondary")'>
-                <label for="drug7">Malaria drugs (Chloroquine, Larium)</label>
+                    <input type="checkbox" id="drug7" name="drug7" onchange='reveal("drug7","drug7Secondary")'>
+                    <label for="drug7">Malaria drugs (Chloroquine, Larium)</label>
                 </span>
                 <span id="drug7Secondary" class="hidden">
                     <label for="drug7details"> - Date?</label>
@@ -755,8 +764,8 @@
             </li>
             <li>
                 <span>
-                <input type="checkbox" id="drug8" name="drug8" onchange='reveal("drug8","drug8Secondary")'>
-                <label for="drug8">Tamoxifen</label>
+                    <input type="checkbox" id="drug8" name="drug8" onchange='reveal("drug8","drug8Secondary")'>
+                    <label for="drug8">Tamoxifen</label>
                 </span>
                 <span id="drug8Secondary" class="hidden">
                     <label for="drug8details"> - Date?</label>
@@ -768,17 +777,128 @@
             <h4>TODO</h4>
             <br>
             <h2>Family History</h2>
+            <li>
+                <label for="siblings">Number of Siblings</label>
+                <input type="number" id="siblings" name="siblings">
+                <label for="children">Number of Children</label>
+                <input type="number" id="children" name="children">
+            </li>
+            <h4>Which of your relatives (grandparents, parents, siblings, children, grandchildren) had these diseases?
+            </h4>
+            <li>
+                <label for="balance">Balance problems</label>
+                <input type="text" id="balance" name="balance">
+            </li>
+            <li>
+                <label for="hearingloss">Hearing loss before age 40</label>
+                <input type="text" id="hearingloss" name="hearingloss">
+            </li>
+            <li>
+                <label for="vertigo">Vertigo</label>
+                <input type="text" id="vertigo" name="vertigo">
+            </li>
+            <li>
+                <label for="otosclerosis">Otosclerosis</label>
+                <input type="text" id="otosclerosis" name="otosclerosis">
+            </li>
+            <li>
+                <label for="menieres">Meniere's</label>
+                <input type="text" id="menieres" name="menieres">
+            </li>
+            <li>
+                <label for="seizures">Seizures</label>
+                <input type="text" id="seizures" name="seizures">
+            </li>
+            <li>
+                <label for="migraine">Migraines</label>
+                <input type="text" id="migraine" name="migraine">
+            </li>
             <br>
-
-
+            <li>
+                <label for="otherHereditary">Any other diseases that run in the family?</label>
+                <input type="text" id="otherHereditary" name="otherHereditary">
+            </li>
+            <li>
+                <label for="ethnicity">Ethnicity (some diseases are more common in certain ethnic groups)</label>
+                <input type="text" id="ethnicity" name="ethnicity">
+            </li>
+            <br>
+            <h2>Medications Used</h2>
+            <!-- Figure out how to use the DOM for this?? -->
+            <div id="medications">
+                <div id="med1">
+                    <li>
+                        <label for="med1-1">1. Name</label>
+                        <input type="text" id="med1-1" name="med1-1">
+                        <br>
+                        <label for="med1-2"> Dosage</label>
+                        <input type="text" id="med1-2" name="med1-2">
+                        <br>
+                        <label for="med1-3"> Frequency</label>
+                        <input type="text" id="med1-3" name="med1-3">
+                        <br>
+                        <label for="med1-4"> Start Date</label>
+                        <input type="date" id="med1-4" name="med1-4">
+                        <br>
+                        <label for="med1-5"> Helpfulness</label>
+                        <select id="med1-5" name="med1-5">
+                            <option value="helpful">Quite helpful</option>
+                            <option value="somewhat helpful">Somewhat helpful</option>
+                            <option value="not very helpful">Not very helpful</option>
+                            <option value="not at all helpful">Not at all helpful</option>
+                        </select>
+                    </li>
+                </div>
+                <br>
+            
+            <button type="button" id="addmed">+ Add</button>
+            </div>
+            <br>
+            <h4>Other Treatments Tried</h4>
+            <li>
+                <label for="physicalTherapy">Physical therapy? Yes</label>
+                <input type="radio" id="physicalTherapy" name="physicalTherapy">
+                <label for="physicalTherapyno">No</label>
+                <input type="radio" id="physicalTherapyno" name="physicalTherapy">
+            </li>
+            <li>
+                <label for="chiroTherapy">Chiropractic therapy? Yes</label>
+                <input type="radio" id="chiroTherapy" name="chiroTherapy">
+                <label for="chiroTherapyno">No</label>
+                <input type="radio" id="chiroTherapyno" name="chiroTherapy">
+            </li>
+            <li>
+                <label for="acupuncture">Acupuncture? Yes</label>
+                <input type="radio" id="acupuncture" name="acupuncture">
+                <label for="acupunctureno">No</label>
+                <input type="radio" id="acupunctureno" name="acupuncture">
+            </li>
+            <li>
+                <label for="alternative">Alternative therapy? Yes</label>
+                <input type="radio" id="alternative" name="alternative">
+                <label for="alternativeno">No</label>
+                <input type="radio" id="alternativeno" name="alternative">
+            </li>
+            <br>
+            <h2>Allergies (Drug, Medication, Other) and Reactions</h2>
+            <li>
+                <label for="allergy1-1">Name of Allergen</label>
+                <input type="text" id="allergy1-1" name="allergy1-1">
+                <label for="allergy1-2">Reaction(s) to Allergen</label>
+                <input type="text" id="allergy1-2" name="allergy1-2">
+            </li>
+            <br>
+            <h2>Past Investigations</h2>
+            <h4>TODO</h4>
             <li>
                 <button type="button" onclick="submitForm()">Finish Survey</button>
                 <!-- <button type="submit">Submit Form</button> -->
             </li>
 
-            
+
         </ul>
 
     </form>
 </body>
+
 </html>
