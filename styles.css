@@ -10,3 +10,7 @@ form {
     border: 1px solid black;
     border-radius: 4px;
 }
+
+.hidden {
+    display: none;
+}

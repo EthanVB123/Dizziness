@@ -24,6 +24,15 @@
                 <label for="age">Patient Age (in years)</label>
                 <input type="number" id="age" name="age" min="0" max="150">
             </li>
+            <li>
+                <p>Patient Sex (Relevant as questions ask about specific biology e.g. menopause)</p>
+            </li>
+            <li>
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="sex" onchange='reveal("female","femaleSecondary")'>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")'>
+            </li>
             <h2>Main Problem</h2>
             <h4>I am here because of (circle all that apply):</h4>
             <li>
@@ -127,11 +136,11 @@
             </li>
             <li>
                 <label for="yes2">Coming in attacks? Yes</label>
-                <input type="radio" id="yes2" name="attack">
+                <input type="radio" id="yes2" name="attack" onchange='reveal("yes2","attackSecondary")'>
                 <label for="no2">No</label>
-                <input type="radio" id="no2" name="attack">
+                <input type="radio" id="no2" name="attack" onchange='reveal("yes2","attackSecondary")'>
             </li>
-
+            <div id="attackSecondary" class="hidden">
             <h4>If in attacks:</h4>
             <li>
                 <label for="attack1">How often?</label>
@@ -181,7 +190,7 @@
                     <option value="improving">Improving</option>
                 </select>
             </li>
-
+            </div>
             <h4>My vertigo is provoked by: (Select all that apply)</h4>
             <li>
                 <input type="checkbox" id="provoke1" name="provoke1" class="provoke">
@@ -336,10 +345,11 @@
             <h2>Headaches</h2>
             <li>
                 <label for="headacheyes">Do you have headaches? Yes</label>
-                <input type="radio" id="headacheyes" name="headache">
+                <input type="radio" id="headacheyes" name="headache" onchange='reveal("headacheyes","headacheSecondary")'>
                 <label for="headacheno">No</label>
-                <input type="radio" id="headacheno" name="headache">
+                <input type="radio" id="headacheno" name="headache" onchange='reveal("headacheyes","headacheSecondary")'>
             </li>
+            <div id="headacheSecondary" class="hidden">
             <li>
                 <label for="hvyes">If yes, do you feel the headache is related to vertigo? Yes</label>
                 <input type="radio" id="hvyes" name="hv">
@@ -414,14 +424,16 @@
                 <label for="treatments">Current Treatments</label>
                 <input type="text" id="treatments" name="treatments">
             </li>
+            </div>
             <br>
             <h2>Ear Symptoms</h2>
             <li>
                 <label for="earyes">Do you have ear symptoms? Yes</label>
-                <input type="radio" id="earyes" name="ear">
+                <input type="radio" id="earyes" name="ear" onchange='reveal("earyes","earSecondary")'>
                 <label for="earno">No</label>
-                <input type="radio" id="earno" name="ear">
+                <input type="radio" id="earno" name="ear" onchange='reveal("earyes","earSecondary")'>
             </li>
+            <div id="earSecondary" class="hidden">
             <li>
                 <label for="evyes">If yes, do you feel the headache is related to vertigo? Yes</label>
                 <input type="radio" id="evyes" name="ev">
@@ -468,7 +480,6 @@
                 <label for="lossN">Brief Notes</label>
                 <input type="text" id="lossN" name="lossN">
 
-                <!-- This is where I am up to-->
             </li>
             <li>
                 <label for="aidsL">Hearing aids - Left</label>
@@ -480,11 +491,32 @@
 
                 <!-- This is where I am up to-->
             </li>
+            <li>
+                <label for="doctorInfoEar">List of doctors seen, tests, diagnosis, and treatments</label>
+            </li>
+            <li>
+                <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5"></textarea>
+            </li>
+            </div>
             <br>
+            <h2>Lifestyle</h2>
+            <li>
+                <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
+                <input type="number" min="0" id="standardDrinks" name="standardDrinks">
+            </li>
+            <!--<li>
+                <label for="Smokers">Do you smoke? </label>
+            </li>-->
+            <br>
+
+
+
             <li>
                 <button type="button" onclick="submitForm()">Finish Survey</button>
                 <!-- <button type="submit">Submit Form</button> -->
             </li>
+
+            
         </ul>
 
     </form>

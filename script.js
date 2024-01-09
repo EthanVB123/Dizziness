@@ -124,6 +124,14 @@ function downloadResults(filename, text) {
     
     document.body.removeChild(element);
 }
+// Utility functions below
 function convertDates(isoDate) {
     return isoDate.slice(8)+"/"+isoDate.slice(5,7)+"/"+isoDate.slice(0,4);
+}
+function reveal(idToCheck, idToChange) {
+    if (document.getElementById(idToCheck).checked) {
+        document.getElementById(idToChange).classList.remove("hidden");
+    } else {
+        document.getElementById(idToChange).classList.add("hidden");
+    }
 }
