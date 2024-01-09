@@ -1,5 +1,8 @@
 var numMeds = 1;
+var numAllergies = 1;
 document.getElementById("addmed").addEventListener("click", addmed);
+document.getElementById("addallergy").addEventListener("click", addallergy);
+
 function submitForm() {
     var outputString = "";
     // Name, age, main problem
@@ -166,4 +169,17 @@ function addmed() {
     </li>
     <br>`
     document.getElementById("medications").insertBefore(newMed, document.getElementById("addmed"));
+}
+function addallergy() {
+    numAllergies++;
+    const newAllergy = document.createElement('div');
+    newAllergy.id = `allergen${numAllergies}`;
+    newAllergy.innerHTML = `            <li>
+    <label for="allergy${numAllergies}-1">${numAllergies}. Name of Allergen</label>
+    <input type="text" id="allergy${numAllergies}-1" name="allergy${numAllergies}-1">
+    <label for="allergy${numAllergies}-2">Reaction(s) to Allergen</label>
+    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2">
+</li>
+<br>`
+    document.getElementById("allergies").insertBefore(newAllergy, document.getElementById("addallergy"));
 }
