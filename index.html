@@ -504,9 +504,110 @@
                 <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
                 <input type="number" min="0" id="standardDrinks" name="standardDrinks">
             </li>
-            <!--<li>
-                <label for="Smokers">Do you smoke? </label>
-            </li>-->
+            <li>
+                <label for="smoker">Are you a smoker or ex-smoker? Yes</label>
+                <input type="radio" id="smoker" name="smoker" onchange='reveal("smoker","smokerSecondary")'>
+                <label for="notsmoker">No</label>
+                <input type="radio" id="notsmoker" name="smoker" onchange='reveal("headacheyes","smokerSecondary")'>
+            </li>
+            <div id="smokerSecondary" class="hidden">
+                <li>
+                    <label for="smokerQuantity">How many cigarettes do/did you smoke a day?</label>
+                    <input type="number" min="0" id="smokerQuantity" name="smokerQuantity">
+                </li>
+                <li>
+                    <label for="smokerStart">When did you start? (If you don't know exact date, approximate is fine)</label>
+                    <input type="date" id="smokerStart" name="smokerStart">
+                </li>
+                <li>
+                    <label for="smokerStop">When did you stop? (If still smoking, put current date)</label>
+                    <input type="date" id="smokerStop" name="smokerStop">
+                </li>
+            </div>
+            <li>
+                <label for="single">What is your familial status? Single</label>
+                <input type="radio" id="single" name="marital">
+                <label for="married">Married</label>
+                <input type="radio" id="married" name="marital">
+            </li>
+            <li>
+                <label for="occupation">What is your occupation? If retired, use past occupation</label>
+                <input type="text" id="occupation" name="occupation">
+            </li>
+            <li>
+                <label for="airplane">How often do you fly on an airplane?</label>
+                <select id="airplane" name="airplane">
+                    <option value=">5/yr">5 or more times a year</option>
+                    <option value="2-4/yr">2-4 times a year</option>
+                    <option value="1/yr">About once a year</option>
+                    <option value="A few in their lifetime">A few times in your life</option>
+                    <option value="Once in their lifetime">Once in your life</option>
+                    <option value="0">Never</option>
+                </select>
+            </li>
+            <li>
+                <label for="litigate">Are you in litigation/planning litigation regarding your symptoms? Yes</label>
+                <input type="radio" id="litigate" name="litigate">
+                <label for="litigateno">No</label>
+                <input type="radio" id="litigateno" name="litigate">
+            </li>
+            <li>
+                <label for="disabled">Are you disabled due to your condition? Yes</label>
+                <input type="radio" id="disabled" name="disabled">
+                <label for="disabledno">No</label>
+                <input type="radio" id="disabledno" name="disabled">
+            </li>
+            <li>
+                <label for="drive">Do you drive? Yes</label>
+                <input type="radio" id="drive" name="drive">
+                <label for="driveno">No</label>
+                <input type="radio" id="driveno" name="drive">
+            </li>
+            <li>
+                <label for="pillow">How many pillows do you use to sleep at night?</label>
+                <input type="number" min="0" id="pillow" name="pillow">
+            </li>
+            <li>
+                <label for="sleepPosition">In what position usually?</label>
+                <select id="sleepPosition" name="sleepPosition">
+                    <option value="on their back">Back</option>
+                    <option value="on their stomach">Stomach</option>
+                    <option value="with their right side down">Right side down</option>
+                    <option value="with their left side down">Left side down</option>
+                    <option value="with no regular position">Any / no regular position</option>
+                </select>
+            </li>
+            <div class="hidden" id="femaleSecondary">
+                <h4>Questions for women</h4>
+                <li>
+                    <label for="pregnancy">Pregnant or planning pregnancy?</label>
+                    <select id="pregnancy" name="pregnancy">
+                        <option value="not pregnant">Not pregnant</option>
+                        <option value="planning pregnancy">Planning pregnancy</option>
+                        <option value="pregnant">Currently pregnant</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="contraceptive">Using oral contraceptive or hormone replacement?</label>
+                    <select id="contraceptive" name="contraceptive">
+                        <option value="not using oral contraceptive or hormone replacement">No</option>
+                        <option value="using oral contraceptive">Oral contraceptive only</option>
+                        <option value="using hormone replacement">Hormone replacement only</option>
+                        <option value="using oral contraceptive and hormone replacement">Both oral contraceptive and hormone replacement</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="menstrual">Menstrual status?</label>
+                    <select id="menstrual" name="menstrual">
+                        <option value="regular menstrual cycles">Regular menstrual cycles</option>
+                        <option value="irregular menstrual cycles">Irregular menstrual cycles</option>
+                        <option value="peri-menopausal">Peri-menopausal</option> <!-- should this be in the same option? -->
+                        <option value="menopausal">Menopausal</option>
+                    </select>
+                    <label for="menopause">If menopausal, age of menopause?</label> <!-- should this be a dependent question? -->
+                    <input type="number" min="0" id="menopause" name="menopause">
+                </li>
+            </div>
             <br>
 
 
