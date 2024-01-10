@@ -9,30 +9,17 @@ document.getElementById("removeallergy").addEventListener("click", removeallergy
 
 function validateForm() {
     var inputs = Array.from(document.getElementsByTagName("input"));
-    /*var requiredInputs = Array.from(document.getElementsByClassName("required"));
-    var integerInputs = Array.from(document.getElementsByClassName("integer"));
-    var choiceInputs = Array.from(document.getElementsByClassName("choice"));
-    var checkInputs = Array.from(document.getElementsByClassName("check"));
     var selects = Array.from(document.getElementsByTagName("select"));
-    console.log(`${inputs.length} inputs, ${requiredInputs.length} required, ${choiceInputs.length} choice, ${checkInputs.length} check, ${integerInputs.length} integers, and ${selects.length} selects`);*/
     
     for (i = 0; i < inputs.length; i++) {
+        // Check for unfilled "required" inputs
         if (inputs[i].classList.contains("required") && inputs[i].value == "") {
             alert(`Please complete the following question:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
             return false;
         }
     }
     return true;
-    // Make sure all required inputs have a value
-    /*for (i = 0; i < requiredInputs.length; i++) {
-        if (requiredInputs[i].value == "") {
-            console.log(`${requiredInputs[i].id} is null!`)
-            var labelElement = document.querySelector(`label[for="${requiredInputs[i].id}"]`);
-            console.log(`${labelElement.innerHTML} is the offender and the parent be ${findPage(requiredInputs[i])}`)
-        } else {
-            console.log(`${requiredInputs[i].id} is a cool banana!`)
-        }
-    }*/
+
 }
 
 function findPage(element) { // return the page number
