@@ -7,6 +7,23 @@ document.getElementById("addallergy").addEventListener("click", addallergy);
 document.getElementById("removemed").addEventListener("click", removemed);
 document.getElementById("removeallergy").addEventListener("click", removeallergy);
 
+function validateForm() {
+    var inputs = document.getElementsByTagName("input");
+    var requiredInputs = document.getElementsByClassName("required");
+    var integerInputs = document.getElementsByClassName("integer");
+    var choiceInputs = document.getElementsByClassName("choice");
+    var checkInputs = document.getElementsByClassName("check");
+    var selects = document.getElementsByTagName("select");
+    console.log(`${inputs.length} inputs, ${requiredInputs.length} required, ${choiceInputs.length} choice, ${checkInputs.length} check, ${integerInputs.length} integers, and ${selects.length} selects`);
+}
+
+
+
+
+
+
+
+
 function submitForm() {
     var outputString = "";
     // Name, age, main problem

@@ -24,20 +24,20 @@
             <div id="pg1" class="page">
             <li>
                 <label for="name">Patient Name</label>
-                <input type="text" id="name" name="patient-name">
+                <input type="text" id="name" name="patient-name" class="required">
             </li>
             <li>
                 <label for="age">Patient Age (in years)</label>
-                <input type="number" id="age" name="age" min="0" max="150">
+                <input type="number" id="age" name="age" min="0" max="150" class="required integer">
             </li>
             <li>
                 <p>Patient Sex (Relevant as questions ask about specific biology e.g. menopause)</p>
             </li>
             <li>
                 <label for="female">Female</label>
-                <input type="radio" id="female" name="sex" onchange='reveal("female","femaleSecondary")'>
+                <input type="radio" id="female" name="sex" onchange='reveal("female","femaleSecondary")' class="choice">
                 <label for="male">Male</label>
-                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")'>
+                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")' class="choice">
             </li>
             </div>
             <div id="pg2" class="page hidden">
@@ -45,115 +45,115 @@
             <h4>I am here because of (circle all that apply):</h4>
             <li>
                 <label for="dizziness">Dizziness</label>
-                <input type="checkbox" id="dizziness" name="dizziness">
+                <input type="checkbox" id="dizziness" name="dizziness" class="check check1">
             </li>
             <li>
                 <label for="imbalance">Imbalance</label>
-                <input type="checkbox" id="imbalance" name="imbalance">
+                <input type="checkbox" id="imbalance" name="imbalance" class="check check1">
             </li>
             <li>
                 <label for="earSymptoms">Ear Symptoms</label>
-                <input type="checkbox" id="earSymptoms" name="earSymptoms">
+                <input type="checkbox" id="earSymptoms" name="earSymptoms" class="check check1">
             </li>
             <h4>My symptoms started on:</h4>
             <li>
                 <label for="Started">Start Date</label>
-                <input type="date" id="Started" name="Started">
+                <input type="date" id="Started" name="Started" class="date">
             </li>
             <h4>When the dizziness started:</h4>
             <li>
                 <label for="time">What time was it?</label>
-                <input type="time" id="time" name="time">
+                <input type="time" id="time" name="time" class="required">
             </li>
             <li>
                 <label for="location">Where were you?</label>
-                <input type="text" id="location" name="location">
+                <input type="text" id="location" name="location" class="required">
             </li>
             <li>
                 <label for="activity">What were you doing?</label>
-                <input type="text" id="activity" name="activity">
+                <input type="text" id="activity" name="activity" class="required">
             </li>
             <li>
                 <label for="length">How long did the dizziness last for?</label>
                 <!-- maybe do this in number and time unit? -->
-                <input type="text" id="length" name="length">
+                <input type="text" id="length" name="length" class="required">
             </li>
             <li>
-                <label for="priorIssues">Any health issues or change in medications prior to dizziness?</label>
-                <input type="text" id="priorIssues" name="priorIssues">
+                <label for="priorIssues">Any health issues or change in medications prior to dizziness? (If none, write "None")</label>
+                <input type="text" id="priorIssues" name="priorIssues" class="required">
             </li>
 
             <h4>When I feel dizzy, I get the sensation of: (Select all that apply)</h4>
             <li>
-                <input type="checkbox" id="dizzy1" name="dizzy1" class="dizzysymptom">
+                <input type="checkbox" id="dizzy1" name="dizzy1" class="dizzysymptom check check2">
                 <label for="dizzy1">Swaying, spinning, tumbline, cart-wheeling, tilting or rocking</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy2" name="dizzy2" class="dizzysymptom">
+                <input type="checkbox" id="dizzy2" name="dizzy2" class="dizzysymptom check check2">
                 <label for="dizzy2">Imbalance, veering to LEFT side</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy3" name="dizzy3" class="dizzysymptom">
+                <input type="checkbox" id="dizzy3" name="dizzy3" class="dizzysymptom check check2">
                 <label for="dizzy3">Imbalance, veering to RIGHT side</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy4" name="dizzy4" class="dizzysymptom">
+                <input type="checkbox" id="dizzy4" name="dizzy4" class="dizzysymptom check check2">
                 <label for="dizzy4">Nausea, vomiting</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy5" name="dizzy5" class="dizzysymptom">
+                <input type="checkbox" id="dizzy5" name="dizzy5" class="dizzysymptom check check2">
                 <label for="dizzy5">Double vision</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy6" name="dizzy6" class="dizzysymptom">
+                <input type="checkbox" id="dizzy6" name="dizzy6" class="dizzysymptom check check2">
                 <label for="dizzy6">Blurred vision</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy7" name="dizzy7" class="dizzysymptom">
+                <input type="checkbox" id="dizzy7" name="dizzy7" class="dizzysymptom check check2">
                 <label for="dizzy7">Jumping vision</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy8" name="dizzy8" class="dizzysymptom">
+                <input type="checkbox" id="dizzy8" name="dizzy8" class="dizzysymptom check check2">
                 <label for="dizzy8">Light-headedness</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy9" name="dizzy9" class="dizzysymptom">
+                <input type="checkbox" id="dizzy9" name="dizzy9" class="dizzysymptom check check2">
                 <label for="dizzy9">Loss of consciousness</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy10" name="dizzy10" class="dizzysymptom">
+                <input type="checkbox" id="dizzy10" name="dizzy10" class="dizzysymptom check check2">
                 <label for="dizzy10">Headache</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy11" name="dizzy11" class="dizzysymptom">
+                <input type="checkbox" id="dizzy11" name="dizzy11" class="dizzysymptom check check2">
                 <label for="dizzy11">Ear symptoms</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy12" name="dizzy12" class="dizzysymptom">
+                <input type="checkbox" id="dizzy12" name="dizzy12" class="dizzysymptom check check2">
                 <label for="dizzy12">Other neurological symptoms -</label>
                 <label for="dizzy12-1">Describe:</label>
-                <input type="text" id="dizzy12-1" name="dizzy12-1">
+                <input type="text" id="dizzy12-1" name="dizzy12-1" class="optional">
             </li>
 
 
             <h4>Since then, my dizziness is:</h4>
             <li>
                 <label for="yes1">Constant? Yes</label>
-                <input type="radio" id="yes1" name="constant">
+                <input type="radio" id="yes1" name="constant" class="choice">
                 <label for="no1">No</label>
-                <input type="radio" id="no1" name="constant">
+                <input type="radio" id="no1" name="constant" class="choice">
             </li>
             <li>
                 <label for="yes2">Coming in attacks? Yes</label>
-                <input type="radio" id="yes2" name="attack" onchange='reveal("yes2","attackSecondary")'>
+                <input type="radio" id="yes2" name="attack" onchange='reveal("yes2","attackSecondary")' class="choice parent1">
                 <label for="no2">No</label>
-                <input type="radio" id="no2" name="attack" onchange='reveal("yes2","attackSecondary")'>
+                <input type="radio" id="no2" name="attack" onchange='reveal("yes2","attackSecondary")' class="choice">
             </li>
             <div id="attackSecondary" class="hidden">
                 <h4>If in attacks:</h4>
                 <li>
                     <label for="attack1">How often?</label>
-                    <select id="attack1" name="attack1">
+                    <select id="attack1" name="attack1" class="child1">
                         <option value="2+/day">2 or more times a day</option>
                         <option value="1/day">Once a day</option>
                         <option value="2-6/wk">2-6 times a week</option>
@@ -167,7 +167,7 @@
                 </li>
                 <li>
                     <label for="attack2">How long per attack?</label>
-                    <select id="attack2" name="attack2">
+                    <select id="attack2" name="attack2" class="child1">
                         <option value="<1min">Less than a minute</option>
                         <option value="1-5min">1-5 minutes</option>
                         <option value="5-15min">5-15 minutes</option>
@@ -178,167 +178,167 @@
                 </li>
                 <li>
                     <label for="attack3">Can it be provoked by certain things?</label>
-                    <select id="attack3" name="attack3">
+                    <select id="attack3" name="attack3" class="child1">
                         <option value="1">Yes</option>
                         <option value="2">No</option>
                     </select>
                     <label for="attack3-1">If yes, what things?</label>
-                    <input type="text" id="attack3-1" name="attack3-1">
+                    <input type="text" id="attack3-1" name="attack3-1" class="child1">
                 </li>
                 <li>
                     <label for="attack4">Do you have a warning that an attack is about to start? Yes</label>
-                    <input type="radio" id="attack4" name="attack4">
+                    <input type="radio" id="attack4" name="attack4" class="child1">
                     <label for="attack4-1">No</label>
-                    <input type="radio" id="attack4-1" name="attack4">
-                </li>
-                <li>
-                    <label for="trend">The overall trend of the dizziness since initial onset is:</label>
-                    <select id="trend" name="trend">
-                        <option value="worsening">Worsening</option>
-                        <option value="nochange">No change</option>
-                        <option value="improving">Improving</option>
-                    </select>
+                    <input type="radio" id="attack4-1" name="attack4" class="child1">
                 </li>
             </div>
+            <li>
+                <label for="trend">The overall trend of the dizziness since initial onset is:</label>
+                <select id="trend" name="trend" class="required">
+                    <option value="worsening">Worsening</option>
+                    <option value="nochange">No change</option>
+                    <option value="improving">Improving</option>
+                </select>
+            </li>
             <h4>My vertigo is provoked by: (Select all that apply)</h4>
             <li>
-                <input type="checkbox" id="provoke1" name="provoke1" class="provoke">
+                <input type="checkbox" id="provoke1" name="provoke1" class="provoke check check2">
                 <label for="provoke1">Turning over in bed to the left</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke2" name="provoke2" class="provoke">
+                <input type="checkbox" id="provoke2" name="provoke2" class="provoke check check2">
                 <label for="provoke2">Turning over in bed to the right</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke3" name="provoke3" class="provoke">
+                <input type="checkbox" id="provoke3" name="provoke3" class="provoke check check2">
                 <label for="provoke3">Lying down</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke4" name="provoke4" class="provoke">
+                <input type="checkbox" id="provoke4" name="provoke4" class="provoke check check2">
                 <label for="provoke4">Going from lying to sitting</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke5" name="provoke5" class="provoke">
+                <input type="checkbox" id="provoke5" name="provoke5" class="provoke check check2">
                 <label for="provoke5">Going from sitting to standing</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke6" name="provoke6" class="provoke">
+                <input type="checkbox" id="provoke6" name="provoke6" class="provoke check check2">
                 <label for="provoke6">Standing still</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke7" name="provoke7" class="provoke">
+                <input type="checkbox" id="provoke7" name="provoke7" class="provoke check check2">
                 <label for="provoke7">Rapid head movements</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke8" name="provoke8" class="provoke">
+                <input type="checkbox" id="provoke8" name="provoke8" class="provoke check check2">
                 <label for="provoke8">Walking in a dark room</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke9" name="provoke9" class="provoke">
+                <input type="checkbox" id="provoke9" name="provoke9" class="provoke check check2">
                 <label for="provoke9">Elevator</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke10" name="provoke10" class="provoke">
+                <input type="checkbox" id="provoke10" name="provoke10" class="provoke check check2">
                 <label for="provoke10">Car travel</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke11" name="provoke11" class="provoke">
+                <input type="checkbox" id="provoke11" name="provoke11" class="provoke check check2">
                 <label for="provoke11">Plane travel</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke12" name="provoke12" class="provoke">
+                <input type="checkbox" id="provoke12" name="provoke12" class="provoke check check2">
                 <label for="provoke12">Sudden loud noises</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke13" name="provoke13" class="provoke">
+                <input type="checkbox" id="provoke13" name="provoke13" class="provoke check check2">
                 <label for="provoke13">Sustained loud noises</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke14" name="provoke14" class="provoke">
+                <input type="checkbox" id="provoke14" name="provoke14" class="provoke check check2">
                 <label for="provoke14">Coughing</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke15" name="provoke15" class="provoke">
+                <input type="checkbox" id="provoke15" name="provoke15" class="provoke check check2">
                 <label for="provoke15">Blowing nose</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke16" name="provoke16" class="provoke">
+                <input type="checkbox" id="provoke16" name="provoke16" class="provoke check check2">
                 <label for="provoke16">Straining</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke17" name="provoke17" class="provoke">
+                <input type="checkbox" id="provoke17" name="provoke17" class="provoke check check2">
                 <label for="provoke17">Grocery stores</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke18" name="provoke18" class="provoke">
+                <input type="checkbox" id="provoke18" name="provoke18" class="provoke check check2">
                 <label for="provoke18">Narrow spaces</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke19" name="provoke19" class="provoke">
+                <input type="checkbox" id="provoke19" name="provoke19" class="provoke check check2">
                 <label for="provoke19">Wide open spaces</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke20" name="provoke20" class="provoke">
+                <input type="checkbox" id="provoke20" name="provoke20" class="provoke check check2">
                 <label for="provoke20">Salt</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke21" name="provoke21" class="provoke">
+                <input type="checkbox" id="provoke21" name="provoke21" class="provoke check check2">
                 <label for="provoke21">MSG</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke22" name="provoke22" class="provoke">
+                <input type="checkbox" id="provoke22" name="provoke22" class="provoke check check2">
                 <label for="provoke22">Foods - which?</label>
                 <input type="text" id="provoke22-1" name="provoke22-1">
             </li>
             <li>
-                <input type="checkbox" id="provoke23" name="provoke23" class="provoke">
+                <input type="checkbox" id="provoke23" name="provoke23" class="provoke check check2">
                 <label for="provoke23">Not eating</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke24" name="provoke24" class="provoke">
+                <input type="checkbox" id="provoke24" name="provoke24" class="provoke check check2">
                 <label for="provoke24">Looking at moving objects</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke25" name="provoke25" class="provoke">
+                <input type="checkbox" id="provoke25" name="provoke25" class="provoke check check2">
                 <label for="provoke25">Heat</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke26" name="provoke26" class="provoke">
+                <input type="checkbox" id="provoke26" name="provoke26" class="provoke check check2">
                 <label for="provoke26">Hot showers</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke27" name="provoke27" class="provoke">
+                <input type="checkbox" id="provoke27" name="provoke27" class="provoke check check2">
                 <label for="provoke27">Time of day - when?</label>
                 <input type="text" id="provoke27-1" name="provoke27-1">
             </li>
             <li>
-                <input type="checkbox" id="provoke28" name="provoke28" class="provoke">
+                <input type="checkbox" id="provoke28" name="provoke28" class="provoke check check2">
                 <label for="provoke28">Seasons - which?</label>
                 <input type="text" id="provoke28-1" name="provoke28-1">
             </li>
             <li>
-                <input type="checkbox" id="provoke29" name="provoke29" class="provoke">
+                <input type="checkbox" id="provoke29" name="provoke29" class="provoke check check2">
                 <label for="provoke29">Stress</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke30" name="provoke30" class="provoke">
+                <input type="checkbox" id="provoke30" name="provoke30" class="provoke check check2">
                 <label for="provoke30">Alcohol</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke31" name="provoke31" class="provoke">
+                <input type="checkbox" id="provoke31" name="provoke31" class="provoke check check2">
                 <label for="provoke31">Menstrual period (if relevant)</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke32" name="provoke32" class="provoke">
+                <input type="checkbox" id="provoke32" name="provoke32" class="provoke check check2">
                 <label for="provoke32">Underwater diving</label>
             </li>
             <li>
-                <input type="checkbox" id="provoke33" name="provoke33" class="provoke">
+                <input type="checkbox" id="provoke33" name="provoke33" class="provoke check check2">
                 <label for="provoke33">Exercise</label>
             </li>
             <br>
             <li>
-                <input type="checkbox" id="provoke34" name="provoke34" class="provoke">
+                <input type="checkbox" id="provoke34" name="provoke34" class="provoke check check2">
                 <label for="provoke34">Unprovoked/Randomly</label>
             </li>
             <h4>Which is the MAIN provoking factor?</h4>
