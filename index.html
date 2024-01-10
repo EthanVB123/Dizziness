@@ -18,6 +18,7 @@
 
     <form>
         <ul>
+            <div id="pg1" class="page">
             <li>
                 <label for="name">Patient Name</label>
                 <input type="text" id="name" name="patient-name">
@@ -35,6 +36,8 @@
                 <label for="male">Male</label>
                 <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")'>
             </li>
+            </div>
+            <div id="pg2" class="page hidden">
             <h2>Main Problem</h2>
             <h4>I am here because of (circle all that apply):</h4>
             <li>
@@ -343,6 +346,8 @@
             <li>
                 <input type="text" id="factor2" name="factor2">
             </li>
+            </div>
+            <div id="pg3" class="page hidden">
             <!-- Above included in the JS, below yet to be implemented -->
             <br>
             <h2>Headaches</h2>
@@ -430,7 +435,8 @@
                     <input type="text" id="treatments" name="treatments">
                 </li>
             </div>
-            <br>
+            </div>
+            <div id="pg4" class="page hidden">
             <h2>Ear Symptoms</h2>
             <li>
                 <label for="earyes">Do you have ear symptoms? Yes</label>
@@ -494,7 +500,6 @@
                     <label for="aidsN">Brief Notes</label>
                     <input type="text" id="aidsN" name="aidsN">
 
-                    <!-- This is where I am up to-->
                 </li>
                 <li>
                     <label for="doctorInfoEar">List of doctors seen, tests, diagnosis, and treatments</label>
@@ -503,7 +508,8 @@
                     <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5"></textarea>
                 </li>
             </div>
-            <br>
+            </div>
+            <div id="pg5" class="page hidden">
             <h2>Lifestyle</h2>
             <li>
                 <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
@@ -617,7 +623,8 @@
                     <input type="number" min="0" id="menopause" name="menopause">
                 </li>
             </div>
-            <br>
+            </div>
+            <div id="pg6" class="page hidden">
             <h2>Injuries and Exposures</h2>
             <h4>Have you had any of the following injuries/exposures? If so, check the box and provide details.</h4>
             <li>
@@ -772,10 +779,12 @@
                     <input type="date" id="drug7details" name="drug8details">
                 </span>
             </li>
-            <br>
+            </div>
+            <div id="pg7" class="page hidden">
             <h2>System Review</h2>
             <h4>TODO</h4>
-            <br>
+            </div>
+            <div id="pg8" class="page hidden">
             <h2>Family History</h2>
             <li>
                 <label for="siblings">Number of Siblings</label>
@@ -822,9 +831,9 @@
                 <label for="ethnicity">Ethnicity (some diseases are more common in certain ethnic groups)</label>
                 <input type="text" id="ethnicity" name="ethnicity">
             </li>
-            <br>
+            </div>
+            <div id="pg9" class="page hidden">
             <h2>Medications Used</h2>
-            <!-- Figure out how to use the DOM for this?? -->
             <div id="medications">
                 <div id="med1">
                     <li>
@@ -880,7 +889,8 @@
                 <label for="alternativeno">No</label>
                 <input type="radio" id="alternativeno" name="alternative">
             </li>
-            <br>
+            </div>
+            <div id="pg10" class="page hidden">
             <h2>Allergies (Drug, Medication, Other) and Reactions</h2>
             <div id="allergies">
                 <div id="allergen1">
@@ -895,13 +905,19 @@
                 <button type="button" id="addallergy">+ Add</button>
                 <button type="button" id="removeallergy">- Remove</button>
             </div>
-            <br>
+            </div>
+            <div id="pg11" class="page hidden">
             <h2>Past Investigations</h2>
             <h4>TODO</h4>
+            </div>
+            <div id="bottomButtons">
             <li>
-                <button type="button" onclick="submitForm()">Finish Survey</button>
+                <button type="button" onclick="nextPage()" id="nextpage">Next Page</button>
+                <button type="button" onclick="prevPage()" id="prevpage" class="hidden">Previous Page</button>
+                <button type="button" onclick="submitForm()" id="finish">Finish Survey</button>
                 <!-- <button type="submit">Submit Form</button> -->
             </li>
+            </div>
 
 
         </ul>

@@ -1,3 +1,5 @@
+var page = 1;
+var maxPage = 11;
 var numMeds = 1;
 var numAllergies = 1;
 document.getElementById("addmed").addEventListener("click", addmed);
@@ -199,5 +201,27 @@ function removeallergy() {
         numAllergies--;
     } else {
         alert("There are no allergies to remove.");
+    }
+}
+function nextPage() {
+    document.getElementById(`pg${page}`).classList.add('hidden');
+    page++;
+    document.getElementById(`pg${page}`).classList.remove('hidden');
+    if (page == maxPage) {
+        document.getElementById("nextpage").classList.add('hidden');
+    }
+    if (page == 2) {
+        document.getElementById(`prevpage`).classList.remove('hidden');
+    }
+}
+function prevPage() {
+    document.getElementById(`pg${page}`).classList.add('hidden');
+    page--;
+    document.getElementById(`pg${page}`).classList.remove('hidden');
+    if (page == 1) {
+        document.getElementById("prevpage").classList.add('hidden');
+    }
+    if (page == maxPage - 1) {
+        document.getElementById(`nextpage`).classList.remove('hidden');
     }
 }
