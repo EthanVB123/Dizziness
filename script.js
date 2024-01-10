@@ -28,8 +28,11 @@ function validateForm() {
     }
 }
 
-function findPage(element) {
-    return element.parentNode.tagName;
+function findPage(element) { // return the page number
+    if (element.parentNode.tagName == "DIV" && element.parentNode.classList.contains("page")) {
+        return parseInt(element.parentNode.id.slice(2), 10);
+    }
+    return findPage(element.parentNode);
 }
 
 
