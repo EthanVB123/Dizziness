@@ -17,6 +17,64 @@ function validateForm() {
             alert(`Please complete the following question:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
             return false;
         }
+        // Check for unfilled "choice" inputs
+        if (inputs[i].classList.contains("choice")) {
+            var choices = document.querySelectorAll(`[name=${inputs[i].name}]`)
+            var chosen = false;
+            for (j = 0; j < choices.length; j++) {
+                if (choices[j].checked) {
+                    chosen = true;
+                }
+            }
+            if (!chosen) {
+                alert(`Please complete the following question:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
+            }
+        }
+        // Check for integer
+        if (inputs[i].classList.contains("integer")) {
+            if (Math.floor(inputs[i].value) != inputs[i].value) {
+                console.log(`${inputs[i].value}`)
+                alert(`Please answer with a whole number:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
+            }
+        }
+        // Check for at least one in each "check"
+        if (inputs[i].classList.contains("check")) {
+            var classes = inputs[i].classList;
+            var targetClass = "";
+            for (j = 0; j < classes.length; j++) {
+                if (classes[j].length>5 && classes[j].slice(0,5)=="check") {
+                    targetClass = classes[j];
+                    break;
+                }
+            }
+            var checkGroup = document.getElementsByClassName(targetClass);
+            var checked = false;
+            for (j = 0; j < checkGroup.length; j++) {
+                if (checkGroup[j].checked) {
+                    checked = true;
+                }
+            }
+            if (!checked) {
+                alert(`Please select at least one box:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
+            }
+        }
+        // Check for legal dated (between 1/1/1900 and today)
+        if (inputs[i].classList.contains("date")) {
+            console.log(`The date was '${inputs[i].value}'`);
+            if (inputs[i].value == '') {
+                alert(`Please complete the following question:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
+            } else if (new Date(inputs[i].value) > new Date()) {
+                alert(`Please pick a date in the past, or if this event has not happened, pick today's date:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
+            } else if (new Date(inputs[i].value) < new Date("1900-01-01")) {
+                alert(`Please pick a date between 1900 and today:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
+            }
+        }
     }
     return true;
 
