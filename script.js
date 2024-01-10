@@ -207,6 +207,7 @@ function nextPage() {
     document.getElementById(`pg${page}`).classList.add('hidden');
     page++;
     document.getElementById(`pg${page}`).classList.remove('hidden');
+    updatePageNumber();
     if (page == maxPage) {
         document.getElementById("nextpage").classList.add('hidden');
     }
@@ -218,10 +219,14 @@ function prevPage() {
     document.getElementById(`pg${page}`).classList.add('hidden');
     page--;
     document.getElementById(`pg${page}`).classList.remove('hidden');
+    updatePageNumber();
     if (page == 1) {
         document.getElementById("prevpage").classList.add('hidden');
     }
     if (page == maxPage - 1) {
         document.getElementById(`nextpage`).classList.remove('hidden');
     }
+}
+function updatePageNumber() {
+    document.getElementById('pagenumber').innerHTML = `Page ${page} of ${maxPage}`;
 }
