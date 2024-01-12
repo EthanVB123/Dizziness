@@ -7,10 +7,13 @@ document.getElementById("addallergy").addEventListener("click", addallergy);
 document.getElementById("removemed").addEventListener("click", removemed);
 document.getElementById("removeallergy").addEventListener("click", removeallergy);
 
-function validateForm() {
+function validateForm(pageNo) {
     var inputs = Array.from(document.getElementsByTagName("input"));
     var selects = Array.from(document.getElementsByTagName("select"));
-    
+    if (pageNo > 0 && pageNo <= maxPage) {
+        inputs = inputs.filter((inputItem) => findPage(inputItem) == pageNo);
+        selects = selects.filter((inputItem) => findPage(inputItem) == pageNo);
+    }
     for (i = 0; i < selects.length; i++) {
         if (selects[i].value == "-1" && !selects[i].classList.contains("off")) {
             alert(`Please complete the following question:\nPage ${findPage(selects[i])}\n${document.querySelector(`label[for="${selects[i].id}"]`).innerHTML}`)
@@ -308,7 +311,7 @@ function removeallergy() {
     }
 }
 function nextPage() {
-    if (/*validateForm()*/true) {
+    if (validateForm(page)) {
         document.getElementById(`pg${page}`).classList.add('hidden');
         page++;
         document.getElementById(`pg${page}`).classList.remove('hidden');
@@ -322,17 +325,15 @@ function nextPage() {
     }
 }
 function prevPage() {
-    if (/*validateForm()*/true) {
-        document.getElementById(`pg${page}`).classList.add('hidden');
-        page--;
-        document.getElementById(`pg${page}`).classList.remove('hidden');
-        updatePageNumber();
-        if (page == 1) {
-            document.getElementById("prevpage").classList.add('hidden');
-        }
-        if (page == maxPage - 1) {
-            document.getElementById(`nextpage`).classList.remove('hidden');
-        }
+    document.getElementById(`pg${page}`).classList.add('hidden');
+    page--;
+    document.getElementById(`pg${page}`).classList.remove('hidden');
+    updatePageNumber();
+    if (page == 1) {
+        document.getElementById("prevpage").classList.add('hidden');
+    }
+    if (page == maxPage - 1) {
+        document.getElementById(`nextpage`).classList.remove('hidden');
     }
 }
 function updatePageNumber() {
