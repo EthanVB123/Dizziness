@@ -259,16 +259,16 @@ function addmed() {
     newMed.innerHTML = `
     <li>
         <label for="med${numMeds}-1">${numMeds}. Name</label>
-        <input type="text" id="med${numMeds}-1" name="med${numMeds}-1">
+        <input type="text" id="med${numMeds}-1" name="med${numMeds}-1" data-question="Medicine ${numMeds} Name">
         <br>
         <label for="med${numMeds}-2"> Dosage</label>
-        <input type="text" id="med${numMeds}-2" name="med${numMeds}-2">
+        <input type="text" id="med${numMeds}-2" name="med${numMeds}-2" data-question="Medicine ${numMeds} Dosage">
         <br>
         <label for="med${numMeds}-3"> Frequency</label>
-        <input type="text" id="med${numMeds}-3" name="med${numMeds}-3">
+        <input type="text" id="med${numMeds}-3" name="med${numMeds}-3" data-question="Medicine ${numMeds} Frequency">
         <br>
         <label for="med${numMeds}-4"> Start Date</label>
-        <input type="date" id="med${numMeds}-4" name="med${numMeds}-4">
+        <input type="date" id="med${numMeds}-4" name="med${numMeds}-4" data-question="Medicine ${numMeds} Start Date">
         <br>
         <label for="med${numMeds}-5"> Helpfulness</label>
         <select id="med${numMeds}-5" name="med${numMeds}-5">
@@ -287,9 +287,9 @@ function addallergy() {
     newAllergy.id = `allergen${numAllergies}`;
     newAllergy.innerHTML = `            <li>
     <label for="allergy${numAllergies}-1">${numAllergies}. Name of Allergen</label>
-    <input type="text" id="allergy${numAllergies}-1" name="allergy${numAllergies}-1">
+    <input type="text" id="allergy${numAllergies}-1" name="allergy${numAllergies}-1" data-question="Allergen ${numAllergies} Name">
     <label for="allergy${numAllergies}-2">Reaction(s) to Allergen</label>
-    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2">
+    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2" data-question="Allergen ${numAllergies} Reaction">
 </li>
 <br>`
     document.getElementById("allergies").insertBefore(newAllergy, document.getElementById("addallergy"));
