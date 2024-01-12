@@ -153,7 +153,8 @@
                 <h4>If in attacks:</h4>
                 <li>
                     <label for="attack1">How often?</label>
-                    <select id="attack1" name="attack1" class="child1 attackSecondary off">
+                    <select id="attack1" name="attack1" class="child1 attackSecondary off required">
+                        <option value="-1">- Select -</option>
                         <option value="2+/day">2 or more times a day</option>
                         <option value="1/day">Once a day</option>
                         <option value="2-6/wk">2-6 times a week</option>
@@ -168,6 +169,7 @@
                 <li>
                     <label for="attack2">How long per attack?</label>
                     <select id="attack2" name="attack2" class="child1 attackSecondary off required">
+                        <option value="-1">- Select -</option>
                         <option value="<1min">Less than a minute</option>
                         <option value="1-5min">1-5 minutes</option>
                         <option value="5-15min">5-15 minutes</option>
@@ -179,6 +181,7 @@
                 <li>
                     <label for="attack3">Can it be provoked by certain things?</label>
                     <select id="attack3" name="attack3" class="child1 attackSecondary off required">
+                        <option value="-1">- Select -</option>
                         <option value="1">Yes</option>
                         <option value="2">No</option>
                     </select>
@@ -195,6 +198,7 @@
             <li>
                 <label for="trend">The overall trend of the dizziness since initial onset is:</label>
                 <select id="trend" name="trend" class="required">
+                    <option value="-1">- Select -</option>
                     <option value="worsening">Worsening</option>
                     <option value="nochange">No change</option>
                     <option value="improving">Improving</option>
@@ -414,6 +418,7 @@
                 <li>
                     <label for="headacheFrequency">Headache frequency</label>
                     <select id="headacheFrequency" name="headacheFrequency">
+                        <option value="-1">- Select -</option>
                         <option value=">1/hr">More often than hourly</option>
                         <option value="Every 1-6 hours">Once every 1-6 hours</option>
                         <option value="2-4/day">2-4 times a day</option>
@@ -425,6 +430,7 @@
                 <li>
                     <label for="headacheLength">Duration per episode</label>
                     <select id="headacheLength" name="headacheLength">
+                        <option value="-1">- Select -</option>
                         <option value="<1min">Less than a minute</option>
                         <option value="1-5min">1-5 minutes</option>
                         <option value="5-15min">5-15 minutes</option>
@@ -552,6 +558,7 @@
             <li>
                 <label for="airplane">How often do you fly on an airplane?</label>
                 <select id="airplane" name="airplane">
+                    <option value="-1">- Select -</option>
                     <option value=">5/yr">5 or more times a year</option>
                     <option value="2-4/yr">2-4 times a year</option>
                     <option value="1/yr">About once a year</option>
@@ -585,6 +592,7 @@
             <li>
                 <label for="sleepPosition">In what position usually?</label>
                 <select id="sleepPosition" name="sleepPosition">
+                    <option value="-1">- Select -</option>
                     <option value="on their back">Back</option>
                     <option value="on their stomach">Stomach</option>
                     <option value="with their right side down">Right side down</option>
@@ -597,6 +605,7 @@
                 <li>
                     <label for="pregnancy">Pregnant or planning pregnancy?</label>
                     <select id="pregnancy" name="pregnancy" class="femaleSecondary">
+                        <option value="-1">- Select -</option>
                         <option value="not pregnant">Not pregnant</option>
                         <option value="planning pregnancy">Planning pregnancy</option>
                         <option value="pregnant">Currently pregnant</option>
@@ -605,6 +614,7 @@
                 <li>
                     <label for="contraceptive">Using oral contraceptive or hormone replacement?</label>
                     <select id="contraceptive" name="contraceptive" class="femaleSecondary">
+                        <option value="-1">- Select -</option>
                         <option value="not using oral contraceptive or hormone replacement">No</option>
                         <option value="using oral contraceptive">Oral contraceptive only</option>
                         <option value="using hormone replacement">Hormone replacement only</option>
@@ -615,6 +625,7 @@
                 <li>
                     <label for="menstrual">Menstrual status?</label>
                     <select id="menstrual" name="menstrual" class="femaleSecondary">
+                        <option value="-1">- Select -</option>
                         <option value="regular menstrual cycles">Regular menstrual cycles</option>
                         <option value="irregular menstrual cycles">Irregular menstrual cycles</option>
                         <option value="peri-menopausal">Peri-menopausal</option>
@@ -854,6 +865,7 @@
                         <br>
                         <label for="med1-5"> Helpfulness</label>
                         <select id="med1-5" name="med1-5">
+                            <option value="-1">- Select -</option>
                             <option value="helpful">Quite helpful</option>
                             <option value="somewhat helpful">Somewhat helpful</option>
                             <option value="not very helpful">Not very helpful</option>

@@ -11,6 +11,14 @@ function validateForm() {
     var inputs = Array.from(document.getElementsByTagName("input"));
     var selects = Array.from(document.getElementsByTagName("select"));
     
+    for (i = 0; i < selects.length; i++) {
+        if (selects[i].value == "-1" && !selects[i].classList.contains("off")) {
+            alert(`Please complete the following question:\nPage ${findPage(selects[i])}\n${document.querySelector(`label[for="${selects[i].id}"]`).innerHTML}`)
+            return false;
+        }
+    }
+
+
     for (i = 0; i < inputs.length; i++) {
         // If question is dependent and not required based on current input (i.e. "off"), skip
         if (inputs[i].classList.contains("off")) {
