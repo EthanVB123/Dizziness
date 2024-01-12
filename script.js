@@ -12,6 +12,10 @@ function validateForm() {
     var selects = Array.from(document.getElementsByTagName("select"));
     
     for (i = 0; i < inputs.length; i++) {
+        // If question is dependent and not required based on current input (i.e. "off"), skip
+        if (inputs[i].classList.contains("off")) {
+            continue;
+        }
         // Check for unfilled "required" inputs
         if (inputs[i].classList.contains("required") && inputs[i].value == "") {
             alert(`Please complete the following question:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
@@ -224,10 +228,17 @@ function convertDates(isoDate) {
 }
 
 function reveal(idToCheck, idToChange) {
+    var dependents = document.getElementsByClassName(idToChange);
     if (document.getElementById(idToCheck).checked) {
         document.getElementById(idToChange).classList.remove("hidden");
+        for (i = 0; i < dependents.length; i++) {
+            dependents[i].classList.remove("off");
+        }
     } else {
         document.getElementById(idToChange).classList.add("hidden");
+        for (i = 0; i < dependents.length; i++) {
+            dependents[i].classList.add("off");
+        }
     }
 }
 function addmed() {
@@ -289,27 +300,31 @@ function removeallergy() {
     }
 }
 function nextPage() {
-    document.getElementById(`pg${page}`).classList.add('hidden');
-    page++;
-    document.getElementById(`pg${page}`).classList.remove('hidden');
-    updatePageNumber();
-    if (page == maxPage) {
-        document.getElementById("nextpage").classList.add('hidden');
-    }
-    if (page == 2) {
-        document.getElementById(`prevpage`).classList.remove('hidden');
+    if (/*validateForm()*/true) {
+        document.getElementById(`pg${page}`).classList.add('hidden');
+        page++;
+        document.getElementById(`pg${page}`).classList.remove('hidden');
+        updatePageNumber();
+        if (page == maxPage) {
+            document.getElementById("nextpage").classList.add('hidden');
+        }
+        if (page == 2) {
+            document.getElementById(`prevpage`).classList.remove('hidden');
+        }
     }
 }
 function prevPage() {
-    document.getElementById(`pg${page}`).classList.add('hidden');
-    page--;
-    document.getElementById(`pg${page}`).classList.remove('hidden');
-    updatePageNumber();
-    if (page == 1) {
-        document.getElementById("prevpage").classList.add('hidden');
-    }
-    if (page == maxPage - 1) {
-        document.getElementById(`nextpage`).classList.remove('hidden');
+    if (/*validateForm()*/true) {
+        document.getElementById(`pg${page}`).classList.add('hidden');
+        page--;
+        document.getElementById(`pg${page}`).classList.remove('hidden');
+        updatePageNumber();
+        if (page == 1) {
+            document.getElementById("prevpage").classList.add('hidden');
+        }
+        if (page == maxPage - 1) {
+            document.getElementById(`nextpage`).classList.remove('hidden');
+        }
     }
 }
 function updatePageNumber() {

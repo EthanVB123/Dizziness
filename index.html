@@ -153,7 +153,7 @@
                 <h4>If in attacks:</h4>
                 <li>
                     <label for="attack1">How often?</label>
-                    <select id="attack1" name="attack1" class="child1">
+                    <select id="attack1" name="attack1" class="child1 attackSecondary off">
                         <option value="2+/day">2 or more times a day</option>
                         <option value="1/day">Once a day</option>
                         <option value="2-6/wk">2-6 times a week</option>
@@ -167,7 +167,7 @@
                 </li>
                 <li>
                     <label for="attack2">How long per attack?</label>
-                    <select id="attack2" name="attack2" class="child1">
+                    <select id="attack2" name="attack2" class="child1 attackSecondary off required">
                         <option value="<1min">Less than a minute</option>
                         <option value="1-5min">1-5 minutes</option>
                         <option value="5-15min">5-15 minutes</option>
@@ -178,18 +178,18 @@
                 </li>
                 <li>
                     <label for="attack3">Can it be provoked by certain things?</label>
-                    <select id="attack3" name="attack3" class="child1">
+                    <select id="attack3" name="attack3" class="child1 attackSecondary off required">
                         <option value="1">Yes</option>
                         <option value="2">No</option>
                     </select>
                     <label for="attack3-1">If yes, what things?</label>
-                    <input type="text" id="attack3-1" name="attack3-1" class="child1">
+                    <input type="text" id="attack3-1" name="attack3-1" class="child1 attackSecondary off">
                 </li>
                 <li>
                     <label for="attack4">Do you have a warning that an attack is about to start? Yes</label>
-                    <input type="radio" id="attack4" name="attack4" class="child1">
+                    <input type="radio" id="attack4" name="attack4" class="child1 attackSecondary off choice">
                     <label for="attack4-1">No</label>
-                    <input type="radio" id="attack4-1" name="attack4" class="child1">
+                    <input type="radio" id="attack4-1" name="attack4" class="child1 attackSecondary off choice">
                 </li>
             </div>
             <li>
@@ -596,7 +596,7 @@
                 <h4>Questions for women</h4>
                 <li>
                     <label for="pregnancy">Pregnant or planning pregnancy?</label>
-                    <select id="pregnancy" name="pregnancy">
+                    <select id="pregnancy" name="pregnancy" class="femaleSecondary">
                         <option value="not pregnant">Not pregnant</option>
                         <option value="planning pregnancy">Planning pregnancy</option>
                         <option value="pregnant">Currently pregnant</option>
@@ -604,7 +604,7 @@
                 </li>
                 <li>
                     <label for="contraceptive">Using oral contraceptive or hormone replacement?</label>
-                    <select id="contraceptive" name="contraceptive">
+                    <select id="contraceptive" name="contraceptive" class="femaleSecondary">
                         <option value="not using oral contraceptive or hormone replacement">No</option>
                         <option value="using oral contraceptive">Oral contraceptive only</option>
                         <option value="using hormone replacement">Hormone replacement only</option>
@@ -614,7 +614,7 @@
                 </li>
                 <li>
                     <label for="menstrual">Menstrual status?</label>
-                    <select id="menstrual" name="menstrual">
+                    <select id="menstrual" name="menstrual" class="femaleSecondary">
                         <option value="regular menstrual cycles">Regular menstrual cycles</option>
                         <option value="irregular menstrual cycles">Irregular menstrual cycles</option>
                         <option value="peri-menopausal">Peri-menopausal</option>
@@ -623,7 +623,7 @@
                     </select>
                     <label for="menopause">If menopausal, age of menopause?</label>
                     <!-- should this be a dependent question? -->
-                    <input type="number" min="0" id="menopause" name="menopause">
+                    <input type="number" min="0" id="menopause" name="menopause" value="0">
                 </li>
             </div>
             </div>
