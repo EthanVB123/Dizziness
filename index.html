@@ -24,20 +24,20 @@
             <div id="pg1" class="page">
             <li>
                 <label for="name">Patient Name</label>
-                <input type="text" id="name" name="patient-name" class="required">
+                <input type="text" id="name" name="patient-name" class="required" data-question="Name">
             </li>
             <li>
                 <label for="age">Patient Age (in years)</label>
-                <input type="number" id="age" name="age" min="0" max="150" class="required integer">
+                <input type="number" id="age" name="age" min="0" max="150" class="required integer" data-question="Age">
             </li>
             <li>
                 <p>Patient Sex (Relevant as questions ask about specific biology e.g. menopause)</p>
             </li>
             <li>
                 <label for="female">Female</label>
-                <input type="radio" id="female" name="sex" onchange='reveal("female","femaleSecondary")' class="choice">
+                <input type="radio" id="female" name="sex" onchange='reveal("female","femaleSecondary")' class="choice" data-question="Female">
                 <label for="male">Male</label>
-                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")' class="choice">
+                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")' class="choice" data-question="Male">
             </li>
             </div>
             <div id="pg2" class="page hidden">
@@ -45,109 +45,109 @@
             <h4>I am here because of (circle all that apply):</h4>
             <li>
                 <label for="dizziness">Dizziness</label>
-                <input type="checkbox" id="dizziness" name="dizziness" class="check check1">
+                <input type="checkbox" id="dizziness" name="dizziness" class="check check1" data-question="Main Problem">
             </li>
             <li>
                 <label for="imbalance">Imbalance</label>
-                <input type="checkbox" id="imbalance" name="imbalance" class="check check1">
+                <input type="checkbox" id="imbalance" name="imbalance" class="check check1" data-question="Main Problem">
             </li>
             <li>
                 <label for="earSymptoms">Ear Symptoms</label>
-                <input type="checkbox" id="earSymptoms" name="earSymptoms" class="check check1">
+                <input type="checkbox" id="earSymptoms" name="earSymptoms" class="check check1" data-question="Main Problem">
             </li>
             <h4>My symptoms started on:</h4>
             <li>
                 <label for="Started">Start Date</label>
-                <input type="date" id="Started" name="Started" class="date">
+                <input type="date" id="Started" name="Started" class="date" data-question="Symptom Start Date">
             </li>
             <h4>When the dizziness started:</h4>
             <li>
                 <label for="time">What time was it?</label>
-                <input type="time" id="time" name="time" class="required">
+                <input type="time" id="time" name="time" class="required" data-question="Symptom Start Time">
             </li>
             <li>
                 <label for="location">Where were you?</label>
-                <input type="text" id="location" name="location" class="required">
+                <input type="text" id="location" name="location" class="required" data-question="Where They Were">
             </li>
             <li>
                 <label for="activity">What were you doing?</label>
-                <input type="text" id="activity" name="activity" class="required">
+                <input type="text" id="activity" name="activity" class="required" data-question="What They Were Doing">
             </li>
             <li>
                 <label for="length">How long did the dizziness last for?</label>
                 <!-- maybe do this in number and time unit? -->
-                <input type="text" id="length" name="length" class="required">
+                <input type="text" id="length" name="length" class="required" data-question="Dizziness Length">
             </li>
             <li>
                 <label for="priorIssues">Any health issues or change in medications prior to dizziness? (If none, write "None")</label>
-                <input type="text" id="priorIssues" name="priorIssues" class="required">
+                <input type="text" id="priorIssues" name="priorIssues" class="required" data-question="Prior Health Issues or Medication Changes">
             </li>
 
             <h4>When I feel dizzy, I get the sensation of: (Select all that apply)</h4>
             <li>
-                <input type="checkbox" id="dizzy1" name="dizzy1" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy1" name="dizzy1" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy1">Swaying, spinning, tumbline, cart-wheeling, tilting or rocking</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy2" name="dizzy2" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy2" name="dizzy2" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy2">Imbalance, veering to LEFT side</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy3" name="dizzy3" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy3" name="dizzy3" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy3">Imbalance, veering to RIGHT side</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy4" name="dizzy4" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy4" name="dizzy4" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy4">Nausea, vomiting</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy5" name="dizzy5" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy5" name="dizzy5" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy5">Double vision</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy6" name="dizzy6" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy6" name="dizzy6" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy6">Blurred vision</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy7" name="dizzy7" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy7" name="dizzy7" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy7">Jumping vision</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy8" name="dizzy8" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy8" name="dizzy8" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy8">Light-headedness</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy9" name="dizzy9" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy9" name="dizzy9" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy9">Loss of consciousness</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy10" name="dizzy10" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy10" name="dizzy10" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy10">Headache</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy11" name="dizzy11" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy11" name="dizzy11" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy11">Ear symptoms</label>
             </li>
             <li>
-                <input type="checkbox" id="dizzy12" name="dizzy12" class="dizzysymptom check check2">
+                <input type="checkbox" id="dizzy12" name="dizzy12" class="dizzysymptom check check2" data-question="Dizziness Sensations">
                 <label for="dizzy12">Other neurological symptoms -</label>
                 <label for="dizzy12-1">Describe:</label>
-                <input type="text" id="dizzy12-1" name="dizzy12-1" class="optional">
+                <input type="text" id="dizzy12-1" name="dizzy12-1" class="optional" data-question="Dizziness Sensations Other">
             </li>
 
 
             <h4>Since then, my dizziness is:</h4>
             <li>
                 <label for="yes1">Constant? Yes</label>
-                <input type="radio" id="yes1" name="constant" class="choice">
+                <input type="radio" id="yes1" name="constant" class="choice" data-question="Constant Dizziness">
                 <label for="no1">No</label>
-                <input type="radio" id="no1" name="constant" class="choice">
+                <input type="radio" id="no1" name="constant" class="choice" data-question="Constant Dizziness">
             </li>
             <li>
                 <label for="yes2">Coming in attacks? Yes</label>
-                <input type="radio" id="yes2" name="attack" onchange='reveal("yes2","attackSecondary")' class="choice parent1">
+                <input type="radio" id="yes2" name="attack" onchange='reveal("yes2","attackSecondary")' class="choice parent1" data-question="Coming in Attacks">
                 <label for="no2">No</label>
-                <input type="radio" id="no2" name="attack" onchange='reveal("yes2","attackSecondary")' class="choice">
+                <input type="radio" id="no2" name="attack" onchange='reveal("yes2","attackSecondary")' class="choice" data-question="Coming in Attacks">
             </li>
             <div id="attackSecondary" class="hidden">
                 <h4>If in attacks:</h4>
@@ -186,13 +186,13 @@
                         <option value="2">No</option>
                     </select>
                     <label for="attack3-1">If yes, what things?</label>
-                    <input type="text" id="attack3-1" name="attack3-1" class="child1 attackSecondary off">
+                    <input type="text" id="attack3-1" name="attack3-1" class="child1 attackSecondary off" data-question="Things that Provoke Attacks">
                 </li>
                 <li>
                     <label for="attack4">Do you have a warning that an attack is about to start? Yes</label>
-                    <input type="radio" id="attack4" name="attack4" class="child1 attackSecondary off choice">
+                    <input type="radio" id="attack4" name="attack4" class="child1 attackSecondary off choice" data-question="Is there a Warning for Attacks">
                     <label for="attack4-1">No</label>
-                    <input type="radio" id="attack4-1" name="attack4" class="child1 attackSecondary off choice">
+                    <input type="radio" id="attack4-1" name="attack4" class="child1 attackSecondary off choice" data-question="Is there a Warning for Attacks">
                 </li>
             </div>
             <li>
