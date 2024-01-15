@@ -104,7 +104,15 @@ function findPage(element) { // return the page number
 
 
 
-
+function submitTable() {
+    var allInformation = document.querySelectorAll("[data-question]");
+    console.log(allInformation.length);
+    var outputString = "";
+    for (var i = 0; i < allInformation.length; i++) {
+        outputString += `${i} - ${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+    }
+    downloadResults("results.txt", outputString);
+}
 
 
 function submitForm() {
