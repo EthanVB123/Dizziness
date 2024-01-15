@@ -103,20 +103,32 @@ function findPage(element) { // return the page number
     return findPage(element.parentNode);
 }
 
-function pdfTest() {
+function pdfTest(toPutOnThePDF) {
     const doc = new jspdf.jsPDF();
-    doc.text("Hello world!", 10, 10);
-    doc.save("a4.pdf");
+    for (var i = 0; i < toPutOnThePDF.length; i++) {
+        doc.text(`${toPutOnThePDF[i]}`, 10, 10);
+        doc.addPage();
+    }
+    //doc.text("One more time",15,25);
+    doc.save("results.pdf");
+    //console.log(doc.getFontList())
 }
 
 function submitTable() {
     var allInformation = document.querySelectorAll("[data-question]");
     console.log(allInformation.length);
     var outputString = "";
+    var output = [];
     for (var i = 0; i < allInformation.length; i++) {
         outputString += `${i} - ${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+        if (i % 40 == 39) {
+            output.push(outputString);
+            outputString = "";
+        }
     }
-    downloadResults("results.txt", outputString);
+    output.push(outputString);
+    pdfTest(output);
+    //downloadResults("results.txt", outputString);
 }
 
 
