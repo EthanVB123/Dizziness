@@ -1,3 +1,4 @@
+
 var page = 1;
 var maxPage = 11;
 var numMeds = 1;
@@ -102,7 +103,11 @@ function findPage(element) { // return the page number
     return findPage(element.parentNode);
 }
 
-
+function pdfTest() {
+    const doc = new jspdf.jsPDF();
+    doc.text("Hello world!", 10, 10);
+    doc.save("a4.pdf");
+}
 
 function submitTable() {
     var allInformation = document.querySelectorAll("[data-question]");
