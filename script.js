@@ -120,7 +120,17 @@ function submitTable() {
     var outputString = "";
     var output = [];
     for (var i = 0; i < allInformation.length; i++) {
-        outputString += `${i} - ${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+        console.log(allInformation[i].type);
+        if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
+            outputString += `${i} - ${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+        } else if (allInformation[i].type == "checkbox") {
+            outputString += `${i} - ${allInformation[i].dataset.question}:${allInformation[i].checked ? "Yes" : "No"}\n`
+        } else if (allInformation[i].type == "radio") {
+            if (allInformation[i].checked) {
+                outputString += `${i} - ${allInformation[i].dataset.question}:${allInformation[i].value}\n`
+            }
+        }
+
         if (i % 40 == 39) {
             output.push(outputString);
             outputString = "";
