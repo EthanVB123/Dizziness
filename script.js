@@ -119,15 +119,26 @@ function submitTable() {
     console.log(allInformation.length);
     var outputString = "";
     var output = [];
+    var inCheckboxGroup = false;
     for (var i = 0; i < allInformation.length; i++) {
         console.log(allInformation[i].type);
         if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
-            outputString += `${i} - ${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+            outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
         } else if (allInformation[i].type == "checkbox") {
-            outputString += `${i} - ${allInformation[i].dataset.question}:${allInformation[i].checked ? "Yes" : "No"}\n`
+            if (!inCheckboxGroup) {
+                inCheckboxGroup = true;
+                outputString += /*`${i} - */`${allInformation[i].dataset.question}:`;
+            }
+            if (allInformation[i].checked) {
+                outputString += `\n${allInformation[i].value}`;
+            }
+            if (allInformation[i].hasAttribute("data-checkbox-end")) {
+                inCheckboxGroup = false;
+                outputString += "\n";
+            }
         } else if (allInformation[i].type == "radio") {
             if (allInformation[i].checked) {
-                outputString += `${i} - ${allInformation[i].dataset.question}:${allInformation[i].value}\n`
+                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`
             }
         }
 
