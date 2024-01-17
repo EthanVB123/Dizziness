@@ -105,6 +105,7 @@ function findPage(element) { // return the page number
 
 function pdfTest(toPutOnThePDF) {
     const doc = new jspdf.jsPDF();
+    doc.setFontSize(10);
     for (var i = 0; i < toPutOnThePDF.length; i++) {
         doc.text(`${toPutOnThePDF[i]}`, 10, 10);
         doc.addPage();
@@ -115,38 +116,54 @@ function pdfTest(toPutOnThePDF) {
 }
 
 function submitTable() {
+    var numLinesThisPage = 0;
     var allInformation = document.querySelectorAll("[data-question]");
     console.log(allInformation.length);
     var outputString = "";
     var output = [];
     var inCheckboxGroup = false;
     for (var i = 0; i < allInformation.length; i++) {
-        console.log(allInformation[i].type);
+        //console.log(allInformation[i].type);
         if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
             if (inCheckboxGroup) {
-                outputString += ` ${allInformation[i].value}`
+                outputString += ` ${allInformation[i].value} ${numLinesThisPage}`
+                if (allInformation[i].hasAttribute("data-checkbox-end")) {
+                    inCheckboxGroup = false;
+                    outputString += "\n";
+                    numLinesThisPage++;
+                }
+                //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
             } else {
-                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value} ${numLinesThisPage}\n`;
+                numLinesThisPage++;
             }
         } else if (allInformation[i].type == "checkbox") {
             if (!inCheckboxGroup) {
                 inCheckboxGroup = true;
+                console.log(`inCheckboxGroup TRUE - ${allInformation[i].dataset.question}`)
                 outputString += /*`${i} - */`${allInformation[i].dataset.question}:`;
+                numLinesThisPage++;
             }
             if (allInformation[i].checked) {
+                console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
                 outputString += `\n${allInformation[i].value}`;
+                numLinesThisPage++;
             }
             if (allInformation[i].hasAttribute("data-checkbox-end")) {
                 inCheckboxGroup = false;
+                console.log(`inCheckboxGroup FALSE - ${allInformation[i].dataset.question}`)
                 outputString += "\n";
+                numLinesThisPage++;
             }
         } else if (allInformation[i].type == "radio") {
             if (allInformation[i].checked) {
                 outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`
+                numLinesThisPage++;
             }
         }
 
-        if (i % 40 == 39) {
+        if (numLinesThisPage >= 70) {
+            numLinesThisPage = 0;
             output.push(outputString);
             outputString = "";
         }
@@ -157,116 +174,7 @@ function submitTable() {
 }
 
 
-function submitForm() {
-    var outputString = "";
-    // Name, age, main problem
-    var name = document.getElementById('name').value;
-    outputString += "The patient's name is " + name + "\n";
-    var age = document.getElementById('age').value;
-    outputString += "The patient is " + age + " years old\n";
-    outputString += "Main Problem(s):\n"
-    outputString += document.getElementById('dizziness').checked ? "Dizziness\n" : "";
-    outputString += document.getElementById('imbalance').checked ? "Imbalance\n" : "";
-    outputString += document.getElementById('earSymptoms').checked ? "Ear Symptoms\n" : "";
-    outputString += "\n";
-    // Initial dizziness
-    var dateStarted = document.getElementById("Started").value;
-    outputString += "Symptoms started on " + convertDates(dateStarted) + "\n";
 
-    outputString += "When the dizziness started, it was " + document.getElementById("time").value + " and it lasted for the time period of " + document.getElementById("length").value + "\n";
-    outputString += "Patient was doing " + document.getElementById("activity").value + "\nPatient's location was " + document.getElementById("location").value + "\n"
-    outputString += `Prior to the dizziness, the patient had the following health issues or changes to medications: "${document.getElementById("priorIssues").value}"\n\n`
-    // Dizziness symptoms
-    outputString += "When the patient feels dizzy, they get the sensation of:\n"
-    var dizzySymptoms = document.getElementsByClassName("dizzysymptom");
-    var dizzySymptomsInOrder =
-        ["Swaying, spinning, tumbling, cart-wheeling, tilting or rocking",
-            "Imbalance, veering to left side",
-            "Imbalance, veering to right side",
-            "Nausea, vomiting",
-            "Double",
-            "Blurred",
-            "Jumping vision",
-            "Light-headedness",
-            "Loss of consciousness",
-            "Headache",
-            "Ear symptoms",
-            "Other neurological symptoms"]
-    for (var i = 0; i < dizzySymptoms.length; i++) {
-        if (dizzySymptoms[i].checked) {
-            outputString += dizzySymptomsInOrder[dizzySymptoms[i].id.slice(5) - 1];
-            if (dizzySymptoms[i].id.slice(5) == 12) {
-                outputString += ` ${document.getElementById("dizzy12-1").value}`
-            }
-            outputString += "\n";
-        }
-    }
-    // Ongoing Dizziness
-    outputString += "\nSince then, the patient's dizziness is "
-    outputString += document.getElementById('yes1').checked ? "constant" : "not constant"
-    outputString += " and the dizziness "
-    outputString += document.getElementById('yes2').checked ? "comes in attacks." : "does not come in attacks." + "\n\n"
-    // Dizziness Attacks
-    if (document.getElementById('yes2').checked) {
-        outputString += ("The attacks occur with the following frequency: " + document.getElementById("attack1").value
-            + " and have the following length: " + document.getElementById("attack2").value + "\n")
-        outputString += (document.getElementById('attack3').value = '1') ? "Attacks can be provoked by \"" + document.getElementById("attack3-1").value + "\"\n" : "Attacks are not provoked by specific things.\n"
-        outputString += document.getElementById('attack4').checked ? "There is a warning that an attack is about to start.\n\n" : "There is no warning that an attack is about to start.\n\n";
-    }
-    // Overall Trend
-    outputString += "The overall trend of the dizziness since initial onset is " + document.getElementById("trend").value.toLowerCase() + ".\n\n"
-    // Dizziness Provoked By
-    var provokedBy = document.getElementsByClassName("provoke")
-    var provokedFactors = ["Turning over in bed to the left",
-        "Turning over in bed to the right",
-        "Lying down",
-        "Going from lying to sitting",
-        "Going from sitting to standing",
-        "Standing still",
-        "Rapid head movements",
-        "Walking in a dark room",
-        "Elevator",
-        "Car travel",
-        "Plane travel",
-        "Sudden loud noises",
-        "Sustained loud noises",
-        "Coughing",
-        "Blowing nose",
-        "Straining",
-        "Grocery Stores",
-        "Narrow spaces",
-        "Wide open spaces",
-        "Salt",
-        "MSG",
-        "Food - which?",
-        "Not eating",
-        "Looking at moving objects",
-        "Heat",
-        "Hot showers",
-        "Time of day - when?",
-        "Seasons, which?",
-        "Stress",
-        "Alcohol",
-        "Menstrual period (if relevant)",
-        "Underwater diving",
-        "Exercise",
-        "Unprovoked/Randomly"]
-    outputString += "The vertigo is provoked by:\n"
-    for (var i = 0; i < provokedBy.length; i++) {
-        if (provokedBy[i].checked) {
-            outputString += provokedFactors[provokedBy[i].id.slice(7) - 1];
-            if (provokedBy[i].id.slice(7) == 22 || provokedBy[i].id.slice(7) == 27 || provokedBy[i].id.slice(7) == 28) {
-                outputString += ` ${document.getElementById("provoke" + provokedBy[i].id.slice(7) + "-1").value}`;
-            }
-            outputString += "\n";
-        }
-    }
-    // Main Provoking Factors
-    outputString += `\nThe main provoking factor is: "${document.getElementById("factor1").value}", and other strong provoking factors are: "${document.getElementById("factor2").value}".\n`
-
-
-    downloadResults("results.txt", outputString);
-}
 
 function downloadResults(filename, text) {
     /*var filename = "results.txt";
@@ -389,3 +297,5 @@ function prevPage() {
 function updatePageNumber() {
     document.getElementById('pagenumber').innerHTML = `Page ${page} of ${maxPage}`;
 }
+
+// If submitForm() required, check older commits (removed 16:25 17/01/2024)
