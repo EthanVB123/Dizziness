@@ -123,7 +123,11 @@ function submitTable() {
     for (var i = 0; i < allInformation.length; i++) {
         console.log(allInformation[i].type);
         if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
-            outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+            if (inCheckboxGroup) {
+                outputString += ` ${allInformation[i].value}`
+            } else {
+                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+            }
         } else if (allInformation[i].type == "checkbox") {
             if (!inCheckboxGroup) {
                 inCheckboxGroup = true;
