@@ -1201,8 +1201,149 @@
             </div>
             </div>
             <div id="pg11" class="page wrongpage">
-            <h2>Past Investigations</h2>
-            <h4>TODO</h4>
+            <h2>Past Investigations - select the tests you have done, and provide a copy of the report to Vincent Seet.</h2>
+            <h4>Ear Tests</h4>
+            <li>
+                <input type="checkbox" id="test1" name="test1" data-question="Audiogram" value="Audiogram">
+                <label for="test1">Audiogram (Hearing Test)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test2" name="test2" data-question="VNG" value="VNG">
+                <label for="test2">VNG (Hot and cold air or water to ears)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test3" name="test3" data-question="OAE" value="OAE">
+                <label for="test3">OAE (Otoacoustic Emission)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test4" name="test4" data-question="ECOG" value="ECOG">
+                <label for="test4">ECOG (Meniere's Test)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test5" name="test5" data-question="VEMP" value="VEMP">
+                <label for="test5">VEMP (Test requires you to bend neck forward)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test6" name="test6" data-question="6-HIT" value="6-HIT">
+                <label for="test6">6-HIT (Head moved rapidly in 6 different directions)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test7" name="test7" data-question="Posturography" value="Posturography">
+                <label for="test7">Posturography (On standing platform with harness)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test8" name="test8" data-question="Rotatory Chair Test" value="Rotatory Chair Test">
+                <label for="test8">Rotatory Chair Test (Spinning chair test)</label>
+            </li>
+            <h4>Neurological Tests</h4>
+            <li>
+                <input type="checkbox" id="test9" name="test9" data-question="Carotid Doppler" value="Carotid Doppler">
+                <label for="test9">Carotid Doppler (Ultrasound of the neck arteries)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test10" name="test10" data-question="EEG" value="EEG">
+                <label for="test10">EEG (Brain wave test for seizure)</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test11" name="test11" data-question="Lumbar puncture" value="Lumbar puncture">
+                <label for="test11">Lumbar puncture (Spinal fluid test like epidural)</label>
+            </li>
+            <h4>X-Rays and Scans</h4>
+            <li>
+                <input type="checkbox" id="test12" name="test12" data-question="CT Temporal Bone" value="CT Temporal Bone">
+                <label for="test12">CT Temporal Bone</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test13" name="test13" data-question="MRI Brain" value="MRI Brain">
+                <label for="test13">MRI Brain</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test14" name="test14" data-question="MRA Brain" value="MRA Brain">
+                <label for="test14">MRA Brain</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test15" name="test15" data-question="CT Brain" value="CT Brain">
+                <label for="test15">CT Brain</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test16" name="test16" data-question="X-Ray Neck" value="X-Ray Neck">
+                <label for="test16">X-Ray Neck</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test17" name="test17" data-question="MRI Neck" value="MRI Neck">
+                <label for="test17">MRI Neck</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test18" name="test18" data-question="MRA Neck" value="MRA Neck">
+                <label for="test18">MRA Neck</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test19" name="test19" data-question="CT Neck" value="CT Neck">
+                <label for="test19">CT Neck</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test20" name="test20" data-question="PET" value="PET">
+                <label for="test20">PET</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test21" name="test21" data-question="X-Ray Chest" value="X-Ray Chest">
+                <label for="test21">X-Ray Chest</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test22" name="test22" data-question="Scan Chest" value="Scan Chest">
+                <label for="test22">Scan Chest</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test23" name="test23" data-question="X-Ray Sinus" value="X-Ray Sinus">
+                <label for="test23">X-Ray Sinus</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test24" name="test24" data-question="Scan Sinus" value="Scan Sinus">
+                <label for="test24">CT Sinus</label>
+            </li>
+            <h4>Blood Tests</h4>
+            <li>
+                <input type="checkbox" id="test25" name="test25" data-question="Blood Tests" value="Blood Tests" onchange='reveal("test25","test25secondary")'>
+                <label for="test25">Blood Tests</label>
+            </li>
+            <li id="test25secondary" class="hidden">
+                <label for="test25-1">List all:</label>
+                <input type="text" id="test25-1" name="test25-1" data-question="List of Blood Tests" class="test25secondary off required">
+            </li>
+            <h4>Heart Tests</h4>
+            <li>
+                <input type="checkbox" id="test26" name="test26" data-question="ECG Heart" value="ECG Heart">
+                <label for="test26">ECG Heart</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test27" name="test27" data-question="ECHO" value="ECHO">
+                <label for="test27">ECHO</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test28" name="test28" data-question="Stress Test" value="Stress Test">
+                <label for="test28">Stress Test</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test29" name="test29" data-question="Nuclear Heart Test" value="Nuclear Heart Test">
+                <label for="test29">Nuclear Heart Test</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test30" name="test30" data-question="Holter" value="Holter">
+                <label for="test30">Holter</label>
+            </li>
+            <li>
+                <input type="checkbox" id="test31" name="test31" data-question="Coronary Angiogram" value="Coronary Angiogram">
+                <label for="test31">Coronary Angiogram</label>
+            </li>
+            <h4>Other Important Tests</h4>            
+            <li>
+                <input type="checkbox" id="test32" name="test32" data-question="Other" value="Other" onchange='reveal("test32","test32secondary")'>
+                <label for="test32">Other Important Tests</label>
+            </li>
+            <li id="test32secondary" class="hidden">
+                <label for="test32-1">List all:</label>
+                <input type="text" id="test32-1" name="test32-1" data-question="List of Other Tests" class="test32secondary off required">
+            </li>
             </div>
             <div id="bottomButtons">
             <li>
