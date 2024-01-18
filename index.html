@@ -39,10 +39,10 @@
                 <label for="female">Female</label>
                 <input type="radio" id="female" name="sex" onchange='reveal("female","femaleSecondary")' class="choice" data-question="Sex" value="Female">
                 <label for="male">Male</label>
-                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")' class="choice" data-question="Sex" value="Male">
+                <input type="radio" id="male" name="sex" onchange='reveal("female","femaleSecondary")' class="choice" data-question="Sex" data-break="1" value="Male">
             </li>
             </div>
-            <div id="pg2" class="page hidden">
+            <div id="pg2" class="page wrongpage">
             <h2>Main Problem</h2>
             <h4>I am here because of (circle all that apply):</h4>
             <li>
@@ -134,7 +134,7 @@
                 <input type="checkbox" id="dizzy12" name="dizzy12" class="dizzysymptom check check2" data-question="Dizziness Sensations" data-checkbox-end="True" value="Other neurological symptoms">
                 <label for="dizzy12">Other neurological symptoms -</label>
                 <label for="dizzy12-1">Describe:</label>
-                <input type="text" id="dizzy12-1" name="dizzy12-1" class="optional" data-question="Dizziness Sensations Other">
+                <input type="text" id="dizzy12-1" name="dizzy12-1" class="optional" data-question="Dizziness Sensations Other" data-break="1">
             </li>
 
 
@@ -354,11 +354,10 @@
             </li>
             <h4>Are there any other STRONG provoking factors?</h4>
             <li>
-                <input type="text" id="factor2" name="factor2" data-question="Strong Provoking Factors">
+                <input type="text" id="factor2" name="factor2" data-question="Strong Provoking Factors" data-break="1">
             </li>
             </div>
-            <div id="pg3" class="page hidden">
-            <!-- Above included in the JS, below yet to be implemented -->
+            <div id="pg3" class="page wrongpage">
             <br>
             <h2>Headaches</h2>
             <li>
@@ -444,11 +443,11 @@
                 </li>
                 <li>
                     <label for="treatments">Current Treatments</label>
-                    <input type="text" id="treatments" name="treatments" data-question="Current Treatments">
+                    <input type="text" id="treatments" name="treatments" data-question="Current Treatments" data-break="1">
                 </li>
             </div>
             </div>
-            <div id="pg4" class="page hidden">
+            <div id="pg4" class="page wrongpage">
             <h2>Ear Symptoms</h2>
             <li>
                 <label for="earyes">Do you have ear symptoms? Yes</label>
@@ -517,11 +516,11 @@
                     <label for="doctorInfoEar">List of doctors seen, tests, diagnosis, and treatments</label>
                 </li>
                 <li>
-                    <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5"></textarea>
+                    <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5" data-break="1"></textarea>
                 </li>
             </div>
             </div>
-            <div id="pg5" class="page hidden">
+            <div id="pg5" class="page wrongpage">
             <h2>Lifestyle</h2>
             <li>
                 <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
@@ -594,7 +593,7 @@
             </li>
             <li>
                 <label for="sleepPosition">In what position usually?</label>
-                <select id="sleepPosition" name="sleepPosition">
+                <select id="sleepPosition" name="sleepPosition" data-break="1">
                     <option value="-1">- Select -</option>
                     <option value="on their back">Back</option>
                     <option value="on their stomach">Stomach</option>
@@ -637,11 +636,11 @@
                     </select>
                     <label for="menopause">If menopausal, age of menopause?</label>
                     <!-- should this be a dependent question? -->
-                    <input type="number" min="0" id="menopause" name="menopause" value="0" data-question="Age of Menopause">
+                    <input type="number" min="0" id="menopause" name="menopause" value="0" data-question="Age of Menopause" data-break="1">
                 </li>
             </div>
             </div>
-            <div id="pg6" class="page hidden">
+            <div id="pg6" class="page wrongpage">
             <h2>Injuries and Exposures</h2>
             <h4>Have you had any of the following injuries/exposures? If so, check the box and provide details.</h4>
             <li>
@@ -711,7 +710,7 @@
                 </span>
                 <span id="injury7Secondary" class="hidden">
                     <label for="injury7details"> - Details?</label>
-                    <input type="text" id="injury7details" name="injury7details" data-question="Details" data-checkbox-end="True">
+                    <input type="text" id="injury7details" name="injury7details" data-question="Details" data-checkbox-end="True" data-break="1">
                 </span>
             </li>
             <br>
@@ -793,15 +792,15 @@
                 </span>
                 <span id="drug8Secondary" class="hidden">
                     <label for="drug8details"> - Date?</label>
-                    <input type="date" id="drug8details" name="drug8details" data-question="Details" data-checkbox-end="True">
+                    <input type="date" id="drug8details" name="drug8details" data-question="Details" data-checkbox-end="True" data-break="1">
                 </span>
             </li>
             </div>
-            <div id="pg7" class="page hidden">
+            <div id="pg7" class="page wrongpage">
             <h2>System Review</h2>
             <h4>TODO</h4>
             </div>
-            <div id="pg8" class="page hidden">
+            <div id="pg8" class="page wrongpage">
             <h2>Family History</h2>
             <li>
                 <label for="siblings">Number of Siblings</label>
@@ -846,10 +845,10 @@
             </li>
             <li>
                 <label for="ethnicity">Ethnicity (some diseases are more common in certain ethnic groups)</label>
-                <input type="text" id="ethnicity" name="ethnicity" data-question="Ethnicity">
+                <input type="text" id="ethnicity" name="ethnicity" data-question="Ethnicity" data-break="1">
             </li>
             </div>
-            <div id="pg9" class="page hidden">
+            <div id="pg9" class="page wrongpage">
             <h2>Medications Used</h2>
             <div id="medications">
                 <div id="med1">
@@ -867,7 +866,7 @@
                         <input type="date" id="med1-4" name="med1-4" data-question="Medicine 1 Start Date">
                         <br>
                         <label for="med1-5"> Helpfulness</label>
-                        <select id="med1-5" name="med1-5">
+                        <select id="med1-5" name="med1-5" data-break="1">
                             <option value="-1">- Select -</option>
                             <option value="helpful">Quite helpful</option>
                             <option value="somewhat helpful">Somewhat helpful</option>
@@ -905,10 +904,10 @@
                 <label for="alternative">Alternative therapy? Yes</label>
                 <input type="radio" id="alternative" name="alternative" data-question="Alternative Therapy" value="Yes">
                 <label for="alternativeno">No</label>
-                <input type="radio" id="alternativeno" name="alternative" data-question="Alternative Therapy" value="No">
+                <input type="radio" id="alternativeno" name="alternative" data-question="Alternative Therapy" value="No" data-break="1">
             </li>
             </div>
-            <div id="pg10" class="page hidden">
+            <div id="pg10" class="page wrongpage">
             <h2>Allergies (Drug, Medication, Other) and Reactions</h2>
             <div id="allergies">
                 <div id="allergen1">
@@ -916,7 +915,7 @@
                         <label for="allergy1-1">1. Name of Allergen</label>
                         <input type="text" id="allergy1-1" name="allergy1-1" data-question="Allergen 1 Name">
                         <label for="allergy1-2">Reaction(s) to Allergen</label>
-                        <input type="text" id="allergy1-2" name="allergy1-2" data-question="Allergen 1 Reaction">
+                        <input type="text" id="allergy1-2" name="allergy1-2" data-question="Allergen 1 Reaction" data-break="1">
                     </li>
                     <br>
                 </div>
@@ -924,7 +923,7 @@
                 <button type="button" id="removeallergy">- Remove</button>
             </div>
             </div>
-            <div id="pg11" class="page hidden">
+            <div id="pg11" class="page wrongpage">
             <h2>Past Investigations</h2>
             <h4>TODO</h4>
             </div>
@@ -932,7 +931,7 @@
             <li>
                 <button type="button" onclick="nextPage()" id="nextpage">Next Page</button>
                 <button type="button" onclick="prevPage()" id="prevpage" class="hidden">Previous Page</button>
-                <button type="button" onclick="submitForm()" id="finish">Finish Survey</button>
+                <button type="button" onclick="submitTable()" id="finish">Finish Survey</button>
                 <!-- <button type="submit">Submit Form</button> -->
             </li>
             </div>

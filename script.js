@@ -126,7 +126,7 @@ function submitTable() {
         //console.log(allInformation[i].type);
         if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
             if (inCheckboxGroup) {
-                outputString += ` ${allInformation[i].value} ${numLinesThisPage}`
+                //outputString += ` ${allInformation[i].value} ${numLinesThisPage}`
                 if (allInformation[i].hasAttribute("data-checkbox-end")) {
                     inCheckboxGroup = false;
                     outputString += "\n";
@@ -134,7 +134,7 @@ function submitTable() {
                 }
                 //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
             } else {
-                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value} ${numLinesThisPage}\n`;
+                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
                 numLinesThisPage++;
             }
         } else if (allInformation[i].type == "checkbox") {
@@ -162,6 +162,16 @@ function submitTable() {
             }
         }
 
+
+        if (allInformation[i].hasAttribute("data-break")) {
+            outputString += "\n";
+            numLinesThisPage++;
+            if (numLinesThisPage >= 55) {
+                numLinesThisPage = 0;
+                output.push(outputString);
+                outputString = "";
+            }
+        }
         if (numLinesThisPage >= 70) {
             numLinesThisPage = 0;
             output.push(outputString);
@@ -229,7 +239,7 @@ function addmed() {
         <input type="date" id="med${numMeds}-4" name="med${numMeds}-4" data-question="Medicine ${numMeds} Start Date">
         <br>
         <label for="med${numMeds}-5"> Helpfulness</label>
-        <select id="med${numMeds}-5" name="med${numMeds}-5">
+        <select id="med${numMeds}-5" name="med${numMeds}-5" data-break="1">
             <option value="helpful">Quite helpful</option>
             <option value="somewhat helpful">Somewhat helpful</option>
             <option value="not very helpful">Not very helpful</option>
@@ -247,7 +257,7 @@ function addallergy() {
     <label for="allergy${numAllergies}-1">${numAllergies}. Name of Allergen</label>
     <input type="text" id="allergy${numAllergies}-1" name="allergy${numAllergies}-1" data-question="Allergen ${numAllergies} Name">
     <label for="allergy${numAllergies}-2">Reaction(s) to Allergen</label>
-    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2" data-question="Allergen ${numAllergies} Reaction">
+    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2" data-question="Allergen ${numAllergies} Reaction" data-break="1">
 </li>
 <br>`
     document.getElementById("allergies").insertBefore(newAllergy, document.getElementById("addallergy"));
@@ -270,9 +280,9 @@ function removeallergy() {
 }
 function nextPage() {
     if (validateForm(page)) {
-        document.getElementById(`pg${page}`).classList.add('hidden');
+        document.getElementById(`pg${page}`).classList.add('wrongpage');
         page++;
-        document.getElementById(`pg${page}`).classList.remove('hidden');
+        document.getElementById(`pg${page}`).classList.remove('wrongpage');
         updatePageNumber();
         if (page == maxPage) {
             document.getElementById("nextpage").classList.add('hidden');
@@ -283,9 +293,9 @@ function nextPage() {
     }
 }
 function prevPage() {
-    document.getElementById(`pg${page}`).classList.add('hidden');
+    document.getElementById(`pg${page}`).classList.add('wrongpage');
     page--;
-    document.getElementById(`pg${page}`).classList.remove('hidden');
+    document.getElementById(`pg${page}`).classList.remove('wrongpage');
     updatePageNumber();
     if (page == 1) {
         document.getElementById("prevpage").classList.add('hidden');
