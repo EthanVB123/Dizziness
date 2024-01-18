@@ -810,144 +810,271 @@
             <div id="pg7" class="page wrongpage">
             <h2>System Review - please select any conditions you have had.</h2>
             <h4>Constitutional</h4>
+            <li>
             <input type="checkbox" id="system1" name="system1" data-question="Weight Loss" value="Weight Loss">
             <label for="system1">Weight Loss</label>
+            </li><li>
             <input type="checkbox" id="system2" name="system2" data-question="Fever" value="Fever">
             <label for="system2">Fever</label>
+        </li><li>
             <input type="checkbox" id="system3" name="system3" data-question="Rash" value="Rash">
             <label for="system3">Rash</label>
+        </li><li>
             <input type="checkbox" id="system4" name="system4" data-question="Trouble Sleeping" value="Trouble Sleeping">
             <label for="system4">Trouble Sleeping</label>
+        </li>
+            <h4>Cardiovascular</h4>
+            <li>
             <input type="checkbox" id="system5" name="system5" data-question="Anaemia" value="Anaemia">
             <label for="system5">Anaemia</label>
+        </li><li>
             <input type="checkbox" id="system6" name="system6" data-question="Fainting" value="Fainting">
             <label for="system6">Fainting</label>
+        </li><li>
             <input type="checkbox" id="system7" name="system7" data-question="Heart Problems" value="Heart Problems">
             <label for="system7">Heart Problems</label>
+        </li><li>
             <input type="checkbox" id="system8" name="system8" data-question="High Cholesterol" value="High Cholesterol">
             <label for="system8">High Cholesterol</label>
+        </li><li>
             <input type="checkbox" id="system9" name="system9" data-question="Diabetes" value="Diabetes">
             <label for="system9">Diabetes</label>
+        </li><li>
             <input type="checkbox" id="system10" name="system10" data-question="High Blood Pressure" value="High Blood Pressure">
             <label for="system10">High Blood Pressure</label>
+        </li><li>
             <input type="checkbox" id="system11" name="system11" data-question="Low Blood Pressure" value="Low Blood Pressure">
             <label for="system11">Low Blood Pressure</label>
+        </li><li>
             <input type="checkbox" id="system12" name="system12" data-question="Palpitations" value="Palpitations">
             <label for="system12">Palpitations (abnormal heart beating)</label>
-            <input type="checkbox" id="system13" name="system13" data-question="Cancer" value="Cancer">
+        </li>
+            <h4>Cancer</h4>
+            <li>
+            <input type="checkbox" id="system13" name="system13" data-question="Cancer" value="Cancer" onchange='reveal("system13","system13secondary")'>
             <label for="system13">Cancer</label>
+        </li>
+        <li id="system13secondary" class="hidden">
+            <label for="system13-1">What type and when?</label>
+            <input type="text" id="system13-1" name="system13-1" data-question="What type and when" class="system13secondary off required">
+            <label for='system13-2'>Surgery or radiation?</label>
+            <input type="text" id="system13-2" name="system13-2" data-question="Surgery or radiation" class="system13secondary off required">
+        </li>
+            <h4>Endocrine</h4>
+            <li>
             <input type="checkbox" id="system14" name="system14" data-question="Hypoglycaemia (Low sugar)" value="Hypoglycaemia (Low sugar)">
             <label for="system14">Hypoglycaemia (Low sugar)</label>
+            </li><li>
             <input type="checkbox" id="system15" name="system15" data-question="Thyroid disorder" value="Thyroid disorder">
             <label for="system15">Thyroid disorder</label>
+            </li>
+            <h4>Psychological</h4>
+            <li>
             <input type="checkbox" id="system16" name="system16" data-question="Treatment by psychiatrist" value="Treatment by psychiatrist">
             <label for="system16">Treatment by psychiatrist</label>
+        </li><li>
             <input type="checkbox" id="system17" name="system17" data-question="Depression" value="Depression">
             <label for="system17">Depression</label>
+        </li><li>
             <input type="checkbox" id="system18" name="system18" data-question="Unusual amount of stress" value="Unusual amount of stress">
             <label for="system18">Unusual amount of stress</label>
+        </li><li>
             <input type="checkbox" id="system19" name="system19" data-question="Anxiety" value="Anxiety">
             <label for="system19">Anxiety</label>
+            </li>
+            <h4>Pain</h4>
+            <li>
             <input type="checkbox" id="system20" name="system20" data-question="Arthritis" value="Arthritis">
             <label for="system20">Arthritis</label>
+        </li><li>
             <input type="checkbox" id="system21" name="system21" data-question="Back of jaw (TMJ)" value="Back of jaw (TMJ)">
             <label for="system21">Back of jaw (TMJ)</label>
+        </li><li>
             <input type="checkbox" id="system22" name="system22" data-question="Migraine" value="Migraine">
             <label for="system22">Migraine</label>
+        </li><li>
             <input type="checkbox" id="system23" name="system23" data-question="Sinus headaches" value="Sinus headaches">
             <label for="system23">Sinus headaches</label>
+        </li><li>
             <input type="checkbox" id="system24" name="system24" data-question="Tension headaches" value="Tension headaches">
             <label for="system24">Tension headaches</label>
+        </li><li>
             <input type="checkbox" id="system25" name="system25" data-question="Low back pain" value="Low back pain">
             <label for="system25">Low back pain</label>
+        </li><li>
             <input type="checkbox" id="system26" name="system26" data-question="Neck pain" value="Neck pain">
             <label for="system26">Neck pain</label>
+            </li>
+            <h4>Immunological</h4>
+            <li>
             <input type="checkbox" id="system27" name="system27" data-question="Lupus or other autoimmune disease" value="Lupus or other autoimmune disease">
             <label for="system27">Lupus or other autoimmune disease</label>
+            </li>
+            <h4>Breathing Problem</h4>
+            <li>
             <input type="checkbox" id="system28" name="system28" data-question="Asthma" value="Asthma">
             <label for="system28">Asthma</label>
+        </li><li>
             <input type="checkbox" id="system29" name="system29" data-question="COPD/Emphysema" value="COPD/Emphysema">
             <label for="system29">COPD/Emphysema</label>
+        </li><li>
             <input type="checkbox" id="system30" name="system30" data-question="Pneumonia" value="Pneumonia">
             <label for="system30">Pneumonia</label>
+        </li><li>
             <input type="checkbox" id="system31" name="system31" data-question="Sinusitis" value="Sinusitis">
             <label for="system31">Sinusitis</label>
+        </li><li>
             <input type="checkbox" id="system32" name="system32" data-question="Sleep apnoea" value="Sleep apnoea">
             <label for="system32">Sleep apnoea</label>
+        </li>
+
+            <h4>Stomach Problems</h4>
+            <li>
             <input type="checkbox" id="system33" name="system33" data-question="Ulcer" value="Ulcer">
             <label for="system33">Ulcer</label>
+        </li><li>
             <input type="checkbox" id="system34" name="system34" data-question="Reflux" value="Reflux">
             <label for="system34">Reflux</label>
+        </li><li>
             <input type="checkbox" id="system35" name="system35" data-question="Constipation" value="Constipation">
             <label for="system35">Constipation</label>
+        </li><li>
             <input type="checkbox" id="system36" name="system36" data-question="Diarrhoea" value="Diarrhoea">
             <label for="system36">Diarrhoea</label>
+            </li>
+            <h4>Eye Problems (other than glasses)</h4>
+            <li>
             <input type="checkbox" id="system37" name="system37" data-question="Crossed eyes/lazy eye" value="Crossed eyes/lazy eye">
             <label for="system37">Crossed eyes/lazy eye</label>
+        </li><li>
             <input type="checkbox" id="system38" name="system38" data-question="Poor vision in one eye" value="Poor vision in one eye">
             <label for="system38">Poor vision in one eye</label>
+        </li><li>
             <input type="checkbox" id="system39" name="system39" data-question="Cataract" value="Cataract">
             <label for="system39">Cataract</label>
+        </li><li>
             <input type="checkbox" id="system40" name="system40" data-question="Macular degeneration" value="Macular degeneration">
             <label for="system40">Macular degeneration</label>
+        </li><li>
             <input type="checkbox" id="system41" name="system41" data-question="Double vision" value="Double vision">
             <label for="system41">Double vision</label>
+            </li>
+            <h4>Neurological</h4>
+            <li>
             <input type="checkbox" id="system42" name="system42" data-question="B12 Deficiency" value="B12 Deficiency">
             <label for="system42">B12 Deficiency</label>
+        </li><li>
             <input type="checkbox" id="system43" name="system43" data-question="Carpal tunnel" value="Carpal tunnel">
             <label for="system43">Carpal tunnel</label>
+        </li><li>
             <input type="checkbox" id="system44" name="system44" data-question="Memory loss" value="Memory loss">
             <label for="system44">Memory loss</label>
+        </li><li>
             <input type="checkbox" id="system45" name="system45" data-question="Meningitis" value="Meningitis">
             <label for="system45">Meningitis</label>
+        </li><li>
             <input type="checkbox" id="system46" name="system46" data-question="Multiple Sclerosis" value="Multiple Sclerosis">
             <label for="system46">Multiple Sclerosis</label>
-            <input type="checkbox" id="system47" name="system47" data-question="Pins and needles/numbness" value="Pins and needles/numbness">
+        </li><li>
+            <input type="checkbox" id="system47" name="system47" data-question="Pins and needles/numbness" value="Pins and needles/numbness" onchange='reveal("system47","system47secondary")'>
             <label for="system47">Pins and needles/numbness</label>
-            <input type="checkbox" id="system48" name="system48" data-question="Weakness" value="Weakness">
+        </li>
+        <li id="system47secondary" class="hidden">
+            <label for="system47-1">Where?</label>
+            <input type="text" id="system47-1" name="system47-1" data-question="Location" class="system47secondary off required">
+        </li>
+        <li>
+            <input type="checkbox" id="system48" name="system48" data-question="Weakness" value="Weakness" onchange='reveal("system48","system48secondary")'>
             <label for="system48">Weakness</label>
+        </li>
+        <li id="system48secondary" class="hidden">
+            <label for="system48-1">Where?</label>
+            <input type="text" id="system48-1" name="system48-1" data-question="Location" class="system48secondary off required">
+        </li><li>
             <input type="checkbox" id="system49" name="system49" data-question="Seizures" value="Seizures">
             <label for="system49">Seizures</label>
+        </li><li>
             <input type="checkbox" id="system50" name="system50" data-question="Speech disturbance" value="Speech disturbance">
             <label for="system50">Speech disturbance</label>
+        </li><li>
             <input type="checkbox" id="system51" name="system51" data-question="Tremor" value="Tremor">
             <label for="system51">Tremor</label>
+        </li><li>
             <input type="checkbox" id="system52" name="system52" data-question="Upper limb incoordination" value="Upper limb incoordination">
             <label for="system52">Upper limb incoordination</label>
+        </li>
+
+            <h4>Renal/Genitourinary</h4>
+            <li>
             <input type="checkbox" id="system53" name="system53" data-question="Bladder problem" value="Bladder problem">
             <label for="system53">Bladder problem</label>
+        </li><li>
             <input type="checkbox" id="system54" name="system54" data-question="Sexual function problem" value="Sexual function problem">
             <label for="system54">Sexual function problem</label>
+        </li><li>
             <input type="checkbox" id="system55" name="system55" data-question="Kidney problem" value="Kidney problem">
             <label for="system55">Kidney problem</label>
+        </li>
+            <h4>Surgery</h4>
+        <li>
             <input type="checkbox" id="system56" name="system56" data-question="Breast" value="Breast">
             <label for="system56">Breast</label>
+        </li><li>
             <input type="checkbox" id="system57" name="system57" data-question="Cataract" value="Cataract">
             <label for="system57">Cataract</label>
+        </li><li>
             <input type="checkbox" id="system58" name="system58" data-question="Carotid" value="Carotid">
             <label for="system58">Carotid</label>
+        </li><li>
             <input type="checkbox" id="system59" name="system59" data-question="Hysterectomy" value="Hysterectomy">
             <label for="system59">Hysterectomy</label>
-            <input type="checkbox" id="system60" name="system60" data-question="Ovaries" value="Ovaries">
+        </li><li>
+            <input type="checkbox" id="system60" name="system60" data-question="Ovaries" value="Ovaries" onchange='reveal("system60","system60secondary")'>
             <label for="system60">Ovaries</label>
+        </li><li id="system60secondary" class="hidden">
+            <label for="system60-1">Which surgery?</label>
+            <input type="text" id="system60-1" name="system60-1" data-question="Specify" class="system60secondary off required">
+        </li><li>
             <input type="checkbox" id="system61" name="system61" data-question="C-section" value="C-section">
             <label for="system61">C-section</label>
+        </li><li>
             <input type="checkbox" id="system62" name="system62" data-question="Prostate" value="Prostate">
             <label for="system62">Prostate</label>
+        </li><li>
             <input type="checkbox" id="system63" name="system63" data-question="Tonsil" value="Tonsil">
             <label for="system63">Tonsil</label>
+        </li><li>
             <input type="checkbox" id="system64" name="system64" data-question="Gallbladder" value="Gallbladder">
             <label for="system64">Gallbladder</label>
+        </li><li>
             <input type="checkbox" id="system65" name="system65" data-question="Appendix" value="Appendix">
             <label for="system65">Appendix</label>
+        </li><li>
             <input type="checkbox" id="system66" name="system66" data-question="Epidural" value="Epidural">
             <label for="system66">Epidural</label>
-            <input type="checkbox" id="system67" name="system67" data-question="Stomach" value="Stomach">
+        </li><li>
+            <input type="checkbox" id="system67" name="system67" data-question="Stomach" value="Stomach" onchange='reveal("system67","system67secondary")'>
             <label for="system67">Stomach</label>
-            <input type="checkbox" id="system68" name="system68" data-question="Ear or sinus" value="Ear or sinus">
+        </li><li id="system67secondary" class="hidden">
+            <label for="system67-1">Which surgery?</label>
+            <input type="text" id="system67-1" name="system67-1" data-question="Specify" class="system67secondary off required">
+        </li><li>
+            <input type="checkbox" id="system68" name="system68" data-question="Ear or sinus" value="Ear or sinus" onchange='reveal("system68","system68secondary")'>
             <label for="system68">Ear or sinus</label>
-            <input type="checkbox" id="system69" name="system69" data-question="Other" value="Other">
+        </li><li id="system68secondary" class="hidden">
+            <label for="system68-1">Which surgery?</label>
+            <input type="text" id="system68-1" name="system68-1" data-question="Specify" class="system68secondary off required">
+        </li>
+
+            <h4>Other</h4>
+            <li>
+            <input type="checkbox" id="system69" name="system69" data-question="Other" value="Other" onchange='reveal("system69","system69secondary")'>
             <label for="system69">Other significant medical condition</label>
+            </li>
+            <li id="system69secondary" class="hidden">
+                <label for="system69-1">Details?</label>
+                <input type="text" id="system69-1" name="system69-1" data-question="Details" class="system69secondary off required">
+            </li>
             </div>
 
             <div id="pg8" class="page wrongpage">
