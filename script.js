@@ -285,7 +285,7 @@ function removeallergy() {
     }
 }
 function nextPage() {
-    if (/*validateForm(page)*/true) {
+    if (validateForm(page)) {
         document.getElementById(`pg${page}`).classList.add('wrongpage');
         page++;
         document.getElementById(`pg${page}`).classList.remove('wrongpage');
