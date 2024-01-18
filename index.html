@@ -348,11 +348,21 @@
                 <input type="checkbox" id="provoke34" name="provoke34" class="provoke check check3" data-question="Vertigo Provoked By" data-checkbox-end="True" value="Unprovoked/Randomly">
                 <label for="provoke34">Unprovoked/Randomly</label>
             </li>
-            <h4>Which is the MAIN provoking factor?</h4>
+            <label for="factor1" style="    display: block;
+            margin-top: 1.33em;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;">Which is the MAIN provoking factor?</label>
             <li>
                 <input type="text" id="factor1" name="factor1" class="required" data-question="Main Provoking Factor">
             </li>
-            <h4>Are there any other STRONG provoking factors?</h4>
+            <label for="factor2" style="    display: block;
+            margin-top: 1.33em;
+            margin-bottom: 1.33em;
+            margin-left: 0;
+            margin-right: 0;
+            font-weight: bold;">Are there any other STRONG provoking factors?</label>
             <li>
                 <input type="text" id="factor2" name="factor2" class="required" data-question="Strong Provoking Factors" data-break="1">
             </li>
@@ -381,35 +391,35 @@
                 </li>
                 <br>
                 <li>
-                    <input type="checkbox" id="headache1" name="headache1" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Bright Lights Bother You">
+                    <input type="checkbox" id="headache1" name="headache1" class="headacheSecondary off" data-question="Headache Symptoms" value="Bright Lights Bother You">
                     <label for="headache1">Do bright lights bother you?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache2" name="headache2" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Noise Bothers You">
+                    <input type="checkbox" id="headache2" name="headache2" class="headacheSecondary off" data-question="Headache Symptoms" value="Noise Bothers You">
                     <label for="headache2">Does noise bother you?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache3" name="headache3" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Headache CausesNausea">
+                    <input type="checkbox" id="headache3" name="headache3" class="headacheSecondary off" data-question="Headache Symptoms" value="Headache CausesNausea">
                     <label for="headache3">Nausea</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache4" name="headache4" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Headache Causes Vomiting">
+                    <input type="checkbox" id="headache4" name="headache4" class="headacheSecondary off" data-question="Headache Symptoms" value="Headache Causes Vomiting">
                     <label for="headache4">Vomiting</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache5" name="headache5" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Strong Smells Bother You">
+                    <input type="checkbox" id="headache5" name="headache5" class="headacheSecondary off" data-question="Headache Symptoms" value="Strong Smells Bother You">
                     <label for="headache5">Do strong smells bother you?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache6" name="headache6" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Motion is Very Bothersome">
+                    <input type="checkbox" id="headache6" name="headache6" class="headacheSecondary off" data-question="Headache Symptoms" value="Motion is Very Bothersome">
                     <label for="headache6">Motion very bothersome?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache7" name="headache7" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Weather Changes Trigger">
+                    <input type="checkbox" id="headache7" name="headache7" class="headacheSecondary off" data-question="Headache Symptoms" value="Weather Changes Trigger">
                     <label for="headache7">Weather changes trigger?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache8" name="headache8" class="headacheSecondary check check4 off" data-question="Headache Symptoms" data-checkbox-end="True" value="Visual Auras">
+                    <input type="checkbox" id="headache8" name="headache8" class="headacheSecondary off" data-question="Headache Symptoms" data-checkbox-end="True" value="Visual Auras">
                     <label for="headache8">Do you have visual auras?</label>
                 </li>
                 <br>
@@ -451,72 +461,72 @@
             <h2>Ear Symptoms</h2>
             <li>
                 <label for="earyes">Do you have ear symptoms? Yes</label>
-                <input type="radio" id="earyes" name="ear" onchange='reveal("earyes","earSecondary")' data-question="Ear Symptoms" value="Yes">
+                <input type="radio" id="earyes" name="ear" onchange='reveal("earyes","earSecondary")' data-question="Ear Symptoms" value="Yes" class="choice">
                 <label for="earno">No</label>
-                <input type="radio" id="earno" name="ear" onchange='reveal("earyes","earSecondary")' data-question="Ear Symptoms" value="No">
+                <input type="radio" id="earno" name="ear" onchange='reveal("earyes","earSecondary")' data-question="Ear Symptoms" value="No" class="choice">
             </li>
             <div id="earSecondary" class="hidden">
                 <li>
                     <label for="evyes">If yes, do you feel the symptoms are related to vertigo? Yes</label>
-                    <input type="radio" id="evyes" name="ev" data-question="Ear Symptoms related to Vertigo" value="Yes">
+                    <input type="radio" id="evyes" name="ev" data-question="Ear Symptoms related to Vertigo" value="Yes" class="earSecondary off choice">
                     <label for="evno">No</label>
-                    <input type="radio" id="evno" name="ev" data-question="Ear Symptoms related to Vertigo" value="No">
+                    <input type="radio" id="evno" name="ev" data-question="Ear Symptoms related to Vertigo" value="No" class="earSecondary off choice">
                 </li>
                 <li>
                     <label for="eardate">If yes for ear symptoms, start date?</label>
-                    <input type="date" id="eardate" name="eardate" data-question="Start Date of Ear Symptoms">
+                    <input type="date" id="eardate" name="eardate" data-question="Start Date of Ear Symptoms" class="earSecondary off date">
                 </li>
                 <li>List individual dates below in the Brief Notes section if onset at different times</li>
                 <li>
                     <label for="tinnitusL">Tinnitus - Left</label>
-                    <input type="checkbox" id="tinnitusL" name="tinnitusL" data-question="Tinnitus in Left Ear" value="Left Ear">
+                    <input type="checkbox" id="tinnitusL" name="tinnitusL" data-question="Tinnitus in Left Ear" value="Left Ear" class="earSecondary off">
                     <label for="tinnitusR">Right</label>
-                    <input type="checkbox" id="tinnitusR" name="tinnitusR" data-question="Tinnitus in Right Ear" value="Right Ear" data-checkbox-end="True">
+                    <input type="checkbox" id="tinnitusR" name="tinnitusR" data-question="Tinnitus in Right Ear" value="Right Ear" data-checkbox-end="True" class="earSecondary off">
                     <label for="tinnitusN">Brief Notes</label>
-                    <input type="text" id="tinnitusN" name="tinnitusN" data-question="Brief Notes (Tinnitus)">
+                    <input type="text" id="tinnitusN" name="tinnitusN" data-question="Brief Notes (Tinnitus)" class="earSecondary off">
 
                 </li>
                 <li>
                     <label for="sensitivityL">Sensitivity to noise - Left</label>
-                    <input type="checkbox" id="sensitivityL" name="sensitivityL" data-question="Sensitivity to Noise in Left Ear" value="Left Ear">
+                    <input type="checkbox" id="sensitivityL" name="sensitivityL" data-question="Sensitivity to Noise in Left Ear" value="Left Ear" class="earSecondary off">
                     <label for="sensitivityR">Right</label>
-                    <input type="checkbox" id="sensitivityR" name="sensitivityR" data-question="Sensitivity to Noise in Right Ear" value="Right Ear" data-checkbox-end="True">
+                    <input type="checkbox" id="sensitivityR" name="sensitivityR" data-question="Sensitivity to Noise in Right Ear" value="Right Ear" data-checkbox-end="True" class="earSecondary off">
                     <label for="sensitivityN">Brief Notes</label>
-                    <input type="text" id="sensitivityN" name="sensitivityN" data-question="Brief Notes (Noise Sensitivity)">
+                    <input type="text" id="sensitivityN" name="sensitivityN" data-question="Brief Notes (Noise Sensitivity)" class="earSecondary off">
 
                 </li>
                 <li>
                     <label for="earpressureL">Ear pressure/fullness - Left</label>
-                    <input type="checkbox" id="earpressureL" name="earpressureL" data-question="Ear Pressure/Fullness in Left Ear" value="Left Ear">
+                    <input type="checkbox" id="earpressureL" name="earpressureL" data-question="Ear Pressure/Fullness in Left Ear" value="Left Ear" class="earSecondary off">
                     <label for="earpressureR">Right</label>
-                    <input type="checkbox" id="earpressureR" name="earpressureR" data-question="Ear Pressure/Fullness in Right Ear" value="Right Ear" data-checkbox-end="True">
+                    <input type="checkbox" id="earpressureR" name="earpressureR" data-question="Ear Pressure/Fullness in Right Ear" value="Right Ear" data-checkbox-end="True" class="earSecondary off">
                     <label for="earpressureN">Brief Notes</label>
-                    <input type="text" id="earpressureN" name="earpressureN" data-question="Brief Notes (Ear Pressure/Fullness)">
+                    <input type="text" id="earpressureN" name="earpressureN" data-question="Brief Notes (Ear Pressure/Fullness)" class="earSecondary off">
 
                 </li>
                 <li>
                     <label for="lossL">Hearing loss - Left</label>
-                    <input type="checkbox" id="lossL" name="lossL" data-question="Hearing Loss in Left Ear" value="Left Ear">
+                    <input type="checkbox" id="lossL" name="lossL" data-question="Hearing Loss in Left Ear" value="Left Ear" class="earSecondary off">
                     <label for="lossR">Right</label>
-                    <input type="checkbox" id="lossR" name="lossR" data-question="Hearing Loss in Right Ear" value="Right Ear" data-checkbox-end="True">
+                    <input type="checkbox" id="lossR" name="lossR" data-question="Hearing Loss in Right Ear" value="Right Ear" data-checkbox-end="True" class="earSecondary off">
                     <label for="lossN">Brief Notes</label>
-                    <input type="text" id="lossN" name="lossN" data-question="Brief Notes (Hearing Loss)">
+                    <input type="text" id="lossN" name="lossN" data-question="Brief Notes (Hearing Loss)" class="earSecondary off">
 
                 </li>
                 <li>
                     <label for="aidsL">Hearing aids - Left</label>
-                    <input type="checkbox" id="aidsL" name="aidsL" data-question="Hearing Aids in Left Ear" value="Left Ear">
+                    <input type="checkbox" id="aidsL" name="aidsL" data-question="Hearing Aids in Left Ear" value="Left Ear" class="earSecondary off">
                     <label for="aidsR">Right</label>
-                    <input type="checkbox" id="aidsR" name="aidsR" data-question="Hearing Aids in Right Ear" value="Right Ear" data-checkbox-end="True">
+                    <input type="checkbox" id="aidsR" name="aidsR" data-question="Hearing Aids in Right Ear" value="Right Ear" data-checkbox-end="True" class="earSecondary off">
                     <label for="aidsN">Brief Notes</label>
-                    <input type="text" id="aidsN" name="aidsN" data-question="Brief Notes (Hearing Aids)">
+                    <input type="text" id="aidsN" name="aidsN" data-question="Brief Notes (Hearing Aids)" class="earSecondary off">
 
                 </li>
                 <li>
                     <label for="doctorInfoEar">List of doctors seen, tests, diagnosis, and treatments</label>
                 </li>
                 <li>
-                    <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5" data-break="1"></textarea>
+                    <textarea id="doctorInfoEar" name="doctorInfoEar" cols="80" rows="5" data-break="1" class="earSecondary off required"></textarea>
                 </li>
             </div>
             </div>
@@ -524,42 +534,42 @@
             <h2>Lifestyle</h2>
             <li>
                 <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
-                <input type="number" min="0" id="standardDrinks" name="standardDrinks" data-question="Number of Standard Drinks Per Week">
+                <input type="number" min="0" id="standardDrinks" name="standardDrinks" data-question="Number of Standard Drinks Per Week" class="required">
             </li>
             <li>
                 <label for="smoker">Are you a smoker or ex-smoker? Yes</label>
-                <input type="radio" id="smoker" name="smoker" onchange='reveal("smoker","smokerSecondary")' data-question="Smoker or Ex-Smoker" value="Yes">
+                <input type="radio" id="smoker" name="smoker" onchange='reveal("smoker","smokerSecondary")' data-question="Smoker or Ex-Smoker" value="Yes" class="choice">
                 <label for="notsmoker">No</label>
-                <input type="radio" id="notsmoker" name="smoker" onchange='reveal("headacheyes","smokerSecondary")' data-question="Not a Smoker" value="No">
+                <input type="radio" id="notsmoker" name="smoker" onchange='reveal("headacheyes","smokerSecondary")' data-question="Not a Smoker" value="No" class="choice">
             </li>
             <div id="smokerSecondary" class="hidden">
                 <li>
                     <label for="smokerQuantity">How many cigarettes do/did you smoke a day?</label>
-                    <input type="number" min="0" id="smokerQuantity" name="smokerQuantity" data-question="Cigarettes/Day">
+                    <input type="number" min="0" id="smokerQuantity" name="smokerQuantity" data-question="Cigarettes/Day" class="smokerSecondary off required">
                 </li>
                 <li>
                     <label for="smokerStart">When did you start? (If you don't know exact date, approximate is
                         fine)</label>
-                    <input type="date" id="smokerStart" name="smokerStart" data-question="Smoking Start Date">
+                    <input type="date" id="smokerStart" name="smokerStart" data-question="Smoking Start Date" class="smokerSecondary off date">
                 </li>
                 <li>
                     <label for="smokerStop">When did you stop? (If still smoking, put current date)</label>
-                    <input type="date" id="smokerStop" name="smokerStop" data-question="Smoking Finish Date">
+                    <input type="date" id="smokerStop" name="smokerStop" data-question="Smoking Finish Date" class="smokerSecondary off date">
                 </li>
             </div>
             <li>
                 <label for="single">What is your familial status? Single</label>
-                <input type="radio" id="single" name="marital" data-question="Marital Status" value="Single">
+                <input type="radio" id="single" name="marital" data-question="Marital Status" value="Single" class="choice">
                 <label for="married">Married</label>
-                <input type="radio" id="married" name="marital" data-question="Marital Status" value="Married">
+                <input type="radio" id="married" name="marital" data-question="Marital Status" value="Married" class="choice">
             </li>
             <li>
                 <label for="occupation">What is your occupation? If retired, use past occupation</label>
-                <input type="text" id="occupation" name="occupation" data-question="Occupation">
+                <input type="text" id="occupation" name="occupation" data-question="Occupation" class="required">
             </li>
             <li>
                 <label for="airplane">How often do you fly on an airplane?</label>
-                <select id="airplane" name="airplane">
+                <select id="airplane" name="airplane" class="required">
                     <option value="-1">- Select -</option>
                     <option value=">5/yr">5 or more times a year</option>
                     <option value="2-4/yr">2-4 times a year</option>
@@ -571,29 +581,29 @@
             </li>
             <li>
                 <label for="litigate">Are you in litigation/planning litigation regarding your symptoms? Yes</label>
-                <input type="radio" id="litigate" name="litigate" data-question="Litigation?" value="Yes">
+                <input type="radio" id="litigate" name="litigate" data-question="Litigation?" value="Yes" class="choice">
                 <label for="litigateno">No</label>
-                <input type="radio" id="litigateno" name="litigate" data-question="Litigation?" value="No">
+                <input type="radio" id="litigateno" name="litigate" data-question="Litigation?" value="No" class="choice">
             </li>
             <li>
                 <label for="disabled">Are you disabled due to your condition? Yes</label>
-                <input type="radio" id="disabled" name="disabled" data-question="Disabled due to condition?" value="Yes">
+                <input type="radio" id="disabled" name="disabled" data-question="Disabled due to condition?" value="Yes" class="choice">
                 <label for="disabledno">No</label>
-                <input type="radio" id="disabledno" name="disabled" data-question="Disabled due to condition?" value="No">
+                <input type="radio" id="disabledno" name="disabled" data-question="Disabled due to condition?" value="No" class="choice">
             </li>
             <li>
                 <label for="drive">Do you drive? Yes</label>
-                <input type="radio" id="drive" name="drive" data-question="Can drive?" value="Yes">
+                <input type="radio" id="drive" name="drive" data-question="Can drive?" value="Yes" class="choice">
                 <label for="driveno">No</label>
-                <input type="radio" id="driveno" name="drive" data-question="Can drive?" value="No">
+                <input type="radio" id="driveno" name="drive" data-question="Can drive?" value="No" class="choice">
             </li>
             <li>
                 <label for="pillow">How many pillows do you use to sleep at night?</label>
-                <input type="number" min="0" id="pillow" name="pillow" data-question="Number of Pillows Used to Sleep">
+                <input type="number" min="0" id="pillow" name="pillow" data-question="Number of Pillows Used to Sleep" class="required integer">
             </li>
             <li>
                 <label for="sleepPosition">In what position usually?</label>
-                <select id="sleepPosition" name="sleepPosition" data-break="1">
+                <select id="sleepPosition" name="sleepPosition" data-break="1" class="required">
                     <option value="-1">- Select -</option>
                     <option value="on their back">Back</option>
                     <option value="on their stomach">Stomach</option>
@@ -606,7 +616,7 @@
                 <h4>Questions for women</h4>
                 <li>
                     <label for="pregnancy">Pregnant or planning pregnancy?</label>
-                    <select id="pregnancy" name="pregnancy" class="femaleSecondary">
+                    <select id="pregnancy" name="pregnancy" class="femaleSecondary required">
                         <option value="-1">- Select -</option>
                         <option value="not pregnant">Not pregnant</option>
                         <option value="planning pregnancy">Planning pregnancy</option>
@@ -615,7 +625,7 @@
                 </li>
                 <li>
                     <label for="contraceptive">Using oral contraceptive or hormone replacement?</label>
-                    <select id="contraceptive" name="contraceptive" class="femaleSecondary">
+                    <select id="contraceptive" name="contraceptive" class="femaleSecondary required">
                         <option value="-1">- Select -</option>
                         <option value="not using oral contraceptive or hormone replacement">No</option>
                         <option value="using oral contraceptive">Oral contraceptive only</option>
@@ -626,7 +636,7 @@
                 </li>
                 <li>
                     <label for="menstrual">Menstrual status?</label>
-                    <select id="menstrual" name="menstrual" class="femaleSecondary">
+                    <select id="menstrual" name="menstrual" class="femaleSecondary required">
                         <option value="-1">- Select -</option>
                         <option value="regular menstrual cycles">Regular menstrual cycles</option>
                         <option value="irregular menstrual cycles">Irregular menstrual cycles</option>
@@ -636,7 +646,7 @@
                     </select>
                     <label for="menopause">If menopausal, age of menopause?</label>
                     <!-- should this be a dependent question? -->
-                    <input type="number" min="0" id="menopause" name="menopause" value="0" data-question="Age of Menopause" data-break="1">
+                    <input type="number" min="0" id="menopause" name="menopause" value="0" data-question="Age of Menopause" data-break="1" class="femaleSecondary">
                 </li>
             </div>
             </div>
@@ -650,7 +660,7 @@
                 </span>
                 <span id="injury1Secondary" class="hidden">
                     <label for="injury1details"> - Details?</label>
-                    <input type="text" id="injury1details" name="injury1details" data-question="Details">
+                    <input type="text" id="injury1details" name="injury1details" data-question="Details" class="injury1Secondary off required">
                 </span>
             </li>
             <li>
@@ -660,7 +670,7 @@
                 </span>
                 <span id="injury2Secondary" class="hidden">
                     <label for="injury2details"> - Details?</label>
-                    <input type="text" id="injury2details" name="injury2details" data-question="Details">
+                    <input type="text" id="injury2details" name="injury2details" data-question="Details" class="injury2Secondary off required">
                 </span>
             </li>
             <li>
@@ -670,7 +680,7 @@
                 </span>
                 <span id="injury3Secondary" class="hidden">
                     <label for="injury3details"> - Details?</label>
-                    <input type="text" id="injury3details" name="injury3details" data-question="Details">
+                    <input type="text" id="injury3details" name="injury3details" data-question="Details" class="injury3Secondary off required">
                 </span>
             </li>
             <li>
@@ -680,7 +690,7 @@
                 </span>
                 <span id="injury4Secondary" class="hidden">
                     <label for="injury4details"> - Details?</label>
-                    <input type="text" id="injury4details" name="injury4details" data-question="Details">
+                    <input type="text" id="injury4details" name="injury4details" data-question="Details" class="injury4Secondary off required">
                 </span>
             </li>
             <li>
@@ -690,7 +700,7 @@
                 </span>
                 <span id="injury5Secondary" class="hidden">
                     <label for="injury5details"> - Details?</label>
-                    <input type="text" id="injury5details" name="injury5details" data-question="Details">
+                    <input type="text" id="injury5details" name="injury5details" data-question="Details" class="injury5Secondary off required">
                 </span>
             </li>
             <li>
@@ -700,7 +710,7 @@
                 </span>
                 <span id="injury6Secondary" class="hidden">
                     <label for="injury6details"> - Details?</label>
-                    <input type="text" id="injury6details" name="injury6details" data-question="Details">
+                    <input type="text" id="injury6details" name="injury6details" data-question="Details" class="injury6Secondary off required">
                 </span>
             </li>
             <li>
@@ -710,7 +720,7 @@
                 </span>
                 <span id="injury7Secondary" class="hidden">
                     <label for="injury7details"> - Details?</label>
-                    <input type="text" id="injury7details" name="injury7details" data-question="Details" data-checkbox-end="True" data-break="1">
+                    <input type="text" id="injury7details" name="injury7details" data-question="Details" class="injury7Secondary off required" data-checkbox-end="True" data-break="1">
                 </span>
             </li>
             <br>
@@ -722,7 +732,7 @@
                 </span>
                 <span id="drug1Secondary" class="hidden">
                     <label for="drug1details"> - Date?</label>
-                    <input type="date" id="drug1details" name="drug1details" data-question="Details">
+                    <input type="date" id="drug1details" name="drug1details" data-question="Details" class="drug1Secondary off required">
                 </span>
             </li>
             <li>
@@ -732,7 +742,7 @@
                 </span>
                 <span id="drug2Secondary" class="hidden">
                     <label for="drug2details"> - Date?</label>
-                    <input type="date" id="drug2details" name="drug2details" data-question="Details">
+                    <input type="date" id="drug2details" name="drug2details" data-question="Details" class="drug2Secondary off required">
                 </span>
             </li>
             <li>
@@ -742,7 +752,7 @@
                 </span>
                 <span id="drug3Secondary" class="hidden">
                     <label for="drug3details"> - Date?</label>
-                    <input type="date" id="drug3details" name="drug3details" data-question="Details">
+                    <input type="date" id="drug3details" name="drug3details" data-question="Details" class="drug3Secondary off required">
                 </span>
             </li>
             <li>
@@ -752,7 +762,7 @@
                 </span>
                 <span id="drug4Secondary" class="hidden">
                     <label for="drug4details"> - Date?</label>
-                    <input type="date" id="drug4details" name="drug4details" data-question="Details">
+                    <input type="date" id="drug4details" name="drug4details" data-question="Details" class="drug4Secondary off required">
                 </span>
             </li>
             <li>
@@ -762,7 +772,7 @@
                 </span>
                 <span id="drug5Secondary" class="hidden">
                     <label for="drug5details"> - Date?</label>
-                    <input type="date" id="drug5details" name="drug5details" data-question="Details">
+                    <input type="date" id="drug5details" name="drug5details" data-question="Details" class="drug5Secondary off required">
                 </span>
             </li>
             <li>
@@ -772,7 +782,7 @@
                 </span>
                 <span id="drug6Secondary" class="hidden">
                     <label for="drug6details"> - Date?</label>
-                    <input type="date" id="drug6details" name="drug6details" data-question="Details">
+                    <input type="date" id="drug6details" name="drug6details" data-question="Details" class="drug6Secondary off required">
                 </span>
             </li>
             <li>
@@ -782,7 +792,7 @@
                 </span>
                 <span id="drug7Secondary" class="hidden">
                     <label for="drug7details"> - Date?</label>
-                    <input type="date" id="drug7details" name="drug7details" data-question="Details">
+                    <input type="date" id="drug7details" name="drug7details" data-question="Details" class="drug7Secondary off required">
                 </span>
             </li>
             <li>
@@ -792,60 +802,200 @@
                 </span>
                 <span id="drug8Secondary" class="hidden">
                     <label for="drug8details"> - Date?</label>
-                    <input type="date" id="drug8details" name="drug8details" data-question="Details" data-checkbox-end="True" data-break="1">
+                    <input type="date" id="drug8details" name="drug8details" data-question="Details" class="drug8Secondary off required" data-checkbox-end="True" data-break="1">
                 </span>
             </li>
             </div>
+
             <div id="pg7" class="page wrongpage">
-            <h2>System Review</h2>
-            <h4>TODO</h4>
+            <h2>System Review - please select any conditions you have had.</h2>
+            <h4>Constitutional</h4>
+            <input type="checkbox" id="system1" name="system1" data-question="Weight Loss" value="Weight Loss">
+            <label for="system1">Weight Loss</label>
+            <input type="checkbox" id="system2" name="system2" data-question="Fever" value="Fever">
+            <label for="system2">Fever</label>
+            <input type="checkbox" id="system3" name="system3" data-question="Rash" value="Rash">
+            <label for="system3">Rash</label>
+            <input type="checkbox" id="system4" name="system4" data-question="Trouble Sleeping" value="Trouble Sleeping">
+            <label for="system4">Trouble Sleeping</label>
+            <input type="checkbox" id="system5" name="system5" data-question="Anaemia" value="Anaemia">
+            <label for="system5">Anaemia</label>
+            <input type="checkbox" id="system6" name="system6" data-question="Fainting" value="Fainting">
+            <label for="system6">Fainting</label>
+            <input type="checkbox" id="system7" name="system7" data-question="Heart Problems" value="Heart Problems">
+            <label for="system7">Heart Problems</label>
+            <input type="checkbox" id="system8" name="system8" data-question="High Cholesterol" value="High Cholesterol">
+            <label for="system8">High Cholesterol</label>
+            <input type="checkbox" id="system9" name="system9" data-question="Diabetes" value="Diabetes">
+            <label for="system9">Diabetes</label>
+            <input type="checkbox" id="system10" name="system10" data-question="High Blood Pressure" value="High Blood Pressure">
+            <label for="system10">High Blood Pressure</label>
+            <input type="checkbox" id="system11" name="system11" data-question="Low Blood Pressure" value="Low Blood Pressure">
+            <label for="system11">Low Blood Pressure</label>
+            <input type="checkbox" id="system12" name="system12" data-question="Palpitations" value="Palpitations">
+            <label for="system12">Palpitations (abnormal heart beating)</label>
+            <input type="checkbox" id="system13" name="system13" data-question="Cancer" value="Cancer">
+            <label for="system13">Cancer</label>
+            <input type="checkbox" id="system14" name="system14" data-question="Hypoglycaemia (Low sugar)" value="Hypoglycaemia (Low sugar)">
+            <label for="system14">Hypoglycaemia (Low sugar)</label>
+            <input type="checkbox" id="system15" name="system15" data-question="Thyroid disorder" value="Thyroid disorder">
+            <label for="system15">Thyroid disorder</label>
+            <input type="checkbox" id="system16" name="system16" data-question="Treatment by psychiatrist" value="Treatment by psychiatrist">
+            <label for="system16">Treatment by psychiatrist</label>
+            <input type="checkbox" id="system17" name="system17" data-question="Depression" value="Depression">
+            <label for="system17">Depression</label>
+            <input type="checkbox" id="system18" name="system18" data-question="Unusual amount of stress" value="Unusual amount of stress">
+            <label for="system18">Unusual amount of stress</label>
+            <input type="checkbox" id="system19" name="system19" data-question="Anxiety" value="Anxiety">
+            <label for="system19">Anxiety</label>
+            <input type="checkbox" id="system20" name="system20" data-question="Arthritis" value="Arthritis">
+            <label for="system20">Arthritis</label>
+            <input type="checkbox" id="system21" name="system21" data-question="Back of jaw (TMJ)" value="Back of jaw (TMJ)">
+            <label for="system21">Back of jaw (TMJ)</label>
+            <input type="checkbox" id="system22" name="system22" data-question="Migraine" value="Migraine">
+            <label for="system22">Migraine</label>
+            <input type="checkbox" id="system23" name="system23" data-question="Sinus headaches" value="Sinus headaches">
+            <label for="system23">Sinus headaches</label>
+            <input type="checkbox" id="system24" name="system24" data-question="Tension headaches" value="Tension headaches">
+            <label for="system24">Tension headaches</label>
+            <input type="checkbox" id="system25" name="system25" data-question="Low back pain" value="Low back pain">
+            <label for="system25">Low back pain</label>
+            <input type="checkbox" id="system26" name="system26" data-question="Neck pain" value="Neck pain">
+            <label for="system26">Neck pain</label>
+            <input type="checkbox" id="system27" name="system27" data-question="Lupus or other autoimmune disease" value="Lupus or other autoimmune disease">
+            <label for="system27">Lupus or other autoimmune disease</label>
+            <input type="checkbox" id="system28" name="system28" data-question="Asthma" value="Asthma">
+            <label for="system28">Asthma</label>
+            <input type="checkbox" id="system29" name="system29" data-question="COPD/Emphysema" value="COPD/Emphysema">
+            <label for="system29">COPD/Emphysema</label>
+            <input type="checkbox" id="system30" name="system30" data-question="Pneumonia" value="Pneumonia">
+            <label for="system30">Pneumonia</label>
+            <input type="checkbox" id="system31" name="system31" data-question="Sinusitis" value="Sinusitis">
+            <label for="system31">Sinusitis</label>
+            <input type="checkbox" id="system32" name="system32" data-question="Sleep apnoea" value="Sleep apnoea">
+            <label for="system32">Sleep apnoea</label>
+            <input type="checkbox" id="system33" name="system33" data-question="Ulcer" value="Ulcer">
+            <label for="system33">Ulcer</label>
+            <input type="checkbox" id="system34" name="system34" data-question="Reflux" value="Reflux">
+            <label for="system34">Reflux</label>
+            <input type="checkbox" id="system35" name="system35" data-question="Constipation" value="Constipation">
+            <label for="system35">Constipation</label>
+            <input type="checkbox" id="system36" name="system36" data-question="Diarrhoea" value="Diarrhoea">
+            <label for="system36">Diarrhoea</label>
+            <input type="checkbox" id="system37" name="system37" data-question="Crossed eyes/lazy eye" value="Crossed eyes/lazy eye">
+            <label for="system37">Crossed eyes/lazy eye</label>
+            <input type="checkbox" id="system38" name="system38" data-question="Poor vision in one eye" value="Poor vision in one eye">
+            <label for="system38">Poor vision in one eye</label>
+            <input type="checkbox" id="system39" name="system39" data-question="Cataract" value="Cataract">
+            <label for="system39">Cataract</label>
+            <input type="checkbox" id="system40" name="system40" data-question="Macular degeneration" value="Macular degeneration">
+            <label for="system40">Macular degeneration</label>
+            <input type="checkbox" id="system41" name="system41" data-question="Double vision" value="Double vision">
+            <label for="system41">Double vision</label>
+            <input type="checkbox" id="system42" name="system42" data-question="B12 Deficiency" value="B12 Deficiency">
+            <label for="system42">B12 Deficiency</label>
+            <input type="checkbox" id="system43" name="system43" data-question="Carpal tunnel" value="Carpal tunnel">
+            <label for="system43">Carpal tunnel</label>
+            <input type="checkbox" id="system44" name="system44" data-question="Memory loss" value="Memory loss">
+            <label for="system44">Memory loss</label>
+            <input type="checkbox" id="system45" name="system45" data-question="Meningitis" value="Meningitis">
+            <label for="system45">Meningitis</label>
+            <input type="checkbox" id="system46" name="system46" data-question="Multiple Sclerosis" value="Multiple Sclerosis">
+            <label for="system46">Multiple Sclerosis</label>
+            <input type="checkbox" id="system47" name="system47" data-question="Pins and needles/numbness" value="Pins and needles/numbness">
+            <label for="system47">Pins and needles/numbness</label>
+            <input type="checkbox" id="system48" name="system48" data-question="Weakness" value="Weakness">
+            <label for="system48">Weakness</label>
+            <input type="checkbox" id="system49" name="system49" data-question="Seizures" value="Seizures">
+            <label for="system49">Seizures</label>
+            <input type="checkbox" id="system50" name="system50" data-question="Speech disturbance" value="Speech disturbance">
+            <label for="system50">Speech disturbance</label>
+            <input type="checkbox" id="system51" name="system51" data-question="Tremor" value="Tremor">
+            <label for="system51">Tremor</label>
+            <input type="checkbox" id="system52" name="system52" data-question="Upper limb incoordination" value="Upper limb incoordination">
+            <label for="system52">Upper limb incoordination</label>
+            <input type="checkbox" id="system53" name="system53" data-question="Bladder problem" value="Bladder problem">
+            <label for="system53">Bladder problem</label>
+            <input type="checkbox" id="system54" name="system54" data-question="Sexual function problem" value="Sexual function problem">
+            <label for="system54">Sexual function problem</label>
+            <input type="checkbox" id="system55" name="system55" data-question="Kidney problem" value="Kidney problem">
+            <label for="system55">Kidney problem</label>
+            <input type="checkbox" id="system56" name="system56" data-question="Breast" value="Breast">
+            <label for="system56">Breast</label>
+            <input type="checkbox" id="system57" name="system57" data-question="Cataract" value="Cataract">
+            <label for="system57">Cataract</label>
+            <input type="checkbox" id="system58" name="system58" data-question="Carotid" value="Carotid">
+            <label for="system58">Carotid</label>
+            <input type="checkbox" id="system59" name="system59" data-question="Hysterectomy" value="Hysterectomy">
+            <label for="system59">Hysterectomy</label>
+            <input type="checkbox" id="system60" name="system60" data-question="Ovaries" value="Ovaries">
+            <label for="system60">Ovaries</label>
+            <input type="checkbox" id="system61" name="system61" data-question="C-section" value="C-section">
+            <label for="system61">C-section</label>
+            <input type="checkbox" id="system62" name="system62" data-question="Prostate" value="Prostate">
+            <label for="system62">Prostate</label>
+            <input type="checkbox" id="system63" name="system63" data-question="Tonsil" value="Tonsil">
+            <label for="system63">Tonsil</label>
+            <input type="checkbox" id="system64" name="system64" data-question="Gallbladder" value="Gallbladder">
+            <label for="system64">Gallbladder</label>
+            <input type="checkbox" id="system65" name="system65" data-question="Appendix" value="Appendix">
+            <label for="system65">Appendix</label>
+            <input type="checkbox" id="system66" name="system66" data-question="Epidural" value="Epidural">
+            <label for="system66">Epidural</label>
+            <input type="checkbox" id="system67" name="system67" data-question="Stomach" value="Stomach">
+            <label for="system67">Stomach</label>
+            <input type="checkbox" id="system68" name="system68" data-question="Ear or sinus" value="Ear or sinus">
+            <label for="system68">Ear or sinus</label>
+            <input type="checkbox" id="system69" name="system69" data-question="Other" value="Other">
+            <label for="system69">Other significant medical condition</label>
             </div>
+
             <div id="pg8" class="page wrongpage">
             <h2>Family History</h2>
             <li>
                 <label for="siblings">Number of Siblings</label>
-                <input type="number" id="siblings" name="siblings" data-question="Number of Siblings">
+                <input type="number" id="siblings" name="siblings" data-question="Number of Siblings" class="integer required">
                 <label for="children">Number of Children</label>
-                <input type="number" id="children" name="children" data-question="Number of Children">
+                <input type="number" id="children" name="children" data-question="Number of Children" class="integer required">
             </li>
-            <h4>Which of your relatives (grandparents, parents, siblings, children, grandchildren) had these diseases?
+            <h4>Which of your relatives (grandparents, parents, siblings, children, grandchildren) had these diseases? Write "None" if none.
             </h4>
             <li>
                 <label for="balance">Balance problems</label>
-                <input type="text" id="balance" name="balance" data-question="Relatives with Balance Problems">
+                <input type="text" id="balance" name="balance" data-question="Relatives with Balance Problems" class="required">
             </li>
             <li>
                 <label for="hearingloss">Hearing loss before age 40</label>
-                <input type="text" id="hearingloss" name="hearingloss" data-question="Relatives with Hearing Loss">
+                <input type="text" id="hearingloss" name="hearingloss" data-question="Relatives with Hearing Loss" class="required">
             </li>
             <li>
                 <label for="vertigo">Vertigo</label>
-                <input type="text" id="vertigo" name="vertigo" data-question="Relatives with Vertigo">
+                <input type="text" id="vertigo" name="vertigo" data-question="Relatives with Vertigo" class="required">
             </li>
             <li>
                 <label for="otosclerosis">Otosclerosis</label>
-                <input type="text" id="otosclerosis" name="otosclerosis" data-question="Relatives with Otosclerosis">
+                <input type="text" id="otosclerosis" name="otosclerosis" data-question="Relatives with Otosclerosis" class="required">
             </li>
             <li>
                 <label for="menieres">Meniere's</label>
-                <input type="text" id="menieres" name="menieres" data-question="Relatives with Meniere's">
+                <input type="text" id="menieres" name="menieres" data-question="Relatives with Meniere's" class="required">
             </li>
             <li>
                 <label for="seizures">Seizures</label>
-                <input type="text" id="seizures" name="seizures" data-question="Relatives with Seizures">
+                <input type="text" id="seizures" name="seizures" data-question="Relatives with Seizures" class="required">
             </li>
             <li>
                 <label for="migraine">Migraines</label>
-                <input type="text" id="migraine" name="migraine" data-question="Relatives with Migraines">
+                <input type="text" id="migraine" name="migraine" data-question="Relatives with Migraines" class="required">
             </li>
             <br>
             <li>
                 <label for="otherHereditary">Any other diseases that run in the family?</label>
-                <input type="text" id="otherHereditary" name="otherHereditary" data-question="Other hereditary diseases">
+                <input type="text" id="otherHereditary" name="otherHereditary" data-question="Other hereditary diseases" class="required">
             </li>
             <li>
                 <label for="ethnicity">Ethnicity (some diseases are more common in certain ethnic groups)</label>
-                <input type="text" id="ethnicity" name="ethnicity" data-question="Ethnicity" data-break="1">
+                <input type="text" id="ethnicity" name="ethnicity" data-question="Ethnicity" data-break="1" class="required">
             </li>
             </div>
             <div id="pg9" class="page wrongpage">
@@ -854,19 +1004,19 @@
                 <div id="med1">
                     <li>
                         <label for="med1-1">1. Name</label>
-                        <input type="text" id="med1-1" name="med1-1" data-question="Medicine 1 Name">
+                        <input type="text" id="med1-1" name="med1-1" data-question="Medicine 1 Name" class="required">
                         <br>
                         <label for="med1-2"> Dosage</label>
-                        <input type="text" id="med1-2" name="med1-2" data-question="Medicine 1 Dosage">
+                        <input type="text" id="med1-2" name="med1-2" data-question="Medicine 1 Dosage" class="required">
                         <br>
                         <label for="med1-3"> Frequency</label>
-                        <input type="text" id="med1-3" name="med1-3" data-question="Medicine 1 Frequency">
+                        <input type="text" id="med1-3" name="med1-3" data-question="Medicine 1 Frequency" class="required">
                         <br>
                         <label for="med1-4"> Start Date</label>
-                        <input type="date" id="med1-4" name="med1-4" data-question="Medicine 1 Start Date">
+                        <input type="date" id="med1-4" name="med1-4" data-question="Medicine 1 Start Date" class="required date">
                         <br>
                         <label for="med1-5"> Helpfulness</label>
-                        <select id="med1-5" name="med1-5" data-break="1">
+                        <select id="med1-5" name="med1-5" data-break="1" class="required">
                             <option value="-1">- Select -</option>
                             <option value="helpful">Quite helpful</option>
                             <option value="somewhat helpful">Somewhat helpful</option>
@@ -884,27 +1034,27 @@
             <h4>Other Treatments Tried</h4>
             <li>
                 <label for="physicalTherapy">Physical therapy? Yes</label>
-                <input type="radio" id="physicalTherapy" name="physicalTherapy" data-question="Physical Therapy" value="Yes">
+                <input type="radio" id="physicalTherapy" name="physicalTherapy" data-question="Physical Therapy" value="Yes" class="choice">
                 <label for="physicalTherapyno">No</label>
-                <input type="radio" id="physicalTherapyno" name="physicalTherapy" data-question="Physical Therapy" value="No">
+                <input type="radio" id="physicalTherapyno" name="physicalTherapy" data-question="Physical Therapy" value="No" class="choice">
             </li>
             <li>
                 <label for="chiroTherapy">Chiropractic therapy? Yes</label>
-                <input type="radio" id="chiroTherapy" name="chiroTherapy" data-question="Chiropractic Therapy" value="Yes">
+                <input type="radio" id="chiroTherapy" name="chiroTherapy" data-question="Chiropractic Therapy" value="Yes" class="choice">
                 <label for="chiroTherapyno">No</label>
-                <input type="radio" id="chiroTherapyno" name="chiroTherapy" data-question="Chiropractic Therapy" value="No">
+                <input type="radio" id="chiroTherapyno" name="chiroTherapy" data-question="Chiropractic Therapy" value="No" class="choice">
             </li>
             <li>
                 <label for="acupuncture">Acupuncture? Yes</label>
-                <input type="radio" id="acupuncture" name="acupuncture" data-question="Acupuncture" value="Yes">
+                <input type="radio" id="acupuncture" name="acupuncture" data-question="Acupuncture" value="Yes" class="choice">
                 <label for="acupunctureno">No</label>
-                <input type="radio" id="acupunctureno" name="acupuncture" data-question="Acupuncture" value="No">
+                <input type="radio" id="acupunctureno" name="acupuncture" data-question="Acupuncture" value="No" class="choice">
             </li>
             <li>
                 <label for="alternative">Alternative therapy? Yes</label>
-                <input type="radio" id="alternative" name="alternative" data-question="Alternative Therapy" value="Yes">
+                <input type="radio" id="alternative" name="alternative" data-question="Alternative Therapy" value="Yes" class="choice">
                 <label for="alternativeno">No</label>
-                <input type="radio" id="alternativeno" name="alternative" data-question="Alternative Therapy" value="No" data-break="1">
+                <input type="radio" id="alternativeno" name="alternative" data-question="Alternative Therapy" value="No" data-break="1" class="choice">
             </li>
             </div>
             <div id="pg10" class="page wrongpage">
@@ -913,9 +1063,9 @@
                 <div id="allergen1">
                     <li>
                         <label for="allergy1-1">1. Name of Allergen</label>
-                        <input type="text" id="allergy1-1" name="allergy1-1" data-question="Allergen 1 Name">
+                        <input type="text" id="allergy1-1" name="allergy1-1" data-question="Allergen 1 Name" class="required">
                         <label for="allergy1-2">Reaction(s) to Allergen</label>
-                        <input type="text" id="allergy1-2" name="allergy1-2" data-question="Allergen 1 Reaction" data-break="1">
+                        <input type="text" id="allergy1-2" name="allergy1-2" data-question="Allergen 1 Reaction" data-break="1" class="required">
                     </li>
                     <br>
                 </div>

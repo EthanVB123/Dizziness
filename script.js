@@ -11,6 +11,7 @@ document.getElementById("removeallergy").addEventListener("click", removeallergy
 function validateForm(pageNo) {
     var inputs = Array.from(document.getElementsByTagName("input"));
     var selects = Array.from(document.getElementsByTagName("select"));
+    var textareas = Array.from(document.getElementsByTagName("textarea"));
     if (pageNo > 0 && pageNo <= maxPage) {
         inputs = inputs.filter((inputItem) => findPage(inputItem) == pageNo);
         selects = selects.filter((inputItem) => findPage(inputItem) == pageNo);
@@ -21,7 +22,12 @@ function validateForm(pageNo) {
             return false;
         }
     }
-
+    for (i = 0; i < textareas.length; i++) {
+        if (textareas[i].value == "" && !textareas[i].classList.contains("off") && textareas[i].classList.contains("required")) {
+            alert(`Please complete the following question:\nPage ${findPage(textareas[i])}\n${document.querySelector(`label[for="${textareas[i].id}"]`).innerHTML}`)
+            return false;
+        }
+    }
 
     for (i = 0; i < inputs.length; i++) {
         // If question is dependent and not required based on current input (i.e. "off"), skip
@@ -227,19 +233,19 @@ function addmed() {
     newMed.innerHTML = `
     <li>
         <label for="med${numMeds}-1">${numMeds}. Name</label>
-        <input type="text" id="med${numMeds}-1" name="med${numMeds}-1" data-question="Medicine ${numMeds} Name">
+        <input type="text" id="med${numMeds}-1" name="med${numMeds}-1" data-question="Medicine ${numMeds} Name" class="required">
         <br>
         <label for="med${numMeds}-2"> Dosage</label>
-        <input type="text" id="med${numMeds}-2" name="med${numMeds}-2" data-question="Medicine ${numMeds} Dosage">
+        <input type="text" id="med${numMeds}-2" name="med${numMeds}-2" data-question="Medicine ${numMeds} Dosage" class="required">
         <br>
         <label for="med${numMeds}-3"> Frequency</label>
-        <input type="text" id="med${numMeds}-3" name="med${numMeds}-3" data-question="Medicine ${numMeds} Frequency">
+        <input type="text" id="med${numMeds}-3" name="med${numMeds}-3" data-question="Medicine ${numMeds} Frequency" class="required">
         <br>
         <label for="med${numMeds}-4"> Start Date</label>
-        <input type="date" id="med${numMeds}-4" name="med${numMeds}-4" data-question="Medicine ${numMeds} Start Date">
+        <input type="date" id="med${numMeds}-4" name="med${numMeds}-4" data-question="Medicine ${numMeds} Start Date" class="required date">
         <br>
         <label for="med${numMeds}-5"> Helpfulness</label>
-        <select id="med${numMeds}-5" name="med${numMeds}-5" data-break="1">
+        <select id="med${numMeds}-5" name="med${numMeds}-5" data-break="1" class="required">
             <option value="helpful">Quite helpful</option>
             <option value="somewhat helpful">Somewhat helpful</option>
             <option value="not very helpful">Not very helpful</option>
@@ -255,9 +261,9 @@ function addallergy() {
     newAllergy.id = `allergen${numAllergies}`;
     newAllergy.innerHTML = `            <li>
     <label for="allergy${numAllergies}-1">${numAllergies}. Name of Allergen</label>
-    <input type="text" id="allergy${numAllergies}-1" name="allergy${numAllergies}-1" data-question="Allergen ${numAllergies} Name">
+    <input type="text" id="allergy${numAllergies}-1" name="allergy${numAllergies}-1" data-question="Allergen ${numAllergies} Name" class="required">
     <label for="allergy${numAllergies}-2">Reaction(s) to Allergen</label>
-    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2" data-question="Allergen ${numAllergies} Reaction" data-break="1">
+    <input type="text" id="allergy${numAllergies}-2" name="allergy${numAllergies}-2" data-question="Allergen ${numAllergies} Reaction" data-break="1" class="required">
 </li>
 <br>`
     document.getElementById("allergies").insertBefore(newAllergy, document.getElementById("addallergy"));
