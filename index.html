@@ -350,11 +350,11 @@
             </li>
             <h4>Which is the MAIN provoking factor?</h4>
             <li>
-                <input type="text" id="factor1" name="factor1" data-question="Main Provoking Factor">
+                <input type="text" id="factor1" name="factor1" class="required" data-question="Main Provoking Factor">
             </li>
             <h4>Are there any other STRONG provoking factors?</h4>
             <li>
-                <input type="text" id="factor2" name="factor2" data-question="Strong Provoking Factors" data-break="1">
+                <input type="text" id="factor2" name="factor2" class="required" data-question="Strong Provoking Factors" data-break="1">
             </li>
             </div>
             <div id="pg3" class="page wrongpage">
@@ -363,63 +363,63 @@
             <li>
                 <label for="headacheyes">Do you have headaches? Yes</label>
                 <input type="radio" id="headacheyes" name="headache"
-                    onchange='reveal("headacheyes","headacheSecondary")' data-question="Headaches?" value="Yes">
+                    onchange='reveal("headacheyes","headacheSecondary")' data-question="Headaches?" value="Yes" class="choice">
                 <label for="headacheno">No</label>
                 <input type="radio" id="headacheno" name="headache"
-                    onchange='reveal("headacheyes","headacheSecondary")' data-question="Headaches?" value="No">
+                    onchange='reveal("headacheyes","headacheSecondary")' data-question="Headaches?" value="No" class="choice">
             </li>
             <div id="headacheSecondary" class="hidden">
                 <li>
                     <label for="hvyes">If yes, do you feel the headache is related to vertigo? Yes</label>
-                    <input type="radio" id="hvyes" name="hv" data-question="Headaches Related to Vertigo" value="Yes">
+                    <input type="radio" id="hvyes" name="hv" data-question="Headaches Related to Vertigo" value="Yes" class="choice headacheSecondary off">
                     <label for="hvno">No</label>
-                    <input type="radio" id="hvno" name="hv" data-question="Headaches Related to Vertigo" value="No">
+                    <input type="radio" id="hvno" name="hv" data-question="Headaches Related to Vertigo" value="No" class="choice headacheSecondary off">
                 </li>
                 <li>
                     <label for="headachedate">If yes for headache, start date?</label>
-                    <input type="date" id="headachedate" name="headachedate" data-question="Headache Start Date">
+                    <input type="date" id="headachedate" name="headachedate" data-question="Headache Start Date" class="date headacheSecondary off">
                 </li>
                 <br>
                 <li>
-                    <input type="checkbox" id="headache1" name="headache1" class="headache" data-question="Headache Symptoms" value="Bright Lights Bother You">
+                    <input type="checkbox" id="headache1" name="headache1" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Bright Lights Bother You">
                     <label for="headache1">Do bright lights bother you?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache2" name="headache2" class="headache" data-question="Headache Symptoms" value="Noise Bothers You">
+                    <input type="checkbox" id="headache2" name="headache2" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Noise Bothers You">
                     <label for="headache2">Does noise bother you?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache3" name="headache3" class="headache" data-question="Headache Symptoms" value="Headache CausesNausea">
+                    <input type="checkbox" id="headache3" name="headache3" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Headache CausesNausea">
                     <label for="headache3">Nausea</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache4" name="headache4" class="headache" data-question="Headache Symptoms" value="Headache Causes Vomiting">
+                    <input type="checkbox" id="headache4" name="headache4" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Headache Causes Vomiting">
                     <label for="headache4">Vomiting</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache5" name="headache5" class="headache" data-question="Headache Symptoms" value="Strong Smells Bother You">
+                    <input type="checkbox" id="headache5" name="headache5" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Strong Smells Bother You">
                     <label for="headache5">Do strong smells bother you?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache6" name="headache6" class="headache" data-question="Headache Symptoms" value="Motion is Very Bothersome">
+                    <input type="checkbox" id="headache6" name="headache6" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Motion is Very Bothersome">
                     <label for="headache6">Motion very bothersome?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache7" name="headache7" class="headache" data-question="Headache Symptoms" value="Weather Changes Trigger">
+                    <input type="checkbox" id="headache7" name="headache7" class="headacheSecondary check check4 off" data-question="Headache Symptoms" value="Weather Changes Trigger">
                     <label for="headache7">Weather changes trigger?</label>
                 </li>
                 <li>
-                    <input type="checkbox" id="headache8" name="headache8" class="headache" data-question="Headache Symptoms" data-checkbox-end="True" value="Visual Auras">
+                    <input type="checkbox" id="headache8" name="headache8" class="headacheSecondary check check4 off" data-question="Headache Symptoms" data-checkbox-end="True" value="Visual Auras">
                     <label for="headache8">Do you have visual auras?</label>
                 </li>
                 <br>
                 <li>
                     <label for="headacheLocation">Location in the head</label>
-                    <input type="text" id="headacheLocation" name="headacheLocation" data-question="Location in the Head">
+                    <input type="text" id="headacheLocation" name="headacheLocation" data-question="Location in the Head" class="headacheSecondary off required">
                 </li>
                 <li>
                     <label for="headacheFrequency">Headache frequency</label>
-                    <select id="headacheFrequency" name="headacheFrequency">
+                    <select id="headacheFrequency" name="headacheFrequency" class="required headacheSecondary off">
                         <option value="-1">- Select -</option>
                         <option value=">1/hr">More often than hourly</option>
                         <option value="Every 1-6 hours">Once every 1-6 hours</option>
@@ -431,7 +431,7 @@
                 </li>
                 <li>
                     <label for="headacheLength">Duration per episode</label>
-                    <select id="headacheLength" name="headacheLength">
+                    <select id="headacheLength" name="headacheLength" class="required headacheSecondary off">
                         <option value="-1">- Select -</option>
                         <option value="<1min">Less than a minute</option>
                         <option value="1-5min">1-5 minutes</option>
@@ -443,7 +443,7 @@
                 </li>
                 <li>
                     <label for="treatments">Current Treatments</label>
-                    <input type="text" id="treatments" name="treatments" data-question="Current Treatments" data-break="1">
+                    <input type="text" id="treatments" name="treatments" data-question="Current Treatments" data-break="1" class="headacheSecondary off required">
                 </li>
             </div>
             </div>
