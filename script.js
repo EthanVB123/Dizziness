@@ -59,6 +59,9 @@ function validateForm(pageNo) {
                 console.log(`${inputs[i].value}`)
                 alert(`Please answer with a whole number:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
                 return false;
+            } else if (inputs[i].value < 0) {
+                alert(`Please answer with a positive number:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
+                return false;
             }
         }
         // Check for at least one in each "check"

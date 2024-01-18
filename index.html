@@ -25,7 +25,7 @@
         <ul>
             <div id="pg1" class="page">
             <li>
-                <label for="name">Patient Name</label>
+                <label for="name">Patient Full Name</label>
                 <input type="text" id="name" name="patient-name" class="required" data-question="Name">
             </li>
             <li>
@@ -540,7 +540,7 @@
                 <label for="smoker">Are you a smoker or ex-smoker? Yes</label>
                 <input type="radio" id="smoker" name="smoker" onchange='reveal("smoker","smokerSecondary")' data-question="Smoker or Ex-Smoker" value="Yes" class="choice">
                 <label for="notsmoker">No</label>
-                <input type="radio" id="notsmoker" name="smoker" onchange='reveal("headacheyes","smokerSecondary")' data-question="Not a Smoker" value="No" class="choice">
+                <input type="radio" id="notsmoker" name="smoker" onchange='reveal("smoker","smokerSecondary")' data-question="Not a Smoker" value="No" class="choice">
             </li>
             <div id="smokerSecondary" class="hidden">
                 <li>
