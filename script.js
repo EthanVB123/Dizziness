@@ -8,6 +8,7 @@ document.getElementById("addallergy").addEventListener("click", addallergy);
 document.getElementById("removemed").addEventListener("click", removemed);
 document.getElementById("removeallergy").addEventListener("click", removeallergy);
 
+
 function validateForm(pageNo) {
     var inputs = Array.from(document.getElementsByTagName("input"));
     var selects = Array.from(document.getElementsByTagName("select"));
@@ -122,8 +123,10 @@ function pdfTest(toPutOnThePDF) {
     const doc = new jspdf.jsPDF();
     doc.setFontSize(10);
     for (var i = 0; i < toPutOnThePDF.length; i++) {
+        if (i != 0) {
+            doc.addPage();
+        }
         doc.text(`${toPutOnThePDF[i]}`, 10, 10);
-        doc.addPage();
     }
     //doc.text("One more time",15,25);
     doc.save("results.pdf");
@@ -131,78 +134,80 @@ function pdfTest(toPutOnThePDF) {
 }
 
 function submitTable() {
-    var numLinesThisPage = 0;
-    var allInformation = document.querySelectorAll("[data-question]");
-    //console.log(allInformation.length);
-    var outputString = "";
-    var output = [];
-    var inCheckboxGroup = false;
-    for (var i = 0; i < allInformation.length; i++) {
-        if (isElementOrAncestorHiddenByClass(allInformation[i], "hidden")) {
-            console.log(`Skipped ${allInformation[i].id}`)
-            continue;
-        } else if (allInformation[i].tagName == "H2") {
-            outputString += `\n${allInformation[i].innerHTML}\n\n`;
-            numLinesThisPage += 3;
-        } else if (allInformation[i].tagName == "SELECT") {
-            outputString += `${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
-        } else if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
-            if (inCheckboxGroup) {
-                //outputString += ` ${allInformation[i].value} ${numLinesThisPage}`
+    if (/*validateForm()*/true) {
+        var numLinesThisPage = 0;
+        var allInformation = document.querySelectorAll("[data-question]");
+        //console.log(allInformation.length);
+        var outputString = "";
+        var output = [];
+        var inCheckboxGroup = false;
+        for (var i = 0; i < allInformation.length; i++) {
+            if (isElementOrAncestorHiddenByClass(allInformation[i], "hidden") || allInformation[i].value == "") {
+                console.log(`Skipped ${allInformation[i].id}`)
+                continue;
+            } else if (allInformation[i].tagName == "H2") {
+                outputString += `\n\n${allInformation[i].innerHTML}\n`;
+                numLinesThisPage += 3;
+            } else if (allInformation[i].tagName == "SELECT") {
+                outputString += `${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+            } else if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
+                if (inCheckboxGroup) {
+                    //outputString += ` ${allInformation[i].value} ${numLinesThisPage}`
+                    if (allInformation[i].hasAttribute("data-checkbox-end")) {
+                        inCheckboxGroup = false;
+                        outputString += "\n";
+                        numLinesThisPage++;
+                    }
+                    //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
+                } else {
+                    outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+                    numLinesThisPage++;
+                }
+            } else if (allInformation[i].type == "checkbox") {
+                if (!inCheckboxGroup) {
+                    inCheckboxGroup = true;
+                    //console.log(`inCheckboxGroup TRUE - ${allInformation[i].dataset.question}`)
+                    outputString += /*`${i} - */`${allInformation[i].dataset.question}:`;
+                    numLinesThisPage++;
+                }
+                if (allInformation[i].checked) {
+                    //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
+                    outputString += `\n${allInformation[i].value}`;
+                    numLinesThisPage++;
+                }
                 if (allInformation[i].hasAttribute("data-checkbox-end")) {
                     inCheckboxGroup = false;
+                    //console.log(`inCheckboxGroup FALSE - ${allInformation[i].dataset.question}`)
                     outputString += "\n";
                     numLinesThisPage++;
                 }
-                //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
-            } else {
-                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
-                numLinesThisPage++;
+            } else if (allInformation[i].type == "radio") {
+                if (allInformation[i].checked) {
+                    outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`
+                    numLinesThisPage++;
+                }
             }
-        } else if (allInformation[i].type == "checkbox") {
-            if (!inCheckboxGroup) {
-                inCheckboxGroup = true;
-                //console.log(`inCheckboxGroup TRUE - ${allInformation[i].dataset.question}`)
-                outputString += /*`${i} - */`${allInformation[i].dataset.question}:`;
-                numLinesThisPage++;
-            }
-            if (allInformation[i].checked) {
-                //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
-                outputString += `\n${allInformation[i].value}`;
-                numLinesThisPage++;
-            }
-            if (allInformation[i].hasAttribute("data-checkbox-end")) {
-                inCheckboxGroup = false;
-                //console.log(`inCheckboxGroup FALSE - ${allInformation[i].dataset.question}`)
+
+
+            if (allInformation[i].hasAttribute("data-break")) {
                 outputString += "\n";
                 numLinesThisPage++;
+                if (numLinesThisPage >= 55) {
+                    numLinesThisPage = 0;
+                    output.push(outputString);
+                    outputString = "";
+                }
             }
-        } else if (allInformation[i].type == "radio") {
-            if (allInformation[i].checked) {
-                outputString += /*`${i} - */`${allInformation[i].dataset.question}: ${allInformation[i].value}\n`
-                numLinesThisPage++;
-            }
-        }
-
-
-        if (allInformation[i].hasAttribute("data-break")) {
-            outputString += "\n";
-            numLinesThisPage++;
-            if (numLinesThisPage >= 55) {
+            if (numLinesThisPage >= 70) {
                 numLinesThisPage = 0;
                 output.push(outputString);
                 outputString = "";
             }
         }
-        if (numLinesThisPage >= 70) {
-            numLinesThisPage = 0;
-            output.push(outputString);
-            outputString = "";
-        }
+        output.push(outputString);
+        pdfTest(output);
+        //downloadResults("results.txt", outputString);
     }
-    output.push(outputString);
-    pdfTest(output);
-    //downloadResults("results.txt", outputString);
 }
 
 
@@ -332,16 +337,6 @@ function updatePageNumber() {
     document.getElementById('pagenumber').innerHTML = `Page ${page} of ${maxPage}`;
 }
 
-// Shows the menopause question if menopause selected
-function menopause() {
-    if (document.getElementById("menstrual").value == "menopausal") {
-        document.getElementById("menopauseSecondary").classList.remove("hidden");
-        document.getElementById("menopause").classList.add("required");
-    } else {
-        document.getElementById("menopauseSecondary").classList.add("hidden");
-        document.getElementById("menopause").classList.remove("required");
-    }
-}
 
 // Useful for checking "hidden"
 function isElementOrAncestorHiddenByClass(element, className) {

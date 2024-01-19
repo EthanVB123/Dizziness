@@ -8,12 +8,30 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon-32x32.png" type="image/png">
     <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js" async></script> <!-- jsPdf - under MIT Licence (that means I can use it for free yay) -->
+
 </head>
 
 <body>
 
     <script src="script.js" async></script>
-
+    <script>
+        
+        // Shows the menopause question if menopause selected
+        function menopauseRevealer() {
+            console.log("Menopause time")
+            if (document.getElementById("menstrual").value == "Menopausal") {
+                document.getElementById("menopauseSecondary").classList.remove("hidden");
+                document.getElementById("menopause").classList.add("required");
+                document.getElementById("menopause").classList.add("integer");
+                console.log(`Menopaues on, menopause2ndary ${document.getElementById("menopauseSecondary").classList}; menopause ${document.getElementById("menopause").classList}`)
+            } else {
+                document.getElementById("menopauseSecondary").classList.add("hidden");
+                document.getElementById("menopause").classList.remove("required");
+                document.getElementById("menopause").classList.remove("integer");
+                console.log("Menopause off")
+            }
+        }
+            </script>
     <h1 id="title">
         Dizziness Survey - World College of Neurology
     </h1>
@@ -656,7 +674,7 @@
                 <li>
                     <span>
                     <label for="menstrual">Menstrual status?</label>
-                    <select id="menstrual" name="menstrual" class="femaleSecondary off required" onchange='menopause()' data-question="Menstrual Status">
+                    <select id="menstrual" name="menstrual" onchange="menopauseRevealer()" class="femaleSecondary off required" data-question="Menstrual Status">
                         <option value="-1">- Select -</option>
                         <option value="Regular menstrual cycles">Regular menstrual cycles</option>
                         <option value="Irregular menstrual cycles">Irregular menstrual cycles</option>
