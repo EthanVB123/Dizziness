@@ -56,12 +56,18 @@ function validateForm(pageNo) {
         // Check for integer
         if (inputs[i].classList.contains("integer")) {
             if (Math.floor(inputs[i].value) != inputs[i].value) {
-                console.log(`${inputs[i].value}`)
+                //console.log(`${inputs[i].value}`)
                 alert(`Please answer with a whole number:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
                 return false;
             } else if (inputs[i].value < 0) {
                 alert(`Please answer with a positive number:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
                 return false;
+            }
+        }
+        // Check for +ve number
+        if (inputs[i].classList.contains("positive")) {
+            if (inputs[i].value < 0) {
+                alert(`Please answer with a positive number:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
             }
         }
         // Check for at least one in each "check"
@@ -88,7 +94,7 @@ function validateForm(pageNo) {
         }
         // Check for legal dated (between 1/1/1900 and today)
         if (inputs[i].classList.contains("date")) {
-            console.log(`The date was '${inputs[i].value}'`);
+            //console.log(`The date was '${inputs[i].value}'`);
             if (inputs[i].value == '') {
                 alert(`Please complete the following question:\nPage ${findPage(inputs[i])}\n${document.querySelector(`label[for="${inputs[i].id}"]`).innerHTML}`)
                 return false;
@@ -127,13 +133,20 @@ function pdfTest(toPutOnThePDF) {
 function submitTable() {
     var numLinesThisPage = 0;
     var allInformation = document.querySelectorAll("[data-question]");
-    console.log(allInformation.length);
+    //console.log(allInformation.length);
     var outputString = "";
     var output = [];
     var inCheckboxGroup = false;
     for (var i = 0; i < allInformation.length; i++) {
-        //console.log(allInformation[i].type);
-        if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
+        if (isElementOrAncestorHiddenByClass(allInformation[i], "hidden")) {
+            console.log(`Skipped ${allInformation[i].id}`)
+            continue;
+        } else if (allInformation[i].tagName == "H2") {
+            outputString += `\n${allInformation[i].innerHTML}\n\n`;
+            numLinesThisPage += 3;
+        } else if (allInformation[i].tagName == "SELECT") {
+            outputString += `${allInformation[i].dataset.question}: ${allInformation[i].value}\n`;
+        } else if (allInformation[i].type == "text" || allInformation[i].type == "date" || allInformation[i].type == "time" || allInformation[i].type == "number") {
             if (inCheckboxGroup) {
                 //outputString += ` ${allInformation[i].value} ${numLinesThisPage}`
                 if (allInformation[i].hasAttribute("data-checkbox-end")) {
@@ -149,18 +162,18 @@ function submitTable() {
         } else if (allInformation[i].type == "checkbox") {
             if (!inCheckboxGroup) {
                 inCheckboxGroup = true;
-                console.log(`inCheckboxGroup TRUE - ${allInformation[i].dataset.question}`)
+                //console.log(`inCheckboxGroup TRUE - ${allInformation[i].dataset.question}`)
                 outputString += /*`${i} - */`${allInformation[i].dataset.question}:`;
                 numLinesThisPage++;
             }
             if (allInformation[i].checked) {
-                console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
+                //console.log(`inCheckboxGroup REMAINS TRUE - ${allInformation[i].dataset.question}`)
                 outputString += `\n${allInformation[i].value}`;
                 numLinesThisPage++;
             }
             if (allInformation[i].hasAttribute("data-checkbox-end")) {
                 inCheckboxGroup = false;
-                console.log(`inCheckboxGroup FALSE - ${allInformation[i].dataset.question}`)
+                //console.log(`inCheckboxGroup FALSE - ${allInformation[i].dataset.question}`)
                 outputString += "\n";
                 numLinesThisPage++;
             }
@@ -248,7 +261,7 @@ function addmed() {
         <input type="date" id="med${numMeds}-4" name="med${numMeds}-4" data-question="Medicine ${numMeds} Start Date" class="required date">
         <br>
         <label for="med${numMeds}-5"> Helpfulness</label>
-        <select id="med${numMeds}-5" name="med${numMeds}-5" data-break="1" class="required">
+        <select id="med${numMeds}-5" name="med${numMeds}-5" data-break="1" class="required" data-question="Helpfulness of Medication">
             <option value="helpful">Quite helpful</option>
             <option value="somewhat helpful">Somewhat helpful</option>
             <option value="not very helpful">Not very helpful</option>
@@ -295,6 +308,7 @@ function nextPage() {
         updatePageNumber();
         if (page == maxPage) {
             document.getElementById("nextpage").classList.add('hidden');
+            document.getElementById("finish").classList.remove("hidden");
         }
         if (page == 2) {
             document.getElementById(`prevpage`).classList.remove('hidden');
@@ -311,10 +325,34 @@ function prevPage() {
     }
     if (page == maxPage - 1) {
         document.getElementById(`nextpage`).classList.remove('hidden');
+        document.getElementById("finish").classList.remove("hidden");
     }
 }
 function updatePageNumber() {
     document.getElementById('pagenumber').innerHTML = `Page ${page} of ${maxPage}`;
+}
+
+// Shows the menopause question if menopause selected
+function menopause() {
+    if (document.getElementById("menstrual").value == "menopausal") {
+        document.getElementById("menopauseSecondary").classList.remove("hidden");
+        document.getElementById("menopause").classList.add("required");
+    } else {
+        document.getElementById("menopauseSecondary").classList.add("hidden");
+        document.getElementById("menopause").classList.remove("required");
+    }
+}
+
+// Useful for checking "hidden"
+function isElementOrAncestorHiddenByClass(element, className) {
+    let currentElement = element;
+    while (currentElement) {
+        if (currentElement.classList.contains(className)) {
+            return true; // Element or an ancestor has the specified class
+        }
+        currentElement = currentElement.parentElement;
+    }
+    return false; // Element and its ancestors don't have the specified class
 }
 
 // If submitForm() required, check older commits (removed 16:25 17/01/2024)
