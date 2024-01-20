@@ -32,7 +32,7 @@ function validateForm(pageNo) {
 
     for (i = 0; i < inputs.length; i++) {
         // If question is dependent and not required based on current input (i.e. "off"), skip
-        if (inputs[i].classList.contains("off")) {
+        if (inputs[i].classList.contains("off") || (isElementOrAncestorHiddenByClass(inputs[i], wrongpage) && pageNo != -1)) {
             continue;
         }
         // Check for unfilled "required" inputs
@@ -134,7 +134,7 @@ function pdfTest(toPutOnThePDF) {
 }
 
 function submitTable() {
-    if (/*validateForm()*/true) {
+    if (validateForm(-1)) {
         var numLinesThisPage = 0;
         var allInformation = document.querySelectorAll("[data-question]");
         //console.log(allInformation.length);
@@ -330,7 +330,7 @@ function prevPage() {
     }
     if (page == maxPage - 1) {
         document.getElementById(`nextpage`).classList.remove('hidden');
-        document.getElementById("finish").classList.remove("hidden");
+        document.getElementById("finish").classList.add("hidden");
     }
 }
 function updatePageNumber() {
