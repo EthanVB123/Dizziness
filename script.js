@@ -32,7 +32,7 @@ function validateForm(pageNo) {
 
     for (i = 0; i < inputs.length; i++) {
         // If question is dependent and not required based on current input (i.e. "off"), skip
-        if (inputs[i].classList.contains("off") || (isElementOrAncestorHiddenByClass(inputs[i], wrongpage) && pageNo != -1)) {
+        if (inputs[i].classList.contains("off") || (isElementOrAncestorHiddenByClass(inputs[i], "wrongpage") && pageNo != -1)) {
             continue;
         }
         // Check for unfilled "required" inputs
@@ -143,7 +143,7 @@ function submitTable() {
         var inCheckboxGroup = false;
         for (var i = 0; i < allInformation.length; i++) {
             if (isElementOrAncestorHiddenByClass(allInformation[i], "hidden") || allInformation[i].value == "") {
-                console.log(`Skipped ${allInformation[i].id}`)
+                //console.log(`Skipped ${allInformation[i].id}`)
                 continue;
             } else if (allInformation[i].tagName == "H2") {
                 outputString += `\n\n${allInformation[i].innerHTML}\n`;
