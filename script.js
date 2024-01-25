@@ -350,4 +350,28 @@ function isElementOrAncestorHiddenByClass(element, className) {
     return false; // Element and its ancestors don't have the specified class
 }
 
+function generateLifestyleText() { // Attempts to generate section "Social History" in the written report.
+    var pronoun = document.getElementById("female").checked ? "She" : "He";
+    var drinkingStatus = document.getElementById("standardDrinks").value == 0 ? "was a non-drinker" : `drank ${document.getElementById("standardDrinks").value} standard drinks of alcohol a week`;
+    var smokingStatus; // TODO add quit smoking to smoking status
+    var maritalStatus; // TODO add de facto relationship to marital status
+    var occupation = document.getElementById("occupation").value;
+    var occupationAorAn = ['a','e','i','o','u'].includes(occupation.charAt(0)) ? "an" : "a";
+    var airTravelFrequency; // todo
+    var litigationStatus; // todo
+    var disability = document.getElementById("disabled").checked ? "did" : "did not";
+    var drivingStatus = document.getElementById("drive").checked ? "drove" : "did not drive";
+    var numPillows = document.getElementById("pillow").value;
+    var pillowSingularOrPlural = numPillows == 1 ? "pillow" : "pillows";
+    var pronounPossessive = document.getElementById("female").checked ? "Her" : "His";
+    var sleepingPosition; // todo
+    var menstrualString; // todo
+    output = `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
+    ${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
+    ${pronoun} ${litigationStatus} \
+    ${pronoun} ${disability} consider herself disabled. ${pronoun} ${drivingStatus}. ${pronoun} slept on ${numPillows} ${pillowSingularOrPlural} at \
+    night on ${pronounPossessive} ${sleepingPosition}. ${menstrualString}` 
+    
+}
+
 // If submitForm() required, check older commits (removed 16:25 17/01/2024)
