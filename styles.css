@@ -1,7 +1,8 @@
 body { /* Everything obeys this as default if no override. */
-    font-family: Arial, sans-serif;
+    font-family: "Libre Franklin",Arial, sans-serif;
     background-color: #F0F0F0;
     margin: 0;
+    font-size: max(1vw,10px);
 }
 
 
@@ -9,12 +10,12 @@ li {
     list-style-type: none;
     padding: 0.2em;
 }
-
+/*
 form {
     border: 1px solid black;
     border-radius: 4px;
 }
-
+*/
 .hidden, .wrongpage {
     display: none;
 }
@@ -23,13 +24,15 @@ form {
     position: fixed;
     top: 2vh;
     left: 2vw;
-    width: 96vw;
+    width: 94vw; /* 2 outside, 1 padding, 94 text, 1 padding, 2 outside */
     height: 20vh;
     background-color: #2EA3F2;
     height: 20vh;
     margin: 0;
-    padding: 0;
-    border: 1px solid black;
+    padding: 1vw;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
     border-top-left-radius: 1vmin;
     border-top-right-radius: 1vmin;
 }
@@ -40,6 +43,18 @@ form {
     top: 22vh;
     left: 2vw;
     width: 96vw;
-    border: 1px solid black;
+    height: 10vh;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
 
+#questions {
+    background-color: #E0E0E0;
+    position: fixed;
+    top: 32vh;
+    left: 2vw;
+    width: 96vw;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
 }
