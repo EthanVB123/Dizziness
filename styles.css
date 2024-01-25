@@ -29,12 +29,15 @@ form {
     background-color: #2EA3F2;
     height: 20vh;
     margin: 0;
-    padding: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
     border-top: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-top-left-radius: 1vmin;
     border-top-right-radius: 1vmin;
+    font-size: 4vh;
+    font-weight: bold;
 }
 
 #toolbar {
@@ -42,10 +45,14 @@ form {
     position: fixed;
     top: 22vh;
     left: 2vw;
-    width: 96vw;
+    width: 94vw;
     height: 10vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    text-align: left;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    font-size: 3vh;
 }
 
 #questions {
@@ -53,7 +60,8 @@ form {
     position: fixed;
     top: 32vh;
     left: 2vw;
-    width: 96vw;
+    width: 94vw;
+    padding: 1vw;
     height: 66vh;
     overflow: auto;
     border-bottom: 1px solid black;
