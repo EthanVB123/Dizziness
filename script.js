@@ -1,5 +1,5 @@
 
-var page = 1;
+var page = 5;
 var maxPage = 11;
 var numMeds = 1;
 var numAllergies = 1;

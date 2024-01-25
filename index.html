@@ -41,7 +41,7 @@
 
     <form>
         <ul>
-            <div id="pg1" class="page">
+            <div id="pg1" class="page wrongpage">
             <li>
                 <label for="name">Patient Full Name</label>
                 <input type="text" id="name" name="patient-name" class="required" data-question="Name">
@@ -566,7 +566,7 @@
                 </li>
             </div>
             </div>
-            <div id="pg5" class="page wrongpage">
+            <div id="pg5" class="page">
             <h2 data-question="">Lifestyle</h2 data-question="">
             <li>
                 <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
@@ -1390,7 +1390,7 @@
             <div id="bottomButtons">
             <li>
                 <button type="button" onclick="nextPage()" id="nextpage">Next Page</button>
-                <button type="button" onclick="prevPage()" id="prevpage" class="hidden">Previous Page</button>
+                <button type="button" onclick="prevPage()" id="prevpage">Previous Page</button>
                 <button type="button" onclick="submitTable()" id="finish" class="hidden">Finish Survey</button>
                 <!-- <button type="submit">Submit Form</button> -->
             </li>
