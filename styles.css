@@ -1,6 +1,9 @@
-* {
-    font-family: Arial, sans-serif
+body { /* Everything obeys this as default if no override. */
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+    margin: 0;
 }
+
 
 li {
     list-style-type: none;
@@ -14,4 +17,29 @@ form {
 
 .hidden, .wrongpage {
     display: none;
+}
+
+#heading {
+    position: fixed;
+    top: 2vh;
+    left: 2vw;
+    width: 96vw;
+    height: 20vh;
+    background-color: #2EA3F2;
+    height: 20vh;
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    border-top-left-radius: 1vmin;
+    border-top-right-radius: 1vmin;
+}
+
+#toolbar {
+    background-color: #B0D9F5;
+    position: fixed;
+    top: 22vh;
+    left: 2vw;
+    width: 96vw;
+    border: 1px solid black;
+
 }
