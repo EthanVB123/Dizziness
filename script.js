@@ -363,18 +363,26 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     } else {
         smokingStatus = "has never smoked."
     }
-    var maritalStatus;
+    var maritalStatus = "unknown";
     if (document.getElementById("single").checked) {
         maritalStatus = "single";
     } else if (document.getElementById("married").checked) {
         maritalStatus = "married";
     } else if (document.getElementById("defacto").checked) {
-        maritalStatus = "in a de facto relationship;"
+        maritalStatus = "in a de facto relationship";
     }
     var occupation = document.getElementById("occupation").value;
     var occupationAorAn = ['a','e','i','o','u'].includes(occupation.charAt(0)) ? "an" : "a";
-    var airTravelFrequency; // todo
-    var litigationStatus; // todo
+    var airTravelFrequency = document.getElementById("airplane").options[document.getElementById("airplane").selectedIndex].innerHTML.replace("your","their");
+    airTravelFrequency = airTravelFrequency[0].toLowerCase() + airTravelFrequency.slice(1);
+    var litigationStatus = "made it unclear whether litigation was being planned";
+    if (document.getElementById("litigate").checked) {
+        litigationStatus = "is currently in litigation"
+    } else if (document.getElementById("litigateplan").checked) {
+        litigationStatus = "was planning litigation"
+    } else if (document.getElementById("litigateno").checked) {
+        litigationStatus = "was not in litigation or planning litigation"
+    }
     var disability = document.getElementById("disabled").checked ? "did" : "did not";
     var drivingStatus = document.getElementById("drive").checked ? "drove" : "did not drive";
     var numPillows = document.getElementById("pillow").value;
@@ -384,7 +392,7 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     var menstrualString; // todo   
     output = `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
     ${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
-    ${pronoun} ${litigationStatus} \
+    ${pronoun} ${litigationStatus} regarding ${pronounPossessive} symptoms. \
     ${pronoun} ${disability} consider herself disabled. ${pronoun} ${drivingStatus}. ${pronoun} slept on ${numPillows} ${pillowSingularOrPlural} at \
     night on ${pronounPossessive} ${sleepingPosition}. ${menstrualString}` 
     
