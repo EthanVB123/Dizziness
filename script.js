@@ -388,8 +388,38 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     var numPillows = document.getElementById("pillow").value;
     var pillowSingularOrPlural = numPillows == 1 ? "pillow" : "pillows";
     var pronounPossessive = document.getElementById("female").checked ? "Her" : "His";
-    var sleepingPosition; // todo
-    var menstrualString; // todo   
+    var sleepingPosition;
+    switch (document.getElementById("sleepPosition").value) {
+        case "-1":
+            sleepingPosition = "(unknown)";
+            break;
+        case "On their back":
+            sleepingPosition = "back";
+            break;
+        case "On their stomach":
+            sleepingPosition = "stomach";
+            break;
+        case "With their left side down":
+            sleepingPosition = "left";
+            break;
+        case "With their right side down":
+            sleepingPosition = "right";
+            break;
+        case "With no regular position":
+            sleepingPosition = "sides/back/front with no regular position";
+            break;
+        default:
+            console.log("switch sleepPosition unknown");
+            sleepingPosition = "(unknown)";
+            break;
+    }
+    var menstrualString;
+    if (pronoun == "He") {
+        menstrualString = "";
+    } else {
+        menstrualString = `She ${document.getElementById("menstrual").value.toLowerCase()}${document.getElementById("menstrual").value == "Is Menopausal" ? ` \
+        (became menopausal at ${document.getElementById("menopause").value} years)` : ""}, was ${document.getElementById("contraceptive").value.toLowerCase()}, and is ${document.getElementById("pregnancy").value.toLowerCase()}.`;
+    }
     output = `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
     ${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
     ${pronoun} ${litigationStatus} regarding ${pronounPossessive} symptoms. \
