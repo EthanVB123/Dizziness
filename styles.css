@@ -2,7 +2,7 @@ body { /* Everything obeys this as default if no override. */
     font-family: "Libre Franklin",Arial, sans-serif;
     background-color: #F0F0F0;
     margin: 0;
-    font-size: max(1vw,10px);
+    font-size: max(1vw,10pt);
 }
 
 
@@ -23,8 +23,8 @@ form {
 #heading {
     position: fixed;
     top: 2vh;
-    left: 2vw;
-    width: 94vw; /* 2 outside, 1 padding, 94 text, 1 padding, 2 outside */
+    left: 1vw;
+    width: 96vw; /* 2 outside, 1 padding, 94 text, 1 padding, 2 outside */
     height: 20vh;
     background-color: #2EA3F2;
     height: 20vh;
@@ -44,8 +44,8 @@ form {
     background-color: #B0D9F5;
     position: fixed;
     top: 22vh;
-    left: 2vw;
-    width: 94vw;
+    left: 1vw;
+    width: 96vw;
     height: 10vh;
     padding-left: 1vw;
     padding-right: 1vw;
@@ -59,12 +59,14 @@ form {
     background-color: #E0E0E0;
     position: fixed;
     top: 32vh;
-    left: 2vw;
-    width: 94vw;
+    left: 1vw;
+    width: 96vw;
     padding: 1vw;
-    height: 66vh;
+    height: 62vh;
     overflow: auto;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    border-bottom-left-radius: 1vmin;
+    border-bottom-right-radius: 1vmin;
 }

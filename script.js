@@ -1,5 +1,5 @@
 
-var page = 5;
+var page = 1;
 var maxPage = 11;
 var numMeds = 1;
 var numAllergies = 1;
@@ -229,6 +229,8 @@ function submitTable() {
         }
         output.push(outputString);
         pdfTest(output);
+        generateLifestyleText();
+        nextPage(override);
         //downloadResults("results.txt", outputString);
     }
 }
@@ -328,10 +330,13 @@ function removeallergy() {
         alert("There are no allergies to remove.");
     }
 }
-function nextPage() {
-    if (validateForm(page)) {
+function nextPage(override = false) {
+    if (override || validateForm(page)) {
         document.getElementById(`pg${page}`).classList.add('wrongpage');
         page++;
+        if (override) {
+            page = maxPage + 1;
+        }
         document.getElementById(`pg${page}`).classList.remove('wrongpage');
         updatePageNumber();
         if (page == maxPage) {
@@ -340,6 +345,9 @@ function nextPage() {
         }
         if (page == 2) {
             document.getElementById(`prevpage`).classList.remove('hidden');
+        }
+        if (override) {
+            document.getElementById("bottomButtons").classList.add('hidden');
         }
     }
 }
@@ -357,7 +365,7 @@ function prevPage() {
     }
 }
 function updatePageNumber() {
-    document.getElementById('pagenumber').innerHTML = `Page ${page} of ${maxPage}`;
+    document.getElementById('pagenumber').innerHTML = page > maxPage ? "Survey complete!" : `Page ${page} of ${maxPage}`;
 }
 
 
@@ -437,11 +445,11 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
             break;
     }
     var menstrualString;
-    if (pronoun == "He" || 1==1 /*for testing only*/) {
+    if (pronoun == "He") {
         menstrualString = "";
     } else {
         menstrualString = ` She ${document.getElementById("menstrual").value.toLowerCase()}${document.getElementById("menstrual").value == "Is Menopausal" ? ` \
-        (became menopausal at ${document.getElementById("menopause").value} years)` : ""}, was ${document.getElementById("contraceptive").value.toLowerCase()}, and is ${document.getElementById("pregnancy").value.toLowerCase()}.`;
+(became menopausal at ${document.getElementById("menopause").value} years)` : ""}, was ${document.getElementById("contraceptive").value.toLowerCase()}, and is ${document.getElementById("pregnancy").value.toLowerCase()}.`;
     }
 
     output =  `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \

@@ -50,7 +50,7 @@
     <div id="questions">
         <form>
             <ul>
-                <div id="pg1" class="page wrongpage">
+                <div id="pg1" class="page">
                 <li>
                     <label for="name">Patient Full Name</label>
                     <input type="text" id="name" name="patient-name" class="required" data-question="Name">
@@ -214,7 +214,7 @@
                     <li>
                         <span>
                         <input type="checkbox" id="attack3" name="attack3" class="child1 attackSecondary off" onchange='reveal("attack3", "attack3secondary")'>
-                        <label for="attack3">Can it be provoked by certain things? Yes</label>
+                        <label for="attack3">Can it be provoked by certain things?</label>
                         </span>
                         <span id="attack3secondary">
                         <label for="attack3-1">If yes, what things?</label>
@@ -575,7 +575,7 @@
                     </li>
                 </div>
                 </div>
-                <div id="pg5" class="page">
+                <div id="pg5" class="page wrongpage">
                 <h2 data-question="">Lifestyle</h2 data-question="">
                 <li>
                     <label for="standardDrinks">How many standard drinks of alcohol do you drink per week?</label>
@@ -1399,6 +1399,12 @@
                     <label for="test32-1">List all:</label>
                     <input type="text" id="test32-1" name="test32-1" data-question="List of Other Tests" class="test32secondary off required" data-checkbox-end="true">
                 </li>
+                </div>
+                <div id="pg12" class="page wrongpage">
+                    <h2>Congratulations on completing the survey!</h2>
+                    <h4>Please send the two files that have just downloaded to Vincent Seet at [redacted - check the one on his website].</h4>
+                    <h4>Also send any other information you think might be relevant, and any test reports for tests you checked in the Past Investigations section.</h4>
+                    <h4>You may close the webpage now.</h4>
                 </div>
                 <div id="bottomButtons">
                 <li>
