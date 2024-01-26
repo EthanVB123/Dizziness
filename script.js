@@ -356,14 +356,21 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     var smokingStatus;
     if (document.getElementById("smoker").checked) {
         if (dateString() == document.getElementById("smokerStop").value) {
-            smokingStatus == `is currently a smoker, who started smoking on ${document.getElementById("smokerStart") /* human readable? */} and smokes ${document.getElementById("smokerQuantity").value} cigarettes a day.`
+            smokingStatus = `is currently a smoker, who started smoking on ${document.getElementById("smokerStart") /* human readable? */} and smokes ${document.getElementById("smokerQuantity").value} cigarettes a day.`
         } else {
-            smokingStatus == `is an ex-smoker, who smoked from ${document.getElementById("smokerStart") /* human readable? */} to ${document.getElementById("smokerStop") /* human readable? */} and smoked ${document.getElementById("smokerQuantity").value} cigarettes a day.`            
+            smokingStatus = `was an ex-smoker, who smoked from ${document.getElementById("smokerStart") /* human readable? */} to ${document.getElementById("smokerStop") /* human readable? */} and smoked ${document.getElementById("smokerQuantity").value} cigarettes a day.`            
         }
     } else {
-        smokingStatus == "has never smoked."
+        smokingStatus = "has never smoked."
     }
-    var maritalStatus; // TODO add de facto relationship to marital status
+    var maritalStatus;
+    if (document.getElementById("single").checked) {
+        maritalStatus = "single";
+    } else if (document.getElementById("married").checked) {
+        maritalStatus = "married";
+    } else if (document.getElementById("defacto").checked) {
+        maritalStatus = "in a de facto relationship;"
+    }
     var occupation = document.getElementById("occupation").value;
     var occupationAorAn = ['a','e','i','o','u'].includes(occupation.charAt(0)) ? "an" : "a";
     var airTravelFrequency; // todo
