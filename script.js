@@ -354,6 +354,11 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     var pronoun = document.getElementById("female").checked ? "She" : "He";
     var drinkingStatus = document.getElementById("standardDrinks").value == 0 ? "was a non-drinker" : `drank ${document.getElementById("standardDrinks").value} standard drinks of alcohol a week`;
     var smokingStatus; // TODO add quit smoking to smoking status
+    if (document.getElementById("smoker").checked) {
+        if (dateString() == document.getElementById("smokerStop").value) {
+            smokingStatus == `is currently a smoker, who started smoking on ${document.getElementById("smokerStart") /* human readable? */} and smokes ${document.getElementById("smokerQuantity").value} cigarettes a day.`
+        }
+    }
     var maritalStatus; // TODO add de facto relationship to marital status
     var occupation = document.getElementById("occupation").value;
     var occupationAorAn = ['a','e','i','o','u'].includes(occupation.charAt(0)) ? "an" : "a";
@@ -365,7 +370,7 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     var pillowSingularOrPlural = numPillows == 1 ? "pillow" : "pillows";
     var pronounPossessive = document.getElementById("female").checked ? "Her" : "His";
     var sleepingPosition; // todo
-    var menstrualString; // todo
+    var menstrualString; // todo   
     output = `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
     ${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
     ${pronoun} ${litigationStatus} \
@@ -374,4 +379,11 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     
 }
 
+function dateString() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-based, so we add 1
+    const day = currentDate.getDate().toString().padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
 // If submitForm() required, check older commits (removed 16:25 17/01/2024)
