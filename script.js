@@ -356,12 +356,12 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
     var smokingStatus;
     if (document.getElementById("smoker").checked) {
         if (dateString() == document.getElementById("smokerStop").value) {
-            smokingStatus = `is currently a smoker, who started smoking on ${document.getElementById("smokerStart") /* human readable? */} and smokes ${document.getElementById("smokerQuantity").value} cigarettes a day.`
+            smokingStatus = `is currently a smoker, who started smoking on ${document.getElementById("smokerStart").value /* human readable? */} and smokes ${document.getElementById("smokerQuantity").value} cigarettes a day`
         } else {
-            smokingStatus = `was an ex-smoker, who smoked from ${document.getElementById("smokerStart") /* human readable? */} to ${document.getElementById("smokerStop") /* human readable? */} and smoked ${document.getElementById("smokerQuantity").value} cigarettes a day.`            
+            smokingStatus = `was an ex-smoker, who smoked from ${document.getElementById("smokerStart").value /* human readable? */} to ${document.getElementById("smokerStop").value /* human readable? */} and smoked ${document.getElementById("smokerQuantity").value} cigarettes a day`            
         }
     } else {
-        smokingStatus = "has never smoked."
+        smokingStatus = "has never smoked"
     }
     var maritalStatus = "unknown";
     if (document.getElementById("single").checked) {
@@ -414,17 +414,17 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
             break;
     }
     var menstrualString;
-    if (pronoun == "He") {
+    if (pronoun == "He" || 1==1 /*for testing only*/) {
         menstrualString = "";
     } else {
-        menstrualString = `She ${document.getElementById("menstrual").value.toLowerCase()}${document.getElementById("menstrual").value == "Is Menopausal" ? ` \
+        menstrualString = ` She ${document.getElementById("menstrual").value.toLowerCase()}${document.getElementById("menstrual").value == "Is Menopausal" ? ` \
         (became menopausal at ${document.getElementById("menopause").value} years)` : ""}, was ${document.getElementById("contraceptive").value.toLowerCase()}, and is ${document.getElementById("pregnancy").value.toLowerCase()}.`;
     }
-    output = `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
-    ${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
-    ${pronoun} ${litigationStatus} regarding ${pronounPossessive} symptoms. \
-    ${pronoun} ${disability} consider herself disabled. ${pronoun} ${drivingStatus}. ${pronoun} slept on ${numPillows} ${pillowSingularOrPlural} at \
-    night on ${pronounPossessive} ${sleepingPosition}. ${menstrualString}` 
+    return `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
+${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
+${pronoun} ${litigationStatus} regarding ${pronounPossessive.toLowerCase()} symptoms. \
+${pronoun} ${disability} consider ${pronoun == "He" ? "him" : "her"}self disabled. ${pronoun} ${drivingStatus}. ${pronoun} slept on ${numPillows} ${pillowSingularOrPlural} at \
+night on ${pronounPossessive.toLowerCase()} ${sleepingPosition}.${menstrualString}` 
     
 }
 
