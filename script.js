@@ -133,6 +133,29 @@ function pdfTest(toPutOnThePDF) {
     //console.log(doc.getFontList())
 }
 
+function reportPDF(headings, strings) {
+    const doc = new jspdf.jsPDF();
+    doc.setFontSize(10);
+    var y = 10;
+    for (i = 0; i < headings.length; i++) {
+        doc.setFont('helvetica','bold');
+        doc.text(headings[i], 10, y);
+        console.log(doc.getTextDimensions(headings[i]))
+        y += doc.getTextDimensions(headings[i]).h + 5;
+
+        doc.setFont('helvetica','normal');
+        var lines = doc.splitTextToSize(strings[i],doc.internal.pageSize.width-20);
+        for (j = 0; j < lines.length; j++) {
+            console.log(lines[j])
+            console.log(y)
+            doc.text(lines[j], 10, y);
+            y += doc.getTextDimensions(lines[j]).h;
+        }
+        y += 5;
+    }
+    doc.save("report.pdf")
+}
+
 function submitTable() {
     if (validateForm(-1)) {
         var numLinesThisPage = 0;
@@ -420,12 +443,15 @@ function generateLifestyleText() { // Attempts to generate section "Social Histo
         menstrualString = ` She ${document.getElementById("menstrual").value.toLowerCase()}${document.getElementById("menstrual").value == "Is Menopausal" ? ` \
         (became menopausal at ${document.getElementById("menopause").value} years)` : ""}, was ${document.getElementById("contraceptive").value.toLowerCase()}, and is ${document.getElementById("pregnancy").value.toLowerCase()}.`;
     }
-    return `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
+
+    output =  `${pronoun} ${drinkingStatus} and ${smokingStatus}. ${pronoun} was ${maritalStatus}. \
 ${pronoun} was ${occupationAorAn} ${occupation}. ${pronoun} travelled by air ${airTravelFrequency}. \
 ${pronoun} ${litigationStatus} regarding ${pronounPossessive.toLowerCase()} symptoms. \
 ${pronoun} ${disability} consider ${pronoun == "He" ? "him" : "her"}self disabled. ${pronoun} ${drivingStatus}. ${pronoun} slept on ${numPillows} ${pillowSingularOrPlural} at \
 night on ${pronounPossessive.toLowerCase()} ${sleepingPosition}.${menstrualString}` 
     
+    reportPDF(["Social History","Second Heading"],[output, "Lorem ipsum dolor sit amet"]);
+    return output;
 }
 
 function dateString() {
