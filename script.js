@@ -353,11 +353,15 @@ function isElementOrAncestorHiddenByClass(element, className) {
 function generateLifestyleText() { // Attempts to generate section "Social History" in the written report.
     var pronoun = document.getElementById("female").checked ? "She" : "He";
     var drinkingStatus = document.getElementById("standardDrinks").value == 0 ? "was a non-drinker" : `drank ${document.getElementById("standardDrinks").value} standard drinks of alcohol a week`;
-    var smokingStatus; // TODO add quit smoking to smoking status
+    var smokingStatus;
     if (document.getElementById("smoker").checked) {
         if (dateString() == document.getElementById("smokerStop").value) {
             smokingStatus == `is currently a smoker, who started smoking on ${document.getElementById("smokerStart") /* human readable? */} and smokes ${document.getElementById("smokerQuantity").value} cigarettes a day.`
+        } else {
+            smokingStatus == `is an ex-smoker, who smoked from ${document.getElementById("smokerStart") /* human readable? */} to ${document.getElementById("smokerStop") /* human readable? */} and smoked ${document.getElementById("smokerQuantity").value} cigarettes a day.`            
         }
+    } else {
+        smokingStatus == "has never smoked."
     }
     var maritalStatus; // TODO add de facto relationship to marital status
     var occupation = document.getElementById("occupation").value;
