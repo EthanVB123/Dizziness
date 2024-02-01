@@ -36,7 +36,7 @@ form {
     border-right: 1px solid black;
     border-top-left-radius: 1vmin;
     border-top-right-radius: 1vmin;
-    font-size: 4vh;
+    font-size: 4vmin;
     font-weight: bold;
 }
 
@@ -52,7 +52,7 @@ form {
     text-align: left;
     border-left: 1px solid black;
     border-right: 1px solid black;
-    font-size: 3vh;
+    font-size: 3vmin;
 }
 
 #questions {
@@ -69,4 +69,16 @@ form {
     border-right: 1px solid black;
     border-bottom-left-radius: 1vmin;
     border-bottom-right-radius: 1vmin;
+}
+
+.bottombutton {
+    font-family: "Libre Franklin",Arial,sans-serif;
+    background-color: #2EA3F2;
+    transition: 0.3s;
+    border: none;
+    padding: 1vmin;
+    border-radius: 0.4vmin;
+}
+.bottombutton:hover {
+    background-color: #B0D9F5;
 }
