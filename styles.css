@@ -62,13 +62,14 @@ form {
     left: 1vw;
     width: 96vw;
     padding: 1vw;
-    height: 62vh;
+    height: 52vh;
     overflow: auto;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     border-bottom-left-radius: 1vmin;
     border-bottom-right-radius: 1vmin;
+    padding-bottom: 10vh;
 }
 
 .bottombutton {
